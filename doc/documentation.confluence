@@ -1,0 +1,18 @@
+h1. Confluence-Test
+
+Text mit Confluence-Syntax geschrieben.
+
+h2. Eingabe-Formate
+
+* MediaWiki
+* Markdown
+* Textile
+
+h2. Ausgabe-Formate
+
+* DocBook
+* Eclipse Help
+* DITA (per _Ant_)
+* Confluence
+* Textile
+

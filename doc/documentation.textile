@@ -1,0 +1,18 @@
+h1(#Textile-Test). Textile-Test
+
+Text mit Textile-Syntax geschrieben.
+
+h2(#Eingabe-Formate). Eingabe-Formate
+
+* MediaWiki
+* Markdown
+* Textile
+
+h2(#Ausgabe-Formate). Ausgabe-Formate
+
+* DocBook
+* Eclipse Help
+* DITA (per __Ant__)
+* Confluence
+* Textile
+
