@@ -1,6 +1,6 @@
 # tekom2014
 
-Dies ist das Repository für meinen Vortrag "DITA Dieat" auf der [tekom-Jahrestagung 2014](http://tagungen.tekom.de/h14/tekom-jahrestagung-2014/).   
+Dies ist das Repository für meinen Vortrag "DITA Diet" auf der [tekom-Jahrestagung 2014](http://tagungen.tekom.de/h14/tekom-jahrestagung-2014/).   
 
 Hier wird es neben Beispielcode auch detailliertere Infos zum Vortrag geben, als es der Tagungsband ermöglicht. 
 
