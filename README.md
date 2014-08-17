@@ -9,8 +9,8 @@ Hier wird es neben Beispielcode auch detailliertere Infos zu den Vorträgen gebe
  
 Dies ist der - ansonsten ungenutzte - Master-Branch. Für jeden Vortrag gibt es einen separaten Branch:
 
-- **eclipse**-Branch für das Tutorial "Sonnenfinsternis in der Technischen Dokumentation"
-- **dita**-Branch für den Workshop "DITA Diet"
+- [**eclipse**-Branch](https://github.com/nakohdo/tekom2014/tree/eclipse) für das Tutorial "Sonnenfinsternis in der Technischen Dokumentation"
+- [**dita**-Branch](https://github.com/nakohdo/tekom2014/tree/dita) für den Workshop "DITA Diet"
 
 Frank Ralf
 
