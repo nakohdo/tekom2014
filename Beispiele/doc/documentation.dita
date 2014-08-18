@@ -1,0 +1,47 @@
+<?xml version='1.0' ?><!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.1 Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+<topic id="MediaWiki-Test">
+	<title>MediaWiki-Test</title>
+	<body>
+		<p>Text mit MediaWiki-Syntax geschrieben.</p>
+	</body>
+	<topic id="Eingabe-Formate">
+		<title>Eingabe-Formate</title>
+		<body>
+			<ul>
+				<li>
+					<p>MediaWiki</p>
+				</li>
+				<li>
+					<p>Markdown</p>
+				</li>
+				<li>
+					<p>Textile</p>
+				</li>
+			</ul>
+		</body>
+	</topic>
+	<topic id="Ausgabe-Formate">
+		<title>Ausgabe-Formate</title>
+		<body>
+			<ul>
+				<li>
+					<p>DocBook</p>
+				</li>
+				<li>
+					<p>Eclipse Help</p>
+				</li>
+				<li>
+					<p>DITA (per 
+						<i>Ant</i>)
+					</p>
+				</li>
+				<li>
+					<p>Confluence</p>
+				</li>
+				<li>
+					<p>Textile</p>
+				</li>
+			</ul>
+		</body>
+	</topic>
+</topic>

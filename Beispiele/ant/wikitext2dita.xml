@@ -1,0 +1,20 @@
+<project name="wikitext2dita" default="dita" basedir=".">
+
+	<property name="wikitext.standalone" value="C:\wikitext-standalone-latest\wikitext-standalone-2.2.0-SNAPSHOT"/>
+	<!-- path to wikitext standalone package -->
+
+	<path id="wikitext.classpath">
+		<fileset dir="${wikitext.standalone}">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+
+	<taskdef classpathref="wikitext.classpath" resource="org/eclipse/mylyn/wikitext/core/ant/tasks.properties" />
+	
+	<target name="dita" description="Generate DITA from MediaWiki source">
+		<wikitext-to-dita markupLanguage="MediaWiki"
+				topicStrategy="NONE">
+				<fileset dir="H:\Eclipse\tekom 2014\doc" includes="**/*.mediawiki"/>
+		</wikitext-to-dita>
+	</target>
+</project>

@@ -1,0 +1,5 @@
+<project name="test-ant" default="test" basedir=".">
+	<target name="test">
+		<echo>Dies ist ein Beispieltask (Ant).</echo>
+	</target>
+</project>
