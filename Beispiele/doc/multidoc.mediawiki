@@ -1,0 +1,14 @@
+== MediaWiki-Test ==
+Text mit MediaWiki-Syntax geschrieben.
+
+== Eingabe-Formate ==
+* MediaWiki
+* Markdown
+* Textile
+
+== Ausgabe-Formate ==
+* DocBook
+* Eclipse Help
+* DITA (per ''Ant'')
+* Confluence
+* Textile

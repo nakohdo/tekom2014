@@ -1,0 +1,29 @@
+<?xml version='1.0' ?><!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<book>
+	<title>documentation</title>
+	<chapter id="MediaWiki-Syntax_in_Eclipse">
+		<title>MediaWiki-Syntax in Eclipse</title>
+		<section id="Einleitung">
+			<title>Einleitung</title>
+			<para>Man kann in Eclipse mit Wikisyntax schreiben. Der Vorteil ist, dass man mit wenig Markup bereits gut lesbare Texte schreiben kann.</para>
+			<section id="Formate">
+				<title>Formate</title>
+				<itemizedlist>
+					<listitem>
+						<para>MediaWiki</para>
+					</listitem>
+					<listitem>
+						<para>Textile</para>
+					</listitem>
+					<listitem>
+						<para>Markdown</para>
+					</listitem>
+				</itemizedlist>
+			</section>
+		</section>
+		<section id="Weiterverarbeitung">
+			<title>Weiterverarbeitung</title>
+			<para>Ein weiterer Vorteil ist, dass sich solchermaßen strukturierte Texte auch direkt von Eclipse aus automatisch weiterverarbeiten lassen. So kann man sie in andere Formate konvertieren.</para>
+		</section>
+	</chapter>
+</book>

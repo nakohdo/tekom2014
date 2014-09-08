@@ -1,0 +1,50 @@
+<?xml version='1.0' ?><!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<book>
+	<title>MarkdownPad2</title>
+	<chapter id="MarkdownPad2Willkommenstext">
+		<title>MarkdownPad 2 Willkommenstext</title>
+		<section id="WillkommenbeiMarkdownPad2">
+			<title>Willkommen bei MarkdownPad 2</title>
+			<para>
+				<emphasis role="bold">MarkdownPad</emphasis> ist ein reichhaltig ausgestatteter Markdown Editor für Windows.
+			</para>
+			<section id="ExklusivfrMarkdownerstellt">
+				<title>Exklusiv für Markdown erstellt</title>
+				<para>Genießen Sie erstklassige Markdown-Unterstützung mit einfachem Zugang zur Markdown Syntax und komfortablen Tastaturkürzeln.</para>
+				<para>Versuchen Sie es:
+					- 
+					<emphasis role="bold">Fett</emphasis> (
+					<code>Strg+B</code>) und 
+					<emphasis>Kursiv</emphasis> (
+					<code>Strg+I</code>)
+					- Zitate (
+					<code>Strg+Q</code>)
+					- Code Blöcke (
+					<code>Strg+K</code>)
+					- Überschriften 1, 2, 3 (
+					<code>Strg+1</code>, 
+					<code>Strg+ 2</code>, 
+					<code>Strg+3</code>)
+					- Listen (
+					<code>Strg+U</code> un d 
+					<code>Strg+Umschalt+O</code>)
+				</para>
+			</section>
+			<section id="SehenSieIhrenderungensofortmitLivePreview">
+				<title>Sehen Sie Ihre Änderungen sofort mit LivePreview</title>
+				<para>Überlegen Sie nicht, ob Ihre 
+					<ulink url="http://markdownpad.com">Hyperlink Syntax</ulink> richtig ist. Die Live Vorschau zeigt Ihnen mit jedem Tastendruck genau, wie Ihr Dokument aussehen wird.
+				</para>
+			</section>
+			<section id="MachenSieesselbst">
+				<title>Machen Sie es selbst</title>
+				<para>Schriften, Farbschemata, Layouts und Stylesheets können alle zu 100% angepasst werden. So können Sie MarkdownPad in Ihren perfekten Editor verwandeln.</para>
+			</section>
+			<section id="EinrobusterEditorfrfortgeschrittteneMarkdownAnwender">
+				<title>Ein robuster Editor für fortgeschritttene Markdown Anwender</title>
+				<para>MarkdownPad unterstützt mehrere Markdown Parser, einschließlich Markdown, Markdown Extra (mit Unterstützung für Tabellen) und GitHub Flavored Markdown.
+					Mit mehreren Reitern für verschiedene Dokumente, PDF Export, einem eingebauten Bilder-Uploader, Session Management, Rechtschreibprüfung, automatischem Speichern, Syntax Highlighting sowie einer eingebauter CSS Verwaltung. Mit MarkdownPad stehen Ihnen alle Möglichkeiten offen.</para>
+			</section>
+		</section>
+	</chapter>
+</book>

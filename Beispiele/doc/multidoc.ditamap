@@ -1,0 +1,7 @@
+<?xml version='1.0' ?><!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA 1.1 BookMap//EN"  "http://docs.oasis-open.org/dita/v1.1/OS/dtd/bookmap.dtd">
+<bookmap>
+	<title>multidoc</title>
+	<chapter href="topics/MediaWiki-Test.dita" navtitle="MediaWiki-Test"/>
+	<chapter href="topics/Eingabe-Formate.dita" navtitle="Eingabe-Formate"/>
+	<chapter href="topics/Ausgabe-Formate.dita" navtitle="Ausgabe-Formate"/>
+</bookmap>

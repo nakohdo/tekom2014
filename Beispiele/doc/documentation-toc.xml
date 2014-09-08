@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<toc topic="doc/documentation.html" label="documentation">
+	<topic href="doc/documentation.html" label="Markdown-Syntax">
+		<topic href="doc/documentation.html#Vorteile" label="Vorteile"></topic>
+		<topic href="doc/documentation.html#Untersttzung" label="Unterstützung">
+			<topic href="doc/documentation.html#Formate" label="Formate"></topic>
+		</topic>
+	</topic>
+</toc>
