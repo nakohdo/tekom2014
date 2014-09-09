@@ -10,7 +10,7 @@ Hier wird es neben Beispielcode auch detailliertere Infos zu den Vorträgen gebe
 Dies ist der - ansonsten ungenutzte - Master-Branch. Für jeden Vortrag gibt es einen separaten Branch:
 
 - [**eclipse**-Branch](https://github.com/nakohdo/tekom2014/tree/eclipse) für das Tutorial ["Sonnenfinsternis in der Technischen Dokumentation"](http://tagungen.tekom.de/h14/tagungsprogramm/programm/program/sv_714_OTS7/)
-- [**dita**-Branch](https://github.com/nakohdo/tekom2014/tree/dita) für den Workshop ["DITA Diet - Beautiful in the Inside"](http://tagungen.tekom.de/h14/tagungsprogramm/programm/program/sv_715_DITA3/) (auf Englisch)
+- [**dita**-Branch](https://github.com/nakohdo/tekom2014/tree/dita) für den Workshop ["DITA Diet - Beautiful on the Inside"](http://tagungen.tekom.de/h14/tagungsprogramm/programm/program/sv_715_DITA3/) (auf Englisch)
 
 Frank Ralf
 
