@@ -1,4 +1,4 @@
-# tekom 2014 - DITA
+# tcworld conference 2014 - DITA
 
 This is the repository for our workshop ["DITA Diet - Beautiful on the Inside"](http://conferences.tekom.de/conference/tcworld14/for-participants/conference-program/program/sv_715_DITA3/) at the [tcworld conference 2014](http://conferences.tekom.de/tcworld14/tcworld14/).   
 
