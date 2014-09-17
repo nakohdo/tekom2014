@@ -7,7 +7,5 @@ In addition to sample code, we will provide here more detailled information as i
 * Wiki: https://github.com/nakohdo/tekom2014/wiki
 * GitHub Pages: https://nakohdo.github.io/tekom2014/ 
 
-Frank Ralf  
 Mark Schubert
-
-
+Frank Ralf
