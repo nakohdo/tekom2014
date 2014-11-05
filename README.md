@@ -4,7 +4,7 @@ This is the repository for our workshop ["DITA Diet - Beautiful on the Inside"](
 
 In addition to sample code, we will provide here more detailled information as in the [printed conference program](http://conferences.tekom.de/tcworld14/for-participants/printed-conference-program/). 
 
-* Wiki: https://github.com/nakohdo/tekom2014/wiki
+* Wiki: https://github.com/nakohdo/tekom2014/wiki/DITA-Diet---Beautiful-on-the-Inside
 * GitHub Pages: https://nakohdo.github.io/tekom2014/ 
 
 Mark Schubert  
