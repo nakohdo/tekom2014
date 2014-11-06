@@ -1,0 +1,12 @@
+<NotepadPlus>
+    <InternalCommands>
+        <Shortcut id="42021" Ctrl="no" Alt="yes" Shift="yes" Key="80" />
+    </InternalCommands>
+    <Macros />
+    <UserDefinedCommands />
+    <PluginCommands>
+        <PluginCommand moduleName="XMLTools.dll" internalID="11" Ctrl="yes" Alt="no" Shift="yes" Key="80" />
+        <PluginCommand moduleName="XMLTools.dll" internalID="4" Ctrl="yes" Alt="no" Shift="yes" Key="86" />
+    </PluginCommands>
+    <ScintillaKeys />
+</NotepadPlus>
