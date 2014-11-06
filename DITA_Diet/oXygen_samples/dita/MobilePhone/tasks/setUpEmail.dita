@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_r33_mtl_3g">
+    <title>Setting up an e-mail address</title>
+    <shortdesc>You can use the Mail application to set up your webmail and other POP3 or IMAP email
+        accounts.</shortdesc>
+    <taskbody>
+        <context>
+            <p>From the home menu, select <term>Messaging -&gt; Options -&gt; Settings -&gt; Email
+                    -&gt; Mailboxes</term> and add a new mailbox. Then follow the wizard which walks
+                you through the process. First choose <term>Start</term> to begin the process
+                described below:</p>
+        </context>
+        <steps>
+            <step>
+                <cmd>Choose one of the options: If this is the first time your are setting up an
+                    e-mail account, select POP3/IMAP. If you have already added an email account,
+                    select <term>New account</term> and then select POP3/IMAP.</cmd>
+            </step>
+            <step>
+                <cmd>Type your email address and password and then press <term>Next</term>. </cmd>
+            </step>
+            <step>
+                <cmd> Enter your incoming mail server then choose <term>Next</term> and your
+                    outgoing mail server then choose <term>Next</term>.</cmd>
+            </step>
+            <step>
+                <cmd>Insert your name and the account name. Give this mailbox a name. Make it
+                    meaningful, for example ‘Gmail email’ if your email provider is Gmail. When this
+                    details have been entered, choose <term>Finish</term> and the following
+                    notification is displayed: ‘Setup complete. Settings can be edited in e-mail
+                    settings section’. Click <term>OK</term>. </cmd>
+            </step>
+            <step>
+                <cmd>After you have received this confirmation message, you can view and manage your
+                    email messages, from the home menu, select the <term>Messages</term> icon.</cmd>
+            </step>
+        </steps>
+    </taskbody>
+  </task>
