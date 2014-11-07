@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE topic SYSTEM "dtd/myTopic.dtd">
+<topic id="topic-1">
+  <title>Test file for topic type shell</title>
+  <body>
+    <p>Topic paragraph</p>
+	<p>This document serves as your test document to verify that you haven't made any <b>syntax errors</b> in the new shell. </p>
+  </body>
+</topic>
