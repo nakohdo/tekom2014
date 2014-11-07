@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>delayResolutionDomain.mod</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="livedtd.css">
+<STYLE TYPE="text/css">
+  STRONG { font-weight: bold; color: red;}
+  .COMMENT { font-style:italic; color: #A8A8A8;}
+</STYLE>
+</HEAD>
+<BODY onLoad="parent.file.document.open();parent.file.document.write('<BODY TOPMARGIN=0><B>delayResolutionDomain.mod</B></BODY>');parent.file.document.close()"><?LIVEDTD ENDHEAD?>
+<PRE>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    HEADER                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  MODULE:    DITA Delayed Resolution Domain                    --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  VERSION:   1.2                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  DATE:      November 2009                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    PUBLIC DOCUMENT TYPE DEFINITION            --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    TYPICAL INVOCATION                         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  Refer to this file by the following public identifier or an 
+      appropriate system identifier 
+PUBLIC "-//OASIS//ELEMENTS DITA Delayed Resolution Domain//EN"
+      Delivered as file "delayResolutionDomain.mod"                --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- SYSTEM:     Darwin Information Typing Architecture (DITA)     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- PURPOSE:    Define elements and specialization attributes     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             for Delayed Resolution Domain                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ORIGINAL CREATION DATE:                                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             February 2008                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             (C) Copyright OASIS Open 2008, 2009.              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             All Rights Reserved.                              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  UPDATES:                                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                   ELEMENT NAME ENTITIES                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+&lt;!ENTITY % <A NAME="EntityDef.exportanchors"><STRONG>exportanchors</STRONG></A> "<A HREF="delayResolutionDomain.mod.html#ElementDef110">exportanchors</A>"                             &gt;
+&lt;!ENTITY % <A NAME="EntityDef.anchorid"><STRONG>anchorid</STRONG></A>      "<A HREF="delayResolutionDomain.mod.html#ElementDef111">anchorid</A>"                                  &gt;
+&lt;!ENTITY % <A NAME="EntityDef.anchorkey"><STRONG>anchorkey</STRONG></A>     "<A HREF="delayResolutionDomain.mod.html#ElementDef112">anchorkey</A>"                                 &gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    ELEMENT DECLARATIONS                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Export Anchor List              --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.exportanchors.content"><STRONG>exportanchors.content</STRONG></A>
+                       "(<A HREF="delayResolutionDomain.mod.html#EntityDef.anchorid">%anchorid;</A> | 
+                         <A HREF="delayResolutionDomain.mod.html#EntityDef.anchorkey">%anchorkey;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.exportanchors.attributes"><STRONG>exportanchors.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef110"></A><STRONG>exportanchors</STRONG>    <A HREF="delayResolutionDomain.mod.html#EntityDef.exportanchors.content">%exportanchors.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef222"></A><STRONG>exportanchors</STRONG>    <A HREF="delayResolutionDomain.mod.html#EntityDef.exportanchors.attributes">%exportanchors.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Anchor ID                       --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.anchorid.content"><STRONG>anchorid.content</STRONG></A>
+                       "EMPTY"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.anchorid.attributes"><STRONG>anchorid.attributes</STRONG></A>
+             "keyref 
+                        CDATA 
+                                  #IMPLIED
+              id 
+                        NMTOKEN 
+                                  #REQUIRED
+              <A HREF="commonElements.mod.html#EntityDef.conref-atts">%conref-atts;</A>
+              <A HREF="commonElements.mod.html#EntityDef.select-atts">%select-atts;</A>
+              <A HREF="commonElements.mod.html#EntityDef.localization-atts">%localization-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef111"></A><STRONG>anchorid</STRONG>    <A HREF="delayResolutionDomain.mod.html#EntityDef.anchorid.content">%anchorid.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef223"></A><STRONG>anchorid</STRONG>    <A HREF="delayResolutionDomain.mod.html#EntityDef.anchorid.attributes">%anchorid.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Anchor Key                       --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.anchorkey.content"><STRONG>anchorkey.content</STRONG></A>
+                       "EMPTY"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.anchorkey.attributes"><STRONG>anchorkey.attributes</STRONG></A>
+             "keyref 
+                        CDATA 
+                                  #REQUIRED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef112"></A><STRONG>anchorkey</STRONG>    <A HREF="delayResolutionDomain.mod.html#EntityDef.anchorkey.content">%anchorkey.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef224"></A><STRONG>anchorkey</STRONG>    <A HREF="delayResolutionDomain.mod.html#EntityDef.anchorkey.attributes">%anchorkey.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    SPECIALIZATION ATTRIBUTE DECLARATIONS      --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+&lt;!ATTLIST <A NAME="AttlistDef222"></A><STRONG>exportanchors</STRONG> <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "+ topic/keywords delay-d/exportanchors "  &gt;
+&lt;!ATTLIST <A NAME="AttlistDef223"></A><STRONG>anchorid</STRONG>      <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "+ topic/keyword delay-d/anchorid "  &gt;
+&lt;!ATTLIST <A NAME="AttlistDef224"></A><STRONG>anchorkey</STRONG>     <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "+ topic/keyword delay-d/anchorkey "  &gt;
+
+<SPAN CLASS="COMMENT">&lt;!-- ================== End Delayed Resolution Domain  =========== --&gt;</SPAN>
+<?LIVEDTD EOF?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE></BODY></HTML>

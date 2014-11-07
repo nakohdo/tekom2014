@@ -1,0 +1,464 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>tblDecl.mod</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="livedtd.css">
+<STYLE TYPE="text/css">
+  STRONG { font-weight: bold; color: red;}
+  .COMMENT { font-style:italic; color: #A8A8A8;}
+</STYLE>
+</HEAD>
+<BODY onLoad="parent.file.document.open();parent.file.document.write('<BODY TOPMARGIN=0><B>tblDecl.mod</B></BODY>');parent.file.document.close()"><?LIVEDTD ENDHEAD?>
+<PRE>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    HEADER                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  MODULE:    XML EXCHANGE TABLE MODEL DECLARATION MODULE       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  VERSION:   1.2                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  DATE:      November 2009                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!--             (C) Copyright OASIS Open 2005, 2009.              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             (C) Copyright IBM Corporation 2001, 2004.         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             All Rights Reserved.                              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  UPDATES:                                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2005.11.15 RDA: Corrected the "Delivered as" system ID     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2006.06.07 RDA: Make universal attributes universal        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                      (DITA 1.1 proposal #12)                  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2006.11.30 RDA: Add -dita-use-conref-target to enumerated  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                      attributes                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.02.13 RDA: Create .content and .attributes entities;  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    requires reorganization of some existing   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    entities provided with the Exchange Model  --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  Delivered as file "tblDecl.mod"                              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+<SPAN CLASS="COMMENT">&lt;!-- XML EXCHANGE TABLE MODEL DECLARATION MODULE                   --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- OASIS DITA 1.0 notes:
+     The Exchange Table Model replaces the original CALS-based model
+     used in development versions of the DITA definition.
+     This set of declarations defines the XML version of the Exchange
+     Table Model as adapted for OASIS DITA version 1.0.
+     The base for the DITA version of the Exchange Table Model is
+     defined at http://www.oasis-open.org/specs/tm9901.htm .
+     The DITA version specifically extends this model with these DITA-
+     specific content and attribute adaptations to the DITA processing
+     requirements:
+
+STRUCTURE:
+
+Introduce the DITA-unique &lt;desc&gt; element (optional after &lt;title&gt;); this element
+enables more consistent presentation of both figures and tables.
+
+
+ATTRIBUTES:
+
+For frame, align, and valign attributes on any element:
+  Add the enumerated value -dita-use-conref-target for DITA 1.1.  
+
+For the &lt;table&gt; element, add:
+  %univ-atts; which consists of:
+    %select-atts; [for selection, conditional processing]
+    %id-atts; [for conref and linking]
+    %localization-atts (@translate + @xml:lang) [for NLS processing support]
+    %global-atts; (@xtrf + @xtrc) [for tracing and messaging support in processors]
+    @class [for specialization support]
+  @outputclass [for role designation (ie, styles, future migrations)]
+  @rowheader [for accessibility support in processing]
+  %display-atts; which consists of:
+    @scale [for presentational equivalence with other scaled exhibits: fig, pre, lines, simpletable]
+    @frame (already part of table)
+    @pgwide (already part of table, same intent as original @expanse)
+
+For &lt;tgroup&gt;, &lt;thead&gt;, &lt;tbody&gt;, and &lt;row&gt;, add:
+  %univ-atts;
+  %global-atts;
+  @class
+  @outputclass [for role designation (ie, styles, future migrations)]
+
+For &lt;entry&gt;, add:
+  %id-atts;
+  %global-atts
+  @class
+  @outputclass [for role designation (ie, styles, future migrations)]
+  @rev [for indication of revised content for flag-based processing]
+
+--&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- DITA specialization support: element redefinition for expansion --&gt;</SPAN>
+
+&lt;!ENTITY % table "table"&gt;
+&lt;!ENTITY % tgroup "tgroup"&gt;
+&lt;!ENTITY % colspec "colspec"&gt;
+&lt;!ENTITY % thead "thead"&gt;
+&lt;!ENTITY % tbody "tbody"&gt;
+&lt;!ENTITY % row "row"&gt;
+&lt;!ENTITY % entry "entry"&gt;
+
+<SPAN CLASS="COMMENT">&lt;!-- The Formal Public Identifier (FPI) for this DITA adaptation of
+     the Exchange Table Model shall be:
+
+     "-//OASIS//ELEMENTS DITA Exchange Table Model//EN"
+
+     This set of declarations may be referred to using a public external
+     entity declaration and reference as shown in the following three
+     lines:
+
+     &lt;!ENTITY % tableXML
+       PUBLIC "-//OASIS//ELEMENTS DITA Exchange Table Model//EN"&gt;
+       %tableXML;
+--&gt;</SPAN>
+
+
+
+<SPAN CLASS="COMMENT">&lt;!-- In order to use the Exchange table model, various parameter entity
+     declarations are required.  A brief description is as follows:
+
+     ENTITY NAME      WHERE USED              WHAT IT IS
+
+     %yesorno         In ATTLIST of:          An attribute declared value
+                      almost all elements     for a "boolean" attribute
+
+     %paracon         In content model of:    The "text" (logical content)
+                      &lt;entry&gt;                 of the model group for &lt;entry&gt;
+
+     %titles          In content model of:    The "title" part of the model
+                      table element           group for the table element
+
+     %tbl.table.name  In declaration of:      The name of the "table"
+                      table element           element
+
+     %tbl.table-titles.mdl In content model of: The model group for the title
+                      table elements          part of the content model for
+                                              table element
+
+     %tbl.table.mdl   In content model of:    The model group for the content
+                      table elements          model for table element,
+                                              often (and by default) defined
+                                              in terms of %tbl.table-titles.mdl
+                                              and tgroup
+
+     %tbl.table.att   In ATTLIST of:          Additional attributes on the
+                      table element           table element
+
+     %bodyatt         In ATTLIST of:          Additional attributes on the
+                      table element           table element (for backward
+                                              compatibility with the SGML
+                                              model)
+
+     %tbl.tgroup.mdl  In content model of:    The model group for the content
+                      &lt;tgroup&gt;                model for &lt;tgroup&gt;
+
+     %tbl.tgroup.att  In ATTLIST of:          Additional attributes on the
+                      &lt;tgroup&gt;                &lt;tgroup&gt; element
+
+     %tbl.thead.att   In ATTLIST of:          Additional attributes on the
+                      &lt;thead&gt;                 &lt;thead&gt; element
+
+     %tbl.tbody.att   In ATTLIST of:          Additional attributes on the
+                      &lt;tbody&gt;                 &lt;tbody&gt; element
+
+     %tbl.colspec.att In ATTLIST of:          Additional attributes on the
+                      &lt;colspec&gt;               &lt;colspec&gt; element
+
+     %tbl.row.mdl     In content model of:    The model group for the content
+                      &lt;row&gt;                   model for &lt;row&gt;
+
+     %tbl.row.att     In ATTLIST of:          Additional attributes on the
+                      &lt;row&gt;                   &lt;row&gt; element
+
+     %tbl.entry.mdl   In content model of:    The model group for the content
+                      &lt;entry&gt;                 model for &lt;entry&gt;
+
+     %tbl.entry.att   In ATTLIST of:          Additional attributes on the
+                      &lt;entry&gt;                 &lt;entry&gt; element
+
+     This set of declarations will use the default definitions shown below
+     for any of these parameter entities that are not declared before this
+     set of declarations is referenced.
+
+     Note that DITA properties are added in cumulative declarations at the end.
+--&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- These definitions are not directly related to the table model, but are
+     used in the default CALS table model and may be defined elsewhere (and
+     prior to the inclusion of this table module) in the referencing DTD. --&gt;</SPAN>
+
+&lt;!ENTITY % <A NAME="EntityDef.yesorno"><STRONG>yesorno</STRONG></A> 'NMTOKEN'&gt; <SPAN CLASS="COMMENT">&lt;!-- no if zero(s), yes if any other value --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.titles"><STRONG>titles</STRONG></A>  '<A HREF="commonElements.mod.html#ElementDef5">title</A>?'&gt;
+&lt;!ENTITY % <A NAME="EntityDef.paracon"><STRONG>paracon</STRONG></A> '<A HREF="commonElements.mod.html#EntityDef.tblcell.cnt">%tblcell.cnt;</A>'&gt; <SPAN CLASS="COMMENT">&lt;!-- default for use in entry content --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!--
+The parameter entities as defined below change and simplify the CALS table
+model as published (as part of the Example DTD) in MIL-HDBK-28001.  The
+resulting simplified DTD has support from the SGML Open vendors and is
+therefore more interoperable among different systems.
+
+These following declarations provide the Exchange default definitions
+for these entities.  However, these entities can be redefined (by giving
+the appropriate parameter entity declaration(s) prior to the reference
+to this Table Model declaration set entity) to fit the needs of the
+current application.
+
+Note, however, that changes may have significant effect on the ability to
+interchange table information.  These changes may manifest themselves
+in useability, presentation, and possible structure information degradation.
+--&gt;</SPAN>
+
+&lt;!ENTITY % <A NAME="EntityDef.tbl.table.name"><STRONG>tbl.table.name</STRONG></A>       "<A HREF="tblDecl.mod.html#ElementDef55">table</A>"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.tbl.table-titles.mdl"><STRONG>tbl.table-titles.mdl</STRONG></A> "((<A HREF="commonElements.ent.html#EntityDef.title">%title;</A>)?, (<A HREF="commonElements.ent.html#EntityDef.desc">%desc;</A>)?)?,"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.tbl.table-main.mdl"><STRONG>tbl.table-main.mdl</STRONG></A>   "(<A HREF="commonElements.ent.html#EntityDef.tgroup">%tgroup;</A>)+"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.tbl.table.mdl"><STRONG>tbl.table.mdl</STRONG></A>        "<A HREF="tblDecl.mod.html#EntityDef.tbl.table-titles.mdl">%tbl.table-titles.mdl;</A> <A HREF="tblDecl.mod.html#EntityDef.tbl.table-main.mdl">%tbl.table-main.mdl;</A>"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.tbl.table.att"><STRONG>tbl.table.att</STRONG></A>        "
+    pgwide      <A HREF="tblDecl.mod.html#EntityDef.yesorno">%yesorno;</A>       #IMPLIED "&gt;
+&lt;!ENTITY % <A NAME="EntityDef.bodyatt"><STRONG>bodyatt</STRONG></A>              ""&gt;
+&lt;!ENTITY % <A NAME="EntityDef.tbl.tgroup.mdl"><STRONG>tbl.tgroup.mdl</STRONG></A>       "(<A HREF="commonElements.ent.html#EntityDef.colspec">%colspec;</A>)*, (<A HREF="commonElements.ent.html#EntityDef.thead">%thead;</A>)?, <A HREF="commonElements.ent.html#EntityDef.tbody">%tbody;</A>"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.tbl.tgroup.att"><STRONG>tbl.tgroup.att</STRONG></A>       ""&gt;
+&lt;!ENTITY % <A NAME="EntityDef.tbl.thead.att"><STRONG>tbl.thead.att</STRONG></A>        ""&gt;
+&lt;!ENTITY % <A NAME="EntityDef.tbl.tbody.att"><STRONG>tbl.tbody.att</STRONG></A>        ""&gt;
+&lt;!ENTITY % <A NAME="EntityDef.tbl.colspec.att"><STRONG>tbl.colspec.att</STRONG></A>      "base                        CDATA   #IMPLIED
+                                 <A HREF="task.dtd.html#EntityDef.base-attribute-extensions">%base-attribute-extensions;</A>"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.tbl.row.mdl"><STRONG>tbl.row.mdl</STRONG></A>          "(<A HREF="commonElements.ent.html#EntityDef.entry">%entry;</A>)+"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.tbl.row.att"><STRONG>tbl.row.att</STRONG></A>          ""&gt;
+&lt;!ENTITY % <A NAME="EntityDef.tbl.entry.mdl"><STRONG>tbl.entry.mdl</STRONG></A>        "(<A HREF="tblDecl.mod.html#EntityDef.paracon">%paracon;</A>)*"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.tbl.entry.att"><STRONG>tbl.entry.att</STRONG></A>        "base                        CDATA   #IMPLIED
+                                 <A HREF="task.dtd.html#EntityDef.base-attribute-extensions">%base-attribute-extensions;</A>"&gt;
+
+<SPAN CLASS="COMMENT">&lt;!-- =====  Element and attribute declarations follow. =====  --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    DITA BEHAVIOR ATTRIBUTES                   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+&lt;!ENTITY % <A NAME="EntityDef.dita.table.attributes"><STRONG>dita.table.attributes</STRONG></A>
+       "rowheader   (firstcol | norowheader | 
+                         -dita-use-conref-target) #IMPLIED
+        scale (50|60|70|80|90|100|110|120|140|160|180|200| 
+                         -dita-use-conref-target) #IMPLIED
+        <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+        outputclass CDATA #IMPLIED"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.dita.tgroup.attributes"><STRONG>dita.tgroup.attributes</STRONG></A>
+       "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+        outputclass CDATA #IMPLIED"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.dita.thead.attributes"><STRONG>dita.thead.attributes</STRONG></A>
+       "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+        outputclass CDATA #IMPLIED"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.dita.tbody.attributes"><STRONG>dita.tbody.attributes</STRONG></A>
+       "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+        outputclass CDATA #IMPLIED"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.dita.row.attributes"><STRONG>dita.row.attributes</STRONG></A>
+       "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+        outputclass CDATA #IMPLIED"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.dita.entry.attributes"><STRONG>dita.entry.attributes</STRONG></A>
+       "<A HREF="commonElements.mod.html#EntityDef.id-atts">%id-atts;</A>
+        <A HREF="commonElements.mod.html#EntityDef.localization-atts">%localization-atts;</A>
+        rev CDATA #IMPLIED
+        outputclass CDATA #IMPLIED"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.dita.colspec.attributes"><STRONG>dita.colspec.attributes</STRONG></A>
+       "<A HREF="commonElements.mod.html#EntityDef.id-atts">%id-atts;</A>
+        <A HREF="commonElements.mod.html#EntityDef.localization-atts">%localization-atts;</A>"&gt;
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                   ORIGINAL ELEMENT AND ATTRIBUTE DECLARATIONS --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!--
+     Default declarations previously defined in this entity and
+     referenced below include:
+     ENTITY % tbl.table.name       "table"
+     ENTITY % tbl.table-titles.mdl "%titles;,"
+     ENTITY % tbl.table.mdl        "%tbl.table-titles; tgroup+"
+     ENTITY % tbl.table.att        "
+                        pgwide          %yesorno;       #IMPLIED "
+--&gt;</SPAN>
+
+&lt;!ENTITY % <A NAME="EntityDef.table.content"><STRONG>table.content</STRONG></A>     "(<A HREF="tblDecl.mod.html#EntityDef.tbl.table.mdl">%tbl.table.mdl;</A>)"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.table.attributes"><STRONG>table.attributes</STRONG></A>
+       "frame           (top|bottom|topbot|all|sides|none| 
+                         -dita-use-conref-target)               #IMPLIED
+        colsep          <A HREF="tblDecl.mod.html#EntityDef.yesorno">%yesorno;</A>                               #IMPLIED
+        rowsep          <A HREF="tblDecl.mod.html#EntityDef.yesorno">%yesorno;</A>                               #IMPLIED
+        <A HREF="tblDecl.mod.html#EntityDef.tbl.table.att">%tbl.table.att;</A>
+        <A HREF="tblDecl.mod.html#EntityDef.bodyatt">%bodyatt;</A>
+        <A HREF="tblDecl.mod.html#EntityDef.dita.table.attributes">%dita.table.attributes;</A>"&gt;
+&lt;!ELEMENT <A NAME="ElementDef55"></A><STRONG><A HREF="tblDecl.mod.html#EntityDef.tbl.table.name">%tbl.table.name;</A></STRONG>    <A HREF="tblDecl.mod.html#EntityDef.table.content">%table.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef62"></A><STRONG><A HREF="tblDecl.mod.html#EntityDef.tbl.table.name">%tbl.table.name;</A></STRONG>    <A HREF="tblDecl.mod.html#EntityDef.table.attributes">%table.attributes;</A>&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--
+     Default declarations previously defined in this entity and
+     referenced below include:
+     ENTITY % tbl.tgroup.mdl    "colspec*,thead?,tbody"
+     ENTITY % tbl.tgroup.att    ""
+--&gt;</SPAN>
+
+&lt;!ENTITY % <A NAME="EntityDef.tgroup.content"><STRONG>tgroup.content</STRONG></A>     "(<A HREF="tblDecl.mod.html#EntityDef.tbl.tgroup.mdl">%tbl.tgroup.mdl;</A>)"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.tgroup.attributes"><STRONG>tgroup.attributes</STRONG></A>
+       "cols            NMTOKEN                                 #REQUIRED
+        colsep          <A HREF="tblDecl.mod.html#EntityDef.yesorno">%yesorno;</A>                               #IMPLIED
+        rowsep          <A HREF="tblDecl.mod.html#EntityDef.yesorno">%yesorno;</A>                               #IMPLIED
+        align           (left|right|center|justify|char| 
+                         -dita-use-conref-target)               #IMPLIED
+        <A HREF="tblDecl.mod.html#EntityDef.tbl.tgroup.att">%tbl.tgroup.att;</A>
+        <A HREF="tblDecl.mod.html#EntityDef.dita.tgroup.attributes">%dita.tgroup.attributes;</A>"&gt;
+&lt;!ELEMENT <A NAME="ElementDef56"></A><STRONG>tgroup</STRONG>    <A HREF="tblDecl.mod.html#EntityDef.tgroup.content">%tgroup.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef63"></A><STRONG>tgroup</STRONG>    <A HREF="tblDecl.mod.html#EntityDef.tgroup.attributes">%tgroup.attributes;</A>&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--
+     Default declarations previously defined in this entity and
+     referenced below include:
+     ENTITY % tbl.colspec.att   ""
+--&gt;</SPAN>
+
+&lt;!ENTITY % <A NAME="EntityDef.colspec.content"><STRONG>colspec.content</STRONG></A>     "EMPTY"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.colspec.attributes"><STRONG>colspec.attributes</STRONG></A>
+       "colnum          NMTOKEN                                 #IMPLIED
+        colname         NMTOKEN                                 #IMPLIED
+        colwidth        CDATA                                   #IMPLIED
+        colsep          <A HREF="tblDecl.mod.html#EntityDef.yesorno">%yesorno;</A>                               #IMPLIED
+        rowsep          <A HREF="tblDecl.mod.html#EntityDef.yesorno">%yesorno;</A>                               #IMPLIED
+        align           (left|right|center|justify|char| 
+                         -dita-use-conref-target)               #IMPLIED
+        char            CDATA                                   #IMPLIED
+        charoff         NMTOKEN                                 #IMPLIED
+        <A HREF="tblDecl.mod.html#EntityDef.tbl.colspec.att">%tbl.colspec.att;</A>
+        <A HREF="tblDecl.mod.html#EntityDef.dita.colspec.attributes">%dita.colspec.attributes;</A>"&gt;
+&lt;!ELEMENT <A NAME="ElementDef57"></A><STRONG>colspec</STRONG>    <A HREF="tblDecl.mod.html#EntityDef.colspec.content">%colspec.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef64"></A><STRONG>colspec</STRONG>    <A HREF="tblDecl.mod.html#EntityDef.colspec.attributes">%colspec.attributes;</A>&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--
+     Default declarations previously defined in this entity and
+     referenced below include:
+     ENTITY % tbl.thead.att      ""
+--&gt;</SPAN>
+
+&lt;!ENTITY % <A NAME="EntityDef.thead.content"><STRONG>thead.content</STRONG></A>     "((<A HREF="commonElements.ent.html#EntityDef.row">%row;</A>)+)"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.thead.attributes"><STRONG>thead.attributes</STRONG></A>
+       "valign          (top|middle|bottom|
+                         -dita-use-conref-target)               #IMPLIED
+        <A HREF="tblDecl.mod.html#EntityDef.tbl.thead.att">%tbl.thead.att;</A>
+        <A HREF="tblDecl.mod.html#EntityDef.dita.thead.attributes">%dita.thead.attributes;</A>"&gt;
+&lt;!ELEMENT <A NAME="ElementDef58"></A><STRONG>thead</STRONG>    <A HREF="tblDecl.mod.html#EntityDef.thead.content">%thead.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef65"></A><STRONG>thead</STRONG>    <A HREF="tblDecl.mod.html#EntityDef.thead.attributes">%thead.attributes;</A>&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--
+     Default declarations previously defined in this entity and
+     referenced below include:
+     ENTITY % tbl.tbody.att     ""
+--&gt;</SPAN>
+
+&lt;!ENTITY % <A NAME="EntityDef.tbody.content"><STRONG>tbody.content</STRONG></A>     "(<A HREF="commonElements.ent.html#EntityDef.row">%row;</A>)+"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.tbody.attributes"><STRONG>tbody.attributes</STRONG></A>
+       "valign          (top|middle|bottom| 
+                         -dita-use-conref-target)               #IMPLIED
+        <A HREF="tblDecl.mod.html#EntityDef.tbl.tbody.att">%tbl.tbody.att;</A>
+        <A HREF="tblDecl.mod.html#EntityDef.dita.tbody.attributes">%dita.tbody.attributes;</A>"&gt;
+&lt;!ELEMENT <A NAME="ElementDef59"></A><STRONG>tbody</STRONG>    <A HREF="tblDecl.mod.html#EntityDef.tbody.content">%tbody.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef66"></A><STRONG>tbody</STRONG>    <A HREF="tblDecl.mod.html#EntityDef.tbody.attributes">%tbody.attributes;</A>&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--
+     Default declarations previously defined in this entity and
+     referenced below include:
+     ENTITY % tbl.row.mdl       "entry+"
+     ENTITY % tbl.row.att       ""
+--&gt;</SPAN>
+
+&lt;!ENTITY % <A NAME="EntityDef.row.content"><STRONG>row.content</STRONG></A>     "(<A HREF="tblDecl.mod.html#EntityDef.tbl.row.mdl">%tbl.row.mdl;</A>)"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.row.attributes"><STRONG>row.attributes</STRONG></A>
+       "rowsep          <A HREF="tblDecl.mod.html#EntityDef.yesorno">%yesorno;</A>                               #IMPLIED
+        valign          (top|middle|bottom| 
+                         -dita-use-conref-target)               #IMPLIED
+        <A HREF="tblDecl.mod.html#EntityDef.tbl.row.att">%tbl.row.att;</A>
+        <A HREF="tblDecl.mod.html#EntityDef.dita.row.attributes">%dita.row.attributes;</A>"&gt;
+&lt;!ELEMENT <A NAME="ElementDef60"></A><STRONG>row</STRONG>    <A HREF="tblDecl.mod.html#EntityDef.row.content">%row.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef67"></A><STRONG>row</STRONG>    <A HREF="tblDecl.mod.html#EntityDef.row.attributes">%row.attributes;</A>&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--
+     Default declarations previously defined in this entity and
+     referenced below include:
+     ENTITY % paracon           "#PCDATA"
+     ENTITY % tbl.entry.mdl     "(%paracon;)*"
+     ENTITY % tbl.entry.att     ""
+--&gt;</SPAN>
+
+&lt;!ENTITY % <A NAME="EntityDef.entry.content"><STRONG>entry.content</STRONG></A>     "<A HREF="tblDecl.mod.html#EntityDef.tbl.entry.mdl">%tbl.entry.mdl;</A>"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.entry.attributes"><STRONG>entry.attributes</STRONG></A>
+       "colname         NMTOKEN                                 #IMPLIED
+        namest          NMTOKEN                                 #IMPLIED
+        nameend         NMTOKEN                                 #IMPLIED
+        morerows        NMTOKEN                                 #IMPLIED
+        colsep          <A HREF="tblDecl.mod.html#EntityDef.yesorno">%yesorno;</A>                               #IMPLIED
+        rowsep          <A HREF="tblDecl.mod.html#EntityDef.yesorno">%yesorno;</A>                               #IMPLIED
+        align           (left|right|center|justify|char| 
+                         -dita-use-conref-target)               #IMPLIED
+        char                                CDATA                                   #IMPLIED
+        charoff         NMTOKEN                                 #IMPLIED
+        valign          (top|middle|bottom| 
+                         -dita-use-conref-target)               #IMPLIED
+        <A HREF="tblDecl.mod.html#EntityDef.tbl.entry.att">%tbl.entry.att;</A>
+        <A HREF="tblDecl.mod.html#EntityDef.dita.entry.attributes">%dita.entry.attributes;</A>"&gt;
+&lt;!ELEMENT <A NAME="ElementDef61"></A><STRONG>entry</STRONG>    <A HREF="tblDecl.mod.html#EntityDef.entry.content">%entry.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef68"></A><STRONG>entry</STRONG>    <A HREF="tblDecl.mod.html#EntityDef.entry.attributes">%entry.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    DITA SPECIALIZATION ATTRIBUTE DECLARATIONS --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+&lt;!ATTLIST <A NAME="AttlistDef62"></A><STRONG>table</STRONG>    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/table "       &gt;
+&lt;!ATTLIST <A NAME="AttlistDef63"></A><STRONG>tgroup</STRONG>   <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/tgroup "      &gt;
+&lt;!ATTLIST <A NAME="AttlistDef64"></A><STRONG>colspec</STRONG>  <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/colspec "     &gt;
+&lt;!ATTLIST <A NAME="AttlistDef65"></A><STRONG>thead</STRONG>    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/thead "       &gt;
+&lt;!ATTLIST <A NAME="AttlistDef66"></A><STRONG>tbody</STRONG>    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/tbody "       &gt;
+&lt;!ATTLIST <A NAME="AttlistDef67"></A><STRONG>row</STRONG>      <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/row "         &gt;
+&lt;!ATTLIST <A NAME="AttlistDef68"></A><STRONG>entry</STRONG>    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/entry "       &gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ================== End XML Exchange Table Model ============= --&gt;</SPAN>
+<?LIVEDTD EOF?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE></BODY></HTML>

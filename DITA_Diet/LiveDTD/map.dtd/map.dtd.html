@@ -1,0 +1,319 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>map.dtd</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="livedtd.css">
+<STYLE TYPE="text/css">
+  STRONG { font-weight: bold; color: red;}
+  .COMMENT { font-style:italic; color: #A8A8A8;}
+</STYLE>
+</HEAD>
+<BODY onLoad="parent.file.document.open();parent.file.document.write('<BODY TOPMARGIN=0><B>map.dtd</B></BODY>');parent.file.document.close()"><?LIVEDTD ENDHEAD?>
+<PRE>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    HEADER                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  MODULE:    DITA MAP DTD                                      --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  VERSION:   1.2                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  DATE:      November 2009                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    PUBLIC DOCUMENT TYPE DEFINITION            --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                        TYPICAL INVOCATION                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- Refer to this file by the following public identifier or an
+     appropriate system identifier:
+PUBLIC "-//OASIS//DTD DITA Map//EN"
+     Delivered as file "map.dtd"                                   --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- The public ID above refers to the latest version of this DTD.
+     To refer to this specific version, you may use this value:
+PUBLIC "-//OASIS//DTD DITA 1.2 Map//EN"                            --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- SYSTEM:     Darwin Information Typing Architecture (DITA)     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- PURPOSE:    DTD to describe DITA maps                         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ORIGINAL CREATION DATE:                                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             March 2001                                        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             (C) Copyright OASIS Open 2005, 2009.              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             (C) Copyright IBM Corporation 2001, 2004.         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             All Rights Reserved.                              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  UPDATES:                                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2005.11.15 RDA: Corrected public ID for map.mod            --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2005.11.15 RDA: Updated these comments to match template   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2006.06.07 RDA: Added indexing domain                      --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2006.06.21 RDA: Added props attribute extensions           --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2007.12.01 EK:  Reformatted DTD modules for DITA 1.2       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.02.01 RDA: Added Delayed Resolution domain            --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.02.12 RDA: Modify imbeds to use specific 1.2 version  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2010.09.20 RDA: Add topic-based domains                    --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    MAP ENTITY DECLARATIONS                    --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    DOMAIN ENTITY DECLARATIONS                 --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+&lt;!ENTITY % <A NAME="EntityDef.mapgroup-d-dec"><STRONG>mapgroup-d-dec</STRONG></A> 
+  PUBLIC "-//OASIS//ENTITIES DITA 1.2 Map Group Domain//EN" 
+         "../../base/dtd/mapGroup.ent"                                                       
+&gt;<A HREF="map.dtd.html#EntityDef.mapgroup-d-dec">%mapgroup-d-dec;</A>
+
+&lt;!ENTITY % <A NAME="EntityDef.indexing-d-dec"><STRONG>indexing-d-dec</STRONG></A>     
+  PUBLIC "-//OASIS//ENTITIES DITA 1.2 Indexing Domain//EN" 
+         "../../base/dtd/indexingDomain.ent"                                                 
+&gt;<A HREF="map.dtd.html#EntityDef.indexing-d-dec">%indexing-d-dec;</A>
+
+&lt;!ENTITY % <A NAME="EntityDef.delay-d-dec"><STRONG>delay-d-dec</STRONG></A>     
+  PUBLIC "-//OASIS//ENTITIES DITA 1.2 Delayed Resolution Domain//EN" 
+         "../../base/dtd/delayResolutionDomain.ent"                                                       
+&gt;<A HREF="map.dtd.html#EntityDef.delay-d-dec">%delay-d-dec;</A>
+
+&lt;!ENTITY % <A NAME="EntityDef.glossref-d-dec"><STRONG>glossref-d-dec</STRONG></A>     
+  PUBLIC "-//OASIS//ENTITIES DITA 1.2 Glossary Reference Domain//EN" 
+         "glossrefDomain.ent"                                                       
+&gt;<A HREF="map.dtd.html#EntityDef.glossref-d-dec">%glossref-d-dec;</A>
+
+&lt;!ENTITY % <A NAME="EntityDef.hi-d-dec"><STRONG>hi-d-dec</STRONG></A>     
+  PUBLIC "-//OASIS//ENTITIES DITA 1.2 Highlight Domain//EN" 
+         "../../base/dtd/highlightDomain.ent"
+&gt;<A HREF="map.dtd.html#EntityDef.hi-d-dec">%hi-d-dec;</A>
+
+&lt;!ENTITY % <A NAME="EntityDef.ut-d-dec"><STRONG>ut-d-dec</STRONG></A>     
+  PUBLIC "-//OASIS//ENTITIES DITA 1.2 Utilities Domain//EN" 
+         "../../base/dtd/utilitiesDomain.ent"                                                
+&gt;<A HREF="map.dtd.html#EntityDef.ut-d-dec">%ut-d-dec;</A>
+
+&lt;!ENTITY % <A NAME="EntityDef.hazard-d-dec"><STRONG>hazard-d-dec</STRONG></A>     
+  PUBLIC "-//OASIS//ENTITIES DITA 1.2 Hazard Statement Domain//EN" 
+         "../../base/dtd/hazardstatementDomain.ent"
+&gt;<A HREF="map.dtd.html#EntityDef.hazard-d-dec">%hazard-d-dec;</A>
+
+&lt;!ENTITY % <A NAME="EntityDef.abbrev-d-dec"><STRONG>abbrev-d-dec</STRONG></A>     
+  PUBLIC "-//OASIS//ENTITIES DITA 1.2 Abbreviated Form Domain//EN" 
+         "abbreviateDomain.ent"
+&gt;<A HREF="map.dtd.html#EntityDef.abbrev-d-dec">%abbrev-d-dec;</A>
+
+&lt;!ENTITY % <A NAME="EntityDef.pr-d-dec"><STRONG>pr-d-dec</STRONG></A>     
+  PUBLIC "-//OASIS//ENTITIES DITA 1.2 Programming Domain//EN" 
+         "programmingDomain.ent"                                              
+&gt;<A HREF="map.dtd.html#EntityDef.pr-d-dec">%pr-d-dec;</A>
+
+&lt;!ENTITY % <A NAME="EntityDef.sw-d-dec"><STRONG>sw-d-dec</STRONG></A>     
+  PUBLIC "-//OASIS//ENTITIES DITA 1.2 Software Domain//EN" 
+         "softwareDomain.ent"                                                 
+&gt;<A HREF="map.dtd.html#EntityDef.sw-d-dec">%sw-d-dec;</A>
+
+&lt;!ENTITY % <A NAME="EntityDef.ui-d-dec"><STRONG>ui-d-dec</STRONG></A>     
+  PUBLIC "-//OASIS//ENTITIES DITA 1.2 User Interface Domain//EN" 
+         "uiDomain.ent"                                                       
+&gt;<A HREF="map.dtd.html#EntityDef.ui-d-dec">%ui-d-dec;</A>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    DOMAIN ATTRIBUTE DECLARATIONS              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    DOMAIN EXTENSIONS                          --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    One for each extended base element, with
+                        the name of the domain(s) in which the
+                        extension was declared                     --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.keywords"><STRONG>keywords</STRONG></A>     "<A HREF="metaDecl.mod.html#ElementDef75">keywords</A> | 
+                         <A HREF="delayResolutionDomain.ent.html#EntityDef.delay-d-keywords">%delay-d-keywords;</A>
+                        "&gt;
+&lt;!ENTITY % <A NAME="EntityDef.topicref"><STRONG>topicref</STRONG></A>     "<A HREF="map.mod.html#ElementDef90">topicref</A> | 
+                         (<A HREF="mapGroup.ent.html#EntityDef.mapgroup-d-topicref">%mapgroup-d-topicref;</A>) |
+                         (<A HREF="glossrefDomain.ent.html#EntityDef.glossref-d-topicref">%glossref-d-topicref;</A>)
+                        "&gt;
+&lt;!ENTITY % <A NAME="EntityDef.index-base"><STRONG>index-base</STRONG></A>   "<A HREF="commonElements.mod.html#ElementDef51">index-base</A> | 
+                         <A HREF="indexingDomain.ent.html#EntityDef.indexing-d-index-base">%indexing-d-index-base;</A>
+                        "&gt;
+&lt;!ENTITY % <A NAME="EntityDef.keyword"><STRONG>keyword</STRONG></A>      "<A HREF="commonElements.mod.html#ElementDef32">keyword</A> | 
+                         <A HREF="programmingDomain.ent.html#EntityDef.pr-d-keyword">%pr-d-keyword;</A> | 
+                         <A HREF="softwareDomain.ent.html#EntityDef.sw-d-keyword">%sw-d-keyword;</A> |
+                         <A HREF="uiDomain.ent.html#EntityDef.ui-d-keyword">%ui-d-keyword;</A>
+                        "&gt;
+&lt;!ENTITY % <A NAME="EntityDef.pre"><STRONG>pre</STRONG></A>          "<A HREF="commonElements.mod.html#ElementDef29">pre</A> | 
+                         <A HREF="programmingDomain.ent.html#EntityDef.pr-d-pre">%pr-d-pre;</A> | 
+                         <A HREF="softwareDomain.ent.html#EntityDef.sw-d-pre">%sw-d-pre;</A> | 
+                         <A HREF="uiDomain.ent.html#EntityDef.ui-d-pre">%ui-d-pre;</A>
+                        "&gt;
+&lt;!ENTITY % <A NAME="EntityDef.ph"><STRONG>ph</STRONG></A>           "<A HREF="commonElements.mod.html#ElementDef34">ph</A> | 
+                         <A HREF="highlightDomain.ent.html#EntityDef.hi-d-ph">%hi-d-ph;</A> | 
+                         <A HREF="programmingDomain.ent.html#EntityDef.pr-d-ph">%pr-d-ph;</A> | 
+                         <A HREF="softwareDomain.ent.html#EntityDef.sw-d-ph">%sw-d-ph;</A> | 
+                         <A HREF="uiDomain.ent.html#EntityDef.ui-d-ph">%ui-d-ph;</A>
+                        "&gt;
+&lt;!ENTITY % <A NAME="EntityDef.term"><STRONG>term</STRONG></A>         "<A HREF="commonElements.mod.html#ElementDef33">term</A> | 
+                         <A HREF="abbreviateDomain.ent.html#EntityDef.abbrev-d-term">%abbrev-d-term;</A>
+                        "&gt;
+&lt;!ENTITY % <A NAME="EntityDef.fig"><STRONG>fig</STRONG></A>          "<A HREF="commonElements.mod.html#ElementDef27">fig</A> |
+                         <A HREF="programmingDomain.ent.html#EntityDef.pr-d-fig">%pr-d-fig;</A> |
+                         <A HREF="utilitiesDomain.ent.html#EntityDef.ut-d-fig">%ut-d-fig;</A>
+                        "&gt;
+&lt;!ENTITY % <A NAME="EntityDef.dl"><STRONG>dl</STRONG></A>           "<A HREF="commonElements.mod.html#ElementDef20">dl</A> | 
+                         <A HREF="programmingDomain.ent.html#EntityDef.pr-d-dl">%pr-d-dl;</A>
+                        "&gt;
+&lt;!ENTITY % <A NAME="EntityDef.note"><STRONG>note</STRONG></A>         "<A HREF="commonElements.mod.html#ElementDef10">note</A> | 
+                         <A HREF="hazardstatementDomain.ent.html#EntityDef.hazard-d-note">%hazard-d-note;</A>
+                        "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    DOMAIN ATTRIBUTE EXTENSIONS                --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.props-attribute-extensions"><STRONG>props-attribute-extensions</STRONG></A>  
+  ""
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.base-attribute-extensions"><STRONG>base-attribute-extensions</STRONG></A>   
+  ""
+&gt;
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    DOMAINS ATTRIBUTE OVERRIDE                 --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    Must be declared ahead of the DTDs, which
+                        puts @domains first in order               --&gt;</SPAN>
+
+&lt;!ENTITY included-domains 
+                        "&amp;delay-d-att;
+                         &amp;mapgroup-d-att; 
+                         &amp;indexing-d-att;
+                         &amp;glossref-d-att;
+                         &amp;hi-d-att; 
+                         &amp;ut-d-att; 
+                         &amp;hazard-d-att;
+                         &amp;abbrev-d-att;
+                         &amp;pr-d-att; 
+                         &amp;sw-d-att;
+                         &amp;ui-d-att;
+                        "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    MAP ELEMENT INTEGRATION                    --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    Embed map to get generic elements          --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2005.11.15 RDA: Corrected public ID for map.mod. It was    --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             "-//OASIS//Elements DITA Map Group Domain//EN"    --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.map-type"><STRONG>map-type</STRONG></A>     
+  PUBLIC "-//OASIS//ELEMENTS DITA 1.2 Map//EN" 
+         "../../base/dtd/map.mod"                                                            
+&gt;<A HREF="map.dtd.html#EntityDef.map-type">%map-type;</A>
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    DOMAIN ELEMENT INTEGRATION                 --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+&lt;!ENTITY % <A NAME="EntityDef.mapgroup-d-def"><STRONG>mapgroup-d-def</STRONG></A>  
+  PUBLIC "-//OASIS//ELEMENTS DITA 1.2 Map Group Domain//EN" 
+         "../../base/dtd/mapGroup.mod"                                                       
+&gt;<A HREF="map.dtd.html#EntityDef.mapgroup-d-def">%mapgroup-d-def;</A>
+
+&lt;!ENTITY % <A NAME="EntityDef.indexing-d-def"><STRONG>indexing-d-def</STRONG></A>     
+  PUBLIC "-//OASIS//ELEMENTS DITA 1.2 Indexing Domain//EN" 
+         "../../base/dtd/indexingDomain.mod"                                                 
+&gt;<A HREF="map.dtd.html#EntityDef.indexing-d-def">%indexing-d-def;</A>
+
+&lt;!ENTITY % <A NAME="EntityDef.delay-d-def"><STRONG>delay-d-def</STRONG></A>     
+  PUBLIC "-//OASIS//ELEMENTS DITA 1.2 Delayed Resolution Domain//EN" 
+         "../../base/dtd/delayResolutionDomain.mod"
+&gt;<A HREF="map.dtd.html#EntityDef.delay-d-def">%delay-d-def;</A>
+
+&lt;!ENTITY % <A NAME="EntityDef.glossref-d-def"><STRONG>glossref-d-def</STRONG></A>     
+  PUBLIC "-//OASIS//ELEMENTS DITA 1.2 Glossary Reference Domain//EN" 
+         "glossrefDomain.mod"
+&gt;<A HREF="map.dtd.html#EntityDef.glossref-d-def">%glossref-d-def;</A>
+
+&lt;!ENTITY % <A NAME="EntityDef.hi-d-def"><STRONG>hi-d-def</STRONG></A>     
+  PUBLIC "-//OASIS//ELEMENTS DITA 1.2 Highlight Domain//EN" 
+         "../../base/dtd/highlightDomain.mod"
+&gt;<A HREF="map.dtd.html#EntityDef.hi-d-def">%hi-d-def;</A>
+
+&lt;!ENTITY % <A NAME="EntityDef.ut-d-def"><STRONG>ut-d-def</STRONG></A>     
+  PUBLIC "-//OASIS//ELEMENTS DITA 1.2 Utilities Domain//EN" 
+         "../../base/dtd/utilitiesDomain.mod"
+&gt;<A HREF="map.dtd.html#EntityDef.ut-d-def">%ut-d-def;</A>
+
+&lt;!ENTITY % <A NAME="EntityDef.hazard-d-def"><STRONG>hazard-d-def</STRONG></A>     
+  PUBLIC "-//OASIS//ELEMENTS DITA 1.2 Hazard Statement Domain//EN" 
+         "../../base/dtd/hazardstatementDomain.mod"
+&gt;<A HREF="map.dtd.html#EntityDef.hazard-d-def">%hazard-d-def;</A>
+
+&lt;!ENTITY % <A NAME="EntityDef.abbrev-d-def"><STRONG>abbrev-d-def</STRONG></A>     
+  PUBLIC "-//OASIS//ELEMENTS DITA 1.2 Abbreviated Form Domain//EN" 
+         "abbreviateDomain.mod"
+&gt;<A HREF="map.dtd.html#EntityDef.abbrev-d-def">%abbrev-d-def;</A>
+
+&lt;!ENTITY % <A NAME="EntityDef.ui-d-def"><STRONG>ui-d-def</STRONG></A>     
+  PUBLIC "-//OASIS//ELEMENTS DITA 1.2 User Interface Domain//EN" 
+         "uiDomain.mod"
+&gt;<A HREF="map.dtd.html#EntityDef.ui-d-def">%ui-d-def;</A>
+
+&lt;!ENTITY % <A NAME="EntityDef.pr-d-def"><STRONG>pr-d-def</STRONG></A>     
+  PUBLIC "-//OASIS//ELEMENTS DITA 1.2 Programming Domain//EN" 
+         "programmingDomain.mod"
+&gt;<A HREF="map.dtd.html#EntityDef.pr-d-def">%pr-d-def;</A>
+
+&lt;!ENTITY % <A NAME="EntityDef.sw-d-def"><STRONG>sw-d-def</STRONG></A>     
+  PUBLIC "-//OASIS//ELEMENTS DITA 1.2 Software Domain//EN" 
+         "softwareDomain.mod"
+&gt;<A HREF="map.dtd.html#EntityDef.sw-d-def">%sw-d-def;</A>
+
+<SPAN CLASS="COMMENT">&lt;!-- ================== End DITA Map DTD  ======================== --&gt;</SPAN><?LIVEDTD EOF?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE></BODY></HTML>

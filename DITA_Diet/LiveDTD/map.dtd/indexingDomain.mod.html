@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>indexingDomain.mod</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="livedtd.css">
+<STYLE TYPE="text/css">
+  STRONG { font-weight: bold; color: red;}
+  .COMMENT { font-style:italic; color: #A8A8A8;}
+</STYLE>
+</HEAD>
+<BODY onLoad="parent.file.document.open();parent.file.document.write('<BODY TOPMARGIN=0><B>indexingDomain.mod</B></BODY>');parent.file.document.close()"><?LIVEDTD ENDHEAD?>
+<PRE>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    HEADER                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  MODULE:    DITA Indexing  Domain                             --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  VERSION:   1.2                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  DATE:      November 2009                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    PUBLIC DOCUMENT TYPE DEFINITION            --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    TYPICAL INVOCATION                         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  Refer to this file by the following public identifier or an
+      appropriate system identifier 
+PUBLIC "-//OASIS//ELEMENTS DITA Indexing Domain//EN"
+      Delivered as file "indexingDomain.mod"                       --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- SYSTEM:     Darwin Information Typing Architecture (DITA)     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- PURPOSE:    Declaring the elements and specialization         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             attributes for the DITA Indexing Domain           --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ORIGINAL CREATION DATE:                                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             June 2006                                         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             (C) Copyright OASIS Open 2006, 2009.              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             All Rights Reserved.                              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  UPDATES:                                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2007.12.01 EK:  Reformatted DTD modules for DITA 1.2       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.02.13 RDA: Create .content and .attributes entities   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                   ELEMENT NAME ENTITIES                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+&lt;!ENTITY % <A NAME="EntityDef.index-see"><STRONG>index-see</STRONG></A>       "<A HREF="indexingDomain.mod.html#ElementDef107">index-see</A>"                               &gt;
+&lt;!ENTITY % <A NAME="EntityDef.index-see-also"><STRONG>index-see-also</STRONG></A>  "<A HREF="indexingDomain.mod.html#ElementDef108">index-see-also</A>"                          &gt;
+&lt;!ENTITY % <A NAME="EntityDef.index-sort-as"><STRONG>index-sort-as</STRONG></A>   "<A HREF="indexingDomain.mod.html#ElementDef109">index-sort-as</A>"                           &gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    COMMON ATTLIST SETS                        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    ELEMENT DECLARATIONS for IMAGEMAP          --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Index See                       --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.index-see.content"><STRONG>index-see.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.words.cnt">%words.cnt;</A> |
+                         <A HREF="commonElements.ent.html#EntityDef.indexterm">%indexterm;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.index-see.attributes"><STRONG>index-see.attributes</STRONG></A>
+             "keyref 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef107"></A><STRONG>index-see</STRONG>    <A HREF="indexingDomain.mod.html#EntityDef.index-see.content">%index-see.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef216"></A><STRONG>index-see</STRONG>    <A HREF="indexingDomain.mod.html#EntityDef.index-see.attributes">%index-see.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Index See Also                  --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.index-see-also.content"><STRONG>index-see-also.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.words.cnt">%words.cnt;</A> |
+                         <A HREF="commonElements.ent.html#EntityDef.indexterm">%indexterm;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.index-see-also.attributes"><STRONG>index-see-also.attributes</STRONG></A>
+             "keyref 
+                            CDATA 
+                                            #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef108"></A><STRONG>index-see-also</STRONG>    <A HREF="indexingDomain.mod.html#EntityDef.index-see-also.content">%index-see-also.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef217"></A><STRONG>index-see-also</STRONG>    <A HREF="indexingDomain.mod.html#EntityDef.index-see-also.attributes">%index-see-also.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Index Sort As                   --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.index-sort-as.content"><STRONG>index-sort-as.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.words.cnt">%words.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.index-sort-as.attributes"><STRONG>index-sort-as.attributes</STRONG></A>
+             "keyref 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef109"></A><STRONG>index-sort-as</STRONG>    <A HREF="indexingDomain.mod.html#EntityDef.index-sort-as.content">%index-sort-as.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef218"></A><STRONG>index-sort-as</STRONG>    <A HREF="indexingDomain.mod.html#EntityDef.index-sort-as.attributes">%index-sort-as.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    SPECIALIZATION ATTRIBUTE DECLARATIONS      --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+&lt;!ATTLIST <A NAME="AttlistDef216"></A><STRONG>index-see</STRONG>       <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A> class CDATA "+ topic/index-base indexing-d/index-see "&gt;
+&lt;!ATTLIST <A NAME="AttlistDef217"></A><STRONG>index-see-also</STRONG>  <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A> class CDATA "+ topic/index-base indexing-d/index-see-also "&gt;
+&lt;!ATTLIST <A NAME="AttlistDef218"></A><STRONG>index-sort-as</STRONG>   <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A> class CDATA "+ topic/index-base indexing-d/index-sort-as "&gt;
+ 
+<SPAN CLASS="COMMENT">&lt;!-- ================== End Indexing Domain ====================== --&gt;</SPAN><?LIVEDTD EOF?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE></BODY></HTML>

@@ -1,0 +1,668 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>map.mod</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="livedtd.css">
+<STYLE TYPE="text/css">
+  STRONG { font-weight: bold; color: red;}
+  .COMMENT { font-style:italic; color: #A8A8A8;}
+</STYLE>
+</HEAD>
+<BODY onLoad="parent.file.document.open();parent.file.document.write('<BODY TOPMARGIN=0><B>map.mod</B></BODY>');parent.file.document.close()"><?LIVEDTD ENDHEAD?>
+<PRE>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    HEADER                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  MODULE:    DITA Map                                          --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  VERSION:   1.2                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  DATE:      November 2009                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    PUBLIC DOCUMENT TYPE DEFINITION            --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    TYPICAL INVOCATION                         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  Refer to this file by the following public identifier or an 
+      appropriate system identifier 
+PUBLIC "-//OASIS//ELEMENTS DITA Map//EN"
+      Delivered as file "map.mod"                                  --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- SYSTEM:     Darwin Information Typing Architecture (DITA)     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- PURPOSE:    Declaring the elements and specialization         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             attributes for the DITA Maps                      --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ORIGINAL CREATION DATE:                                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             March 2001                                        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             (C) Copyright OASIS Open 2005, 2009.              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             (C) Copyright IBM Corporation 2001, 2004.         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             All Rights Reserved.                              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  UPDATES:                                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2005.11.15 RDA: Corrected public ID in the comment above   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2005.11.15 RDA: Removed old declaration for topicreftypes  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                      entity                                   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2006.06.06 RDA: Removed default locktitle="yes" from       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                      %topicref-atts-no-toc;                   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    Remove keyword declaration                 --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    Add reference to commonElements            --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    Add title element to map                   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    Add data element to topicmeta              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    Remove shortdesc declaration               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2006.06.07 RDA: Make universal attributes universal        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                      (DITA 1.1 proposal #12)                  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2006.06.14 RDA: Add dir attribute to localization-atts     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2006.06.14 RDA: Add outputclass attribute to most elemetns --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2006.11.30 RDA: Add -dita-use-conref-target to enumerated  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                      attributes                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2006.11.30 RDA: Remove #FIXED from DITAArchVersion         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2007.12.01 EK:  Reformatted DTD modules for DITA 1.2       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.01.28 RDA: Added &lt;metadata&gt; to &lt;topicmeta&gt;            --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.01.30 RDA: Replace @conref defn. with %conref-atts;   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.02.01 RDA: Added keys attributes, more keyref attrs   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.02.12 RDA: Expand relcolspec content model            --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.02.12 RDA: Modify imbeds to use specific 1.2 version  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.02.12 RDA: Add navtitle to topicmeta                  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.02.13 RDA: Create .content and .attributes entities   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2010.09.20 RDA: Bring linktext content in sync with topic  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                   ARCHITECTURE ENTITIES                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- default namespace prefix for DITAArchVersion attribute can be
+     overridden through predefinition in the document type shell   --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.DITAArchNSPrefix"><STRONG>DITAArchNSPrefix</STRONG></A>
+  "ditaarch"
+&gt;
+
+<SPAN CLASS="COMMENT">&lt;!-- must be instanced on each topic type                          --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.arch-atts"><STRONG>arch-atts</STRONG></A> 
+             "xmlns:<A HREF="map.mod.html#EntityDef.DITAArchNSPrefix">%DITAArchNSPrefix;</A> 
+                        CDATA
+                                  #FIXED 'http://dita.oasis-open.org/architecture/2005/'
+              <A HREF="map.mod.html#EntityDef.DITAArchNSPrefix">%DITAArchNSPrefix;</A>:DITAArchVersion
+                        CDATA
+                                  '1.2'
+  "
+&gt;
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                   ELEMENT NAME ENTITIES                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+&lt;!ENTITY % <A NAME="EntityDef.map"><STRONG>map</STRONG></A>         "<A HREF="map.mod.html#ElementDef88">map</A>"                                         &gt;
+&lt;!ENTITY % <A NAME="EntityDef.anchor"><STRONG>anchor</STRONG></A>      "<A HREF="map.mod.html#ElementDef91">anchor</A>"                                      &gt;
+&lt;!ENTITY % <A NAME="EntityDef.linktext"><STRONG>linktext</STRONG></A>    "<A HREF="map.mod.html#ElementDef98">linktext</A>"                                    &gt;
+&lt;!ENTITY % <A NAME="EntityDef.navref"><STRONG>navref</STRONG></A>      "<A HREF="map.mod.html#ElementDef89">navref</A>"                                      &gt;
+&lt;!ENTITY % <A NAME="EntityDef.relcell"><STRONG>relcell</STRONG></A>     "<A HREF="map.mod.html#ElementDef96">relcell</A>"                                     &gt;
+&lt;!ENTITY % <A NAME="EntityDef.relcolspec"><STRONG>relcolspec</STRONG></A>  "<A HREF="map.mod.html#ElementDef94">relcolspec</A>"                                  &gt;
+&lt;!ENTITY % <A NAME="EntityDef.relheader"><STRONG>relheader</STRONG></A>   "<A HREF="map.mod.html#ElementDef93">relheader</A>"                                   &gt;
+&lt;!ENTITY % <A NAME="EntityDef.relrow"><STRONG>relrow</STRONG></A>      "<A HREF="map.mod.html#ElementDef95">relrow</A>"                                      &gt;
+&lt;!ENTITY % <A NAME="EntityDef.reltable"><STRONG>reltable</STRONG></A>    "<A HREF="map.mod.html#ElementDef92">reltable</A>"                                    &gt;
+&lt;!ENTITY % <A NAME="EntityDef.searchtitle"><STRONG>searchtitle</STRONG></A> "<A HREF="map.mod.html#ElementDef99">searchtitle</A>"                                 &gt;
+&lt;!ENTITY % <A NAME="EntityDef.shortdesc"><STRONG>shortdesc</STRONG></A>   "<A HREF="commonElements.mod.html#ElementDef7">shortdesc</A>"                                   &gt;
+&lt;!ENTITY % <A NAME="EntityDef.topicmeta"><STRONG>topicmeta</STRONG></A>   "<A HREF="map.mod.html#ElementDef97">topicmeta</A>"                                   &gt;
+&lt;!ENTITY % topicref    "topicref"                                    &gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    ENTITY DECLARATIONS FOR ATTRIBUTE VALUES   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    DATE FORMAT                                --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- Copied into metaDecl.mod --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--&lt;!ENTITY % date-format  'CDATA'                               &gt;--&gt;</SPAN>
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    COMMON ATTLIST SETS                        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+&lt;!ENTITY % <A NAME="EntityDef.topicref-atts"><STRONG>topicref-atts</STRONG></A> 
+             "collection-type 
+                        (choice | 
+                         family | 
+                         sequence | 
+                         unordered |
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              type 
+                        CDATA 
+                                  #IMPLIED
+              processing-role
+                        (normal |
+                         resource-only |
+                         -dita-use-conref-target)
+                                  #IMPLIED
+              scope 
+                        (external | 
+                         local | 
+                         peer | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              locktitle 
+                        (no | 
+                         yes | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              format 
+                        CDATA 
+                                  #IMPLIED
+              linking 
+                        (none | 
+                         normal | 
+                         sourceonly | 
+                         targetonly |
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              toc 
+                        (no | 
+                         yes | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              print 
+                        (no | 
+                         printonly | 
+                         yes | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              search 
+                        (no | 
+                         yes | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              chunk 
+                        CDATA 
+                                  #IMPLIED
+  "
+&gt;
+
+&lt;!ENTITY % <A NAME="EntityDef.topicref-atts-no-toc"><STRONG>topicref-atts-no-toc</STRONG></A> 
+             'collection-type 
+                        (choice | 
+                         family | 
+                         sequence | 
+                         unordered |
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              type 
+                        CDATA 
+                                  #IMPLIED
+              processing-role
+                        (normal |
+                         resource-only |
+                         -dita-use-conref-target)
+                                  #IMPLIED
+              scope 
+                        (external | 
+                         local | 
+                         peer | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              locktitle 
+                        (no | 
+                         yes | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              format 
+                        CDATA 
+                                  #IMPLIED
+              linking 
+                        (none | 
+                         normal | 
+                         sourceonly | 
+                         targetonly |
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              toc 
+                        (no | 
+                         yes | 
+                         -dita-use-conref-target)
+                                  "no"
+              print 
+                        (no | 
+                         printonly | 
+                         yes | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              search 
+                        (no | 
+                         yes | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              chunk 
+                        CDATA 
+                                  #IMPLIED
+  '
+&gt;
+
+&lt;!ENTITY % <A NAME="EntityDef.topicref-atts-without-format"><STRONG>topicref-atts-without-format</STRONG></A> 
+             "collection-type 
+                        (choice | 
+                         family | 
+                         sequence | 
+                         unordered |
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              type 
+                        CDATA 
+                                  #IMPLIED
+              processing-role
+                        (normal |
+                         resource-only |
+                         -dita-use-conref-target)
+                                  #IMPLIED
+              scope 
+                        (external | 
+                         local | 
+                         peer | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              locktitle 
+                        (no | 
+                         yes | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              linking 
+                        (none | 
+                         normal | 
+                         sourceonly | 
+                         targetonly |
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              toc 
+                        (no | 
+                         yes | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              print 
+                        (no | 
+                         printonly | 
+                         yes | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              search 
+                        (no | 
+                         yes | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              chunk 
+                        CDATA 
+                                  #IMPLIED
+  "
+&gt;
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    MODULES CALLS                              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+<SPAN CLASS="COMMENT">&lt;!--                      Content elements common to map and topic --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.commonElements"><STRONG>commonElements</STRONG></A> 
+  PUBLIC "-//OASIS//ELEMENTS DITA 1.2 Common Elements//EN" 
+         "commonElements.mod" 
+&gt;<A HREF="map.mod.html#EntityDef.commonElements">%commonElements;</A>
+
+<SPAN CLASS="COMMENT">&lt;!--                      MetaData Elements                        --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.metaXML"><STRONG>metaXML</STRONG></A> 
+  PUBLIC "-//OASIS//ELEMENTS DITA 1.2 Metadata//EN" 
+         "metaDecl.mod" 
+&gt;<A HREF="map.mod.html#EntityDef.metaXML">%metaXML;</A>
+ 
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    DOMAINS ATTRIBUTE OVERRIDE                 --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+&lt;!ENTITY included-domains 
+  "" 
+&gt;
+ 
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    ELEMENT DECLARATIONS                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Map                             --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.map.content"><STRONG>map.content</STRONG></A>
+                       "((<A HREF="commonElements.ent.html#EntityDef.title">%title;</A>)?, 
+                         (<A HREF="map.mod.html#EntityDef.topicmeta">%topicmeta;</A>)?, 
+                         (<A HREF="map.mod.html#EntityDef.anchor">%anchor;</A> |
+                          <A HREF="commonElements.mod.html#EntityDef.data.elements.incl">%data.elements.incl;</A> |
+                          <A HREF="map.mod.html#EntityDef.navref">%navref;</A> |
+                          <A HREF="map.mod.html#EntityDef.reltable">%reltable;</A> |
+                          <A HREF="map.dtd.html#EntityDef.topicref">%topicref;</A>)* )"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.map.attributes"><STRONG>map.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#ElementDef5">title</A> 
+                        CDATA 
+                                  #IMPLIED
+              id 
+                        ID 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.conref-atts">%conref-atts;</A>
+              <A HREF="mapGroup.mod.html#ElementDef102">anchorref</A> 
+                        CDATA 
+                                  #IMPLIED
+              outputclass 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.localization-atts">%localization-atts;</A>
+              <A HREF="map.mod.html#EntityDef.topicref-atts">%topicref-atts;</A>
+              <A HREF="commonElements.mod.html#EntityDef.select-atts">%select-atts;</A>"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef88"></A><STRONG>map</STRONG>    <A HREF="map.mod.html#EntityDef.map.content">%map.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef186"></A><STRONG>map</STRONG>    
+              <A HREF="map.mod.html#EntityDef.map.attributes">%map.attributes;</A>
+              <A HREF="map.mod.html#EntityDef.arch-atts">%arch-atts;</A>
+              domains 
+                        CDATA 
+                                  "&amp;included-domains;" 
+&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Navigation Reference            --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.navref.content"><STRONG>navref.content</STRONG></A>
+                       "EMPTY"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.navref.attributes"><STRONG>navref.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              keyref 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="mapGroup.mod.html#ElementDef103">mapref</A> 
+                        CDATA 
+                                  #IMPLIED 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED
+"&gt;
+&lt;!ELEMENT <A NAME="ElementDef89"></A><STRONG>navref</STRONG>    <A HREF="map.mod.html#EntityDef.navref.content">%navref.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef187"></A><STRONG>navref</STRONG>    <A HREF="map.mod.html#EntityDef.navref.attributes">%navref.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Topic Reference                 --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.topicref.content"><STRONG>topicref.content</STRONG></A>
+                       "((<A HREF="map.mod.html#EntityDef.topicmeta">%topicmeta;</A>)?, 
+                         (<A HREF="map.mod.html#EntityDef.anchor">%anchor;</A> | 
+                          <A HREF="commonElements.mod.html#EntityDef.data.elements.incl">%data.elements.incl;</A> |
+                          <A HREF="map.mod.html#EntityDef.navref">%navref;</A> | 
+                          <A HREF="map.dtd.html#EntityDef.topicref">%topicref;</A>)* )"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.topicref.attributes"><STRONG>topicref.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#ElementDef6">navtitle</A> 
+                        CDATA 
+                                  #IMPLIED
+              href 
+                        CDATA 
+                                  #IMPLIED
+              keyref 
+                        CDATA 
+                                  #IMPLIED
+              keys 
+                        CDATA 
+                                  #IMPLIED
+              query 
+                        CDATA 
+                                  #IMPLIED
+              copy-to 
+                        CDATA 
+                                  #IMPLIED
+              outputclass 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="map.mod.html#EntityDef.topicref-atts">%topicref-atts;</A>
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef90"></A><STRONG>topicref</STRONG>    <A HREF="map.mod.html#EntityDef.topicref.content">%topicref.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef188"></A><STRONG>topicref</STRONG>    <A HREF="map.mod.html#EntityDef.topicref.attributes">%topicref.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Anchor                          --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.anchor.content"><STRONG>anchor.content</STRONG></A>
+                       "EMPTY"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.anchor.attributes"><STRONG>anchor.attributes</STRONG></A>
+             "outputclass 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.localization-atts">%localization-atts;</A>
+              id 
+                        ID 
+                                  #REQUIRED 
+              <A HREF="commonElements.mod.html#EntityDef.conref-atts">%conref-atts;</A>
+              <A HREF="commonElements.mod.html#EntityDef.select-atts">%select-atts;</A>"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef91"></A><STRONG>anchor</STRONG>    <A HREF="map.mod.html#EntityDef.anchor.content">%anchor.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef189"></A><STRONG>anchor</STRONG>    <A HREF="map.mod.html#EntityDef.anchor.attributes">%anchor.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Relationship Table              --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.reltable.content"><STRONG>reltable.content</STRONG></A>
+                       "((<A HREF="commonElements.ent.html#EntityDef.title">%title;</A>)?,
+                         (<A HREF="map.mod.html#EntityDef.topicmeta">%topicmeta;</A>)?, 
+                         (<A HREF="map.mod.html#EntityDef.relheader">%relheader;</A>)?, 
+                         (<A HREF="map.mod.html#EntityDef.relrow">%relrow;</A>)+)"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.reltable.attributes"><STRONG>reltable.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#ElementDef5">title</A> 
+                        CDATA 
+                                  #IMPLIED
+              outputclass 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="map.mod.html#EntityDef.topicref-atts-no-toc">%topicref-atts-no-toc;</A>
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef92"></A><STRONG>reltable</STRONG>    <A HREF="map.mod.html#EntityDef.reltable.content">%reltable.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef190"></A><STRONG>reltable</STRONG>    <A HREF="map.mod.html#EntityDef.reltable.attributes">%reltable.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Relationship Header             --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.relheader.content"><STRONG>relheader.content</STRONG></A>
+                       "(<A HREF="map.mod.html#EntityDef.relcolspec">%relcolspec;</A>)+"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.relheader.attributes"><STRONG>relheader.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef93"></A><STRONG>relheader</STRONG>    <A HREF="map.mod.html#EntityDef.relheader.content">%relheader.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef191"></A><STRONG>relheader</STRONG>    <A HREF="map.mod.html#EntityDef.relheader.attributes">%relheader.attributes;</A>&gt;
+ 
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Relationship Column Specification
+                                                                   --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.relcolspec.content"><STRONG>relcolspec.content</STRONG></A>
+                       "((<A HREF="commonElements.ent.html#EntityDef.title">%title;</A>)?,
+                         (<A HREF="map.mod.html#EntityDef.topicmeta">%topicmeta;</A>)?,
+                         (<A HREF="map.dtd.html#EntityDef.topicref">%topicref;</A>)*)
+"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.relcolspec.attributes"><STRONG>relcolspec.attributes</STRONG></A>
+             "outputclass 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="map.mod.html#EntityDef.topicref-atts">%topicref-atts;</A>
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef94"></A><STRONG>relcolspec</STRONG>    <A HREF="map.mod.html#EntityDef.relcolspec.content">%relcolspec.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef192"></A><STRONG>relcolspec</STRONG>    <A HREF="map.mod.html#EntityDef.relcolspec.attributes">%relcolspec.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Relationship Table Row          --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.relrow.content"><STRONG>relrow.content</STRONG></A>
+                       "(<A HREF="map.mod.html#EntityDef.relcell">%relcell;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.relrow.attributes"><STRONG>relrow.attributes</STRONG></A>
+             "outputclass 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef95"></A><STRONG>relrow</STRONG>    <A HREF="map.mod.html#EntityDef.relrow.content">%relrow.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef193"></A><STRONG>relrow</STRONG>    <A HREF="map.mod.html#EntityDef.relrow.attributes">%relrow.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Relationship Table Cell         --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.relcell.content"><STRONG>relcell.content</STRONG></A>
+                       "(<A HREF="map.dtd.html#EntityDef.topicref">%topicref;</A> |
+                         <A HREF="commonElements.mod.html#EntityDef.data.elements.incl">%data.elements.incl;</A>)*
+"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.relcell.attributes"><STRONG>relcell.attributes</STRONG></A>
+             "outputclass 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="map.mod.html#EntityDef.topicref-atts">%topicref-atts;</A>
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef96"></A><STRONG>relcell</STRONG>    <A HREF="map.mod.html#EntityDef.relcell.content">%relcell.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef194"></A><STRONG>relcell</STRONG>    <A HREF="map.mod.html#EntityDef.relcell.attributes">%relcell.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Topic Metadata                  --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.topicmeta.content"><STRONG>topicmeta.content</STRONG></A>
+                       "((<A HREF="commonElements.ent.html#EntityDef.navtitle">%navtitle;</A>)?,
+                         (<A HREF="map.mod.html#EntityDef.linktext">%linktext;</A>)?, 
+                         (<A HREF="map.mod.html#EntityDef.searchtitle">%searchtitle;</A>)?, 
+                         (<A HREF="map.mod.html#EntityDef.shortdesc">%shortdesc;</A>)?, 
+                         (<A HREF="commonElements.ent.html#EntityDef.author">%author;</A>)*, 
+                         (<A HREF="commonElements.ent.html#EntityDef.source">%source;</A>)?, 
+                         (<A HREF="commonElements.ent.html#EntityDef.publisher">%publisher;</A>)?, 
+                         (<A HREF="commonElements.ent.html#EntityDef.copyright">%copyright;</A>)*, 
+                         (<A HREF="commonElements.ent.html#EntityDef.critdates">%critdates;</A>)?, 
+                         (<A HREF="commonElements.ent.html#EntityDef.permissions">%permissions;</A>)?, 
+                         (<A HREF="commonElements.ent.html#EntityDef.metadata">%metadata;</A>)*, 
+                         (<A HREF="commonElements.ent.html#EntityDef.audience">%audience;</A>)*, 
+                         (<A HREF="commonElements.ent.html#EntityDef.category">%category;</A>)*, 
+                         (<A HREF="map.dtd.html#EntityDef.keywords">%keywords;</A>)*, 
+                         (<A HREF="commonElements.ent.html#EntityDef.prodinfo">%prodinfo;</A>)*, 
+                         (<A HREF="commonElements.ent.html#EntityDef.othermeta">%othermeta;</A>)*, 
+                         (<A HREF="commonElements.ent.html#EntityDef.resourceid">%resourceid;</A>)*, 
+                         (<A HREF="commonElements.mod.html#EntityDef.data.elements.incl">%data.elements.incl;</A> | 
+                          <A HREF="commonElements.mod.html#EntityDef.foreign.unknown.incl">%foreign.unknown.incl;</A>)*)"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.topicmeta.attributes"><STRONG>topicmeta.attributes</STRONG></A>
+             "lockmeta 
+                       (no | 
+                        yes | 
+                        -dita-use-conref-target) 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef97"></A><STRONG>topicmeta</STRONG>    <A HREF="map.mod.html#EntityDef.topicmeta.content">%topicmeta.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef195"></A><STRONG>topicmeta</STRONG>    <A HREF="map.mod.html#EntityDef.topicmeta.attributes">%topicmeta.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Link Text                       --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.linktext.content"><STRONG>linktext.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.words.cnt">%words.cnt;</A> |
+                         <A HREF="map.dtd.html#EntityDef.ph">%ph;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.linktext.attributes"><STRONG>linktext.attributes</STRONG></A>
+             "outputclass 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef98"></A><STRONG>linktext</STRONG>    <A HREF="map.mod.html#EntityDef.linktext.content">%linktext.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef196"></A><STRONG>linktext</STRONG>    <A HREF="map.mod.html#EntityDef.linktext.attributes">%linktext.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Search Title                    --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.searchtitle.content"><STRONG>searchtitle.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.words.cnt">%words.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.searchtitle.attributes"><STRONG>searchtitle.attributes</STRONG></A>
+             "outputclass 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef99"></A><STRONG>searchtitle</STRONG>    <A HREF="map.mod.html#EntityDef.searchtitle.content">%searchtitle.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef197"></A><STRONG>searchtitle</STRONG>    <A HREF="map.mod.html#EntityDef.searchtitle.attributes">%searchtitle.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    SPECIALIZATION ATTRIBUTE DECLARATIONS      --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+&lt;!ATTLIST <A NAME="AttlistDef186"></A><STRONG>map</STRONG>         <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- map/map "        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef187"></A><STRONG>navref</STRONG>      <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- map/navref "     &gt;
+&lt;!ATTLIST <A NAME="AttlistDef188"></A><STRONG>topicref</STRONG>    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- map/topicref "   &gt;
+&lt;!ATTLIST <A NAME="AttlistDef189"></A><STRONG>anchor</STRONG>      <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- map/anchor "     &gt;
+&lt;!ATTLIST <A NAME="AttlistDef190"></A><STRONG>reltable</STRONG>    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- map/reltable "   &gt;
+&lt;!ATTLIST <A NAME="AttlistDef191"></A><STRONG>relheader</STRONG>   <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- map/relheader "  &gt;
+&lt;!ATTLIST <A NAME="AttlistDef192"></A><STRONG>relcolspec</STRONG>  <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- map/relcolspec " &gt;
+&lt;!ATTLIST <A NAME="AttlistDef193"></A><STRONG>relrow</STRONG>      <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- map/relrow "     &gt;
+&lt;!ATTLIST <A NAME="AttlistDef194"></A><STRONG>relcell</STRONG>     <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- map/relcell "    &gt;
+&lt;!ATTLIST <A NAME="AttlistDef195"></A><STRONG>topicmeta</STRONG>   <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- map/topicmeta "  &gt;
+&lt;!ATTLIST <A NAME="AttlistDef196"></A><STRONG>linktext</STRONG>    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- map/linktext "   &gt;
+&lt;!ATTLIST <A NAME="AttlistDef197"></A><STRONG>searchtitle</STRONG> <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- map/searchtitle "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!-- Shortdesc in topic uses topic/shortdesc so this one must be 
+     included, even though the element is common. --&gt;</SPAN>
+&lt;!ATTLIST <A NAME="AttlistDef198"></A><STRONG>shortdesc</STRONG>   <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- map/shortdesc "  &gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ================== End DITA Map ============================= --&gt;</SPAN><?LIVEDTD EOF?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE></BODY></HTML>

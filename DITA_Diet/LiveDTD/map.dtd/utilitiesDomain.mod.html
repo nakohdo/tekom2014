@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>utilitiesDomain.mod</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="livedtd.css">
+<STYLE TYPE="text/css">
+  STRONG { font-weight: bold; color: red;}
+  .COMMENT { font-style:italic; color: #A8A8A8;}
+</STYLE>
+</HEAD>
+<BODY onLoad="parent.file.document.open();parent.file.document.write('<BODY TOPMARGIN=0><B>utilitiesDomain.mod</B></BODY>');parent.file.document.close()"><?LIVEDTD ENDHEAD?>
+<PRE>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    HEADER                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  MODULE:    DITA Utilities Domain                             --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  VERSION:   1.2                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  DATE:      November 2009                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    PUBLIC DOCUMENT TYPE DEFINITION            --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    TYPICAL INVOCATION                         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  Refer to this file by the following public identifier or an
+      appropriate system identifier 
+PUBLIC "-//OASIS//ELEMENTS DITA Utilities Domain//EN"
+      Delivered as file "utilitiesDomain.mod"                      --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- SYSTEM:     Darwin Information Typing Architecture (DITA)     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- PURPOSE:    Declaring the elements and specialization         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             attributes for the DITA Utilities Domain          --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ORIGINAL CREATION DATE:                                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             March 2001                                        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             (C) Copyright OASIS Open 2005, 2009.              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             (C) Copyright IBM Corporation 2001, 2004.         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             All Rights Reserved.                              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  UPDATES:                                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2005.11.15 RDA: Updated these comments to match template   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2005.11.15 RDA: Corrected the "Delivered as" system ID     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2006.06.07 RDA: Make universal attributes universal        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                      (DITA 1.1 proposal #12)                  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2006.06.14 RDA: Move univ-atts-translate-no into topic.mod --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2007.12.01 EK:  Reformatted DTD modules for DITA 1.2       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.02.12 RDA: Add text to shape                          --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.02.13 RDA: Create .content and .attributes entities   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                   ELEMENT NAME ENTITIES                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+&lt;!ENTITY % <A NAME="EntityDef.imagemap"><STRONG>imagemap</STRONG></A>    "<A HREF="utilitiesDomain.mod.html#ElementDef120">imagemap</A>"                                    &gt;
+&lt;!ENTITY % <A NAME="EntityDef.area"><STRONG>area</STRONG></A>        "<A HREF="utilitiesDomain.mod.html#ElementDef121">area</A>"                                        &gt;
+&lt;!ENTITY % <A NAME="EntityDef.shape"><STRONG>shape</STRONG></A>       "<A HREF="utilitiesDomain.mod.html#ElementDef122">shape</A>"                                       &gt;
+&lt;!ENTITY % <A NAME="EntityDef.coords"><STRONG>coords</STRONG></A>      "<A HREF="utilitiesDomain.mod.html#ElementDef123">coords</A>"                                      &gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    COMMON ATTLIST SETS                        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    ELEMENT DECLARATIONS for IMAGEMAP          --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Imagemap                        --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.imagemap.content"><STRONG>imagemap.content</STRONG></A>
+                       "((<A HREF="commonElements.ent.html#EntityDef.image">%image;</A>), 
+                         (<A HREF="utilitiesDomain.mod.html#EntityDef.area">%area;</A>)+)"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.imagemap.attributes"><STRONG>imagemap.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.display-atts">%display-atts;</A>
+              spectitle 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef120"></A><STRONG>imagemap</STRONG>    <A HREF="utilitiesDomain.mod.html#EntityDef.imagemap.content">%imagemap.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef243"></A><STRONG>imagemap</STRONG>    <A HREF="utilitiesDomain.mod.html#EntityDef.imagemap.attributes">%imagemap.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Hotspot Area Description        --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.area.content"><STRONG>area.content</STRONG></A>
+                       "((<A HREF="utilitiesDomain.mod.html#EntityDef.shape">%shape;</A>), 
+                         (<A HREF="utilitiesDomain.mod.html#EntityDef.coords">%coords;</A>), 
+                         (<A HREF="commonElements.ent.html#EntityDef.xref">%xref;</A>))"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.area.attributes"><STRONG>area.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef121"></A><STRONG>area</STRONG>    <A HREF="utilitiesDomain.mod.html#EntityDef.area.content">%area.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef244"></A><STRONG>area</STRONG>    <A HREF="utilitiesDomain.mod.html#EntityDef.area.attributes">%area.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Shape of the Hotspot            --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.shape.content"><STRONG>shape.content</STRONG></A>
+                       "(#PCDATA |
+                         <A HREF="commonElements.ent.html#EntityDef.text">%text;</A>)*
+"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.shape.attributes"><STRONG>shape.attributes</STRONG></A>
+             "keyref 
+                        CDATA
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts-translate-no">%univ-atts-translate-no;</A> 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef122"></A><STRONG>shape</STRONG>    <A HREF="utilitiesDomain.mod.html#EntityDef.shape.content">%shape.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef245"></A><STRONG>shape</STRONG>    <A HREF="utilitiesDomain.mod.html#EntityDef.shape.attributes">%shape.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Coordinates of the Hotspot      --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.coords.content"><STRONG>coords.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.words.cnt">%words.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.coords.attributes"><STRONG>coords.attributes</STRONG></A>
+             "keyref
+                        CDATA
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts-translate-no">%univ-atts-translate-no;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef123"></A><STRONG>coords</STRONG>    <A HREF="utilitiesDomain.mod.html#EntityDef.coords.content">%coords.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef246"></A><STRONG>coords</STRONG>    <A HREF="utilitiesDomain.mod.html#EntityDef.coords.attributes">%coords.attributes;</A>&gt;
+
+ 
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    SPECIALIZATION ATTRIBUTE DECLARATIONS      --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+&lt;!ATTLIST <A NAME="AttlistDef243"></A><STRONG>imagemap</STRONG> <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "+ topic/fig ut-d/imagemap " &gt;
+&lt;!ATTLIST <A NAME="AttlistDef244"></A><STRONG>area</STRONG>     <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "+ topic/figgroup ut-d/area "&gt;
+&lt;!ATTLIST <A NAME="AttlistDef245"></A><STRONG>shape</STRONG>    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "+ topic/keyword ut-d/shape "&gt;
+&lt;!ATTLIST <A NAME="AttlistDef246"></A><STRONG>coords</STRONG>   <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "+ topic/ph ut-d/coords "    &gt;
+
+ 
+<SPAN CLASS="COMMENT">&lt;!-- ================== End Utilities Domain ====================== --&gt;</SPAN><?LIVEDTD EOF?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE></BODY></HTML>

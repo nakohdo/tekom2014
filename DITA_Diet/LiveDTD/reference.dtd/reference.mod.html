@@ -1,0 +1,458 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>reference.mod</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="livedtd.css">
+<STYLE TYPE="text/css">
+  STRONG { font-weight: bold; color: red;}
+  .COMMENT { font-style:italic; color: #A8A8A8;}
+</STYLE>
+</HEAD>
+<BODY onLoad="parent.file.document.open();parent.file.document.write('<BODY TOPMARGIN=0><B>reference.mod</B></BODY>');parent.file.document.close()"><?LIVEDTD ENDHEAD?>
+<PRE>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    HEADER                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  MODULE:    DITA Reference                                    --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  VERSION:   1.2                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  DATE:      November 2009                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    PUBLIC DOCUMENT TYPE DEFINITION            --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    TYPICAL INVOCATION                         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  Refer to this file by the following public identifier or an 
+      appropriate system identifier 
+PUBLIC "-//OASIS//ELEMENTS DITA Reference//EN"
+      Delivered as file "reference.mod"                            --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- SYSTEM:     Darwin Information Typing Architecture (DITA)     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- PURPOSE:    Declaring the elements and specialization         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             attributes for Reference                          --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ORIGINAL CREATION DATE:                                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             March 2001                                        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             (C) Copyright OASIS Open 2005, 2009.              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             (C) Copyright IBM Corporation 2001, 2004.         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             All Rights Reserved.                              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  UPDATES:                                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2005.11.15 RDA: Removed old declaration for                --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    referenceClasses entity                    --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2005.11.15 RDA: Corrected LONG NAME for propdeschd         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2006.06.07 RDA: Added &lt;abstract&gt; element                   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2006.06.07 RDA: Make universal attributes universal        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                      (DITA 1.1 proposal #12)                  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2006.11.30 RDA: Remove #FIXED from DITAArchVersion         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2007.12.01 EK:  Reformatted DTD modules for DITA 1.2       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.01.30 RDA: Replace @conref defn. with %conref-atts;   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.02.13 RDA: Create .content and .attributes entities   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.05.06 RDA: Added refbodydiv                           --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                   ARCHITECTURE ENTITIES                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- default namespace prefix for DITAArchVersion attribute can be
+     overridden through predefinition in the document type shell   --&gt;</SPAN>
+&lt;!ENTITY % DITAArchNSPrefix
+  "ditaarch" 
+&gt;
+
+<SPAN CLASS="COMMENT">&lt;!-- must be instanced on each topic type                          --&gt;</SPAN>
+&lt;!ENTITY % arch-atts 
+             "xmlns:%DITAArchNSPrefix; 
+                        CDATA 
+                                  #FIXED 'http://dita.oasis-open.org/architecture/2005/'
+              %DITAArchNSPrefix;:DITAArchVersion
+                        CDATA 
+                                  '1.2'
+  "
+&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                   SPECIALIZATION OF DECLARED ELEMENTS         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+&lt;!ENTITY % reference-info-types 
+  "%info-types;
+  " 
+&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                   ELEMENT NAME ENTITIES                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+&lt;!ENTITY % <A NAME="EntityDef.reference"><STRONG>reference</STRONG></A>   "<A HREF="reference.mod.html#ElementDef105">reference</A>"                                   &gt;
+&lt;!ENTITY % <A NAME="EntityDef.refbody"><STRONG>refbody</STRONG></A>     "<A HREF="reference.mod.html#ElementDef106">refbody</A>"                                     &gt;
+&lt;!ENTITY % <A NAME="EntityDef.refbodydiv"><STRONG>refbodydiv</STRONG></A>  "<A HREF="reference.mod.html#ElementDef107">refbodydiv</A>"                                  &gt;
+&lt;!ENTITY % <A NAME="EntityDef.refsyn"><STRONG>refsyn</STRONG></A>      "<A HREF="reference.mod.html#ElementDef108">refsyn</A>"                                      &gt;
+&lt;!ENTITY % <A NAME="EntityDef.properties"><STRONG>properties</STRONG></A>  "<A HREF="reference.mod.html#ElementDef109">properties</A>"                                  &gt;
+&lt;!ENTITY % <A NAME="EntityDef.property"><STRONG>property</STRONG></A>    "<A HREF="reference.mod.html#ElementDef114">property</A>"                                    &gt;
+&lt;!ENTITY % <A NAME="EntityDef.proptype"><STRONG>proptype</STRONG></A>    "<A HREF="reference.mod.html#ElementDef115">proptype</A>"                                    &gt;
+&lt;!ENTITY % <A NAME="EntityDef.propvalue"><STRONG>propvalue</STRONG></A>   "<A HREF="reference.mod.html#ElementDef116">propvalue</A>"                                   &gt;
+&lt;!ENTITY % <A NAME="EntityDef.propdesc"><STRONG>propdesc</STRONG></A>    "<A HREF="reference.mod.html#ElementDef117">propdesc</A>"                                    &gt;
+&lt;!ENTITY % <A NAME="EntityDef.prophead"><STRONG>prophead</STRONG></A>    "<A HREF="reference.mod.html#ElementDef110">prophead</A>"                                    &gt;
+&lt;!ENTITY % <A NAME="EntityDef.proptypehd"><STRONG>proptypehd</STRONG></A>  "<A HREF="reference.mod.html#ElementDef111">proptypehd</A>"                                  &gt;
+&lt;!ENTITY % <A NAME="EntityDef.propvaluehd"><STRONG>propvaluehd</STRONG></A> "<A HREF="reference.mod.html#ElementDef112">propvaluehd</A>"                                 &gt;
+&lt;!ENTITY % <A NAME="EntityDef.propdeschd"><STRONG>propdeschd</STRONG></A>  "<A HREF="reference.mod.html#ElementDef113">propdeschd</A>"                                  &gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    DOMAINS ATTRIBUTE OVERRIDE                 --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+&lt;!ENTITY included-domains 
+  ""
+&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    ELEMENT DECLARATIONS                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Reference                       --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.reference.content"><STRONG>reference.content</STRONG></A>
+                       "((<A HREF="commonElements.ent.html#EntityDef.title">%title;</A>), 
+                         (<A HREF="topicDefn.ent.html#EntityDef.titlealts">%titlealts;</A>)?,
+                         (<A HREF="topicDefn.ent.html#EntityDef.abstract">%abstract;</A> | 
+                          <A HREF="topicDefn.ent.html#EntityDef.shortdesc">%shortdesc;</A>)?, 
+                         (<A HREF="topicDefn.ent.html#EntityDef.prolog">%prolog;</A>)?, 
+                         (<A HREF="reference.mod.html#EntityDef.refbody">%refbody;</A>)?, 
+                         (<A HREF="topicDefn.ent.html#EntityDef.related-links">%related-links;</A>)?, 
+                         (<A HREF="reference.dtd.html#EntityDef.reference-info-types">%reference-info-types;</A>)* )"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.reference.attributes"><STRONG>reference.attributes</STRONG></A>
+             "id 
+                        ID 
+                                  #REQUIRED
+              <A HREF="commonElements.mod.html#EntityDef.conref-atts">%conref-atts;</A>
+              <A HREF="commonElements.mod.html#EntityDef.select-atts">%select-atts;</A>
+              <A HREF="commonElements.mod.html#EntityDef.localization-atts">%localization-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef105"></A><STRONG>reference</STRONG>    <A HREF="reference.mod.html#EntityDef.reference.content">%reference.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef221"></A><STRONG>reference</STRONG>
+              <A HREF="reference.mod.html#EntityDef.reference.attributes">%reference.attributes;</A>
+              <A HREF="topic.mod.html#EntityDef.arch-atts">%arch-atts;</A>
+              domains 
+                        CDATA 
+                                  "&amp;included-domains;"
+&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Reference Body                  --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.refbody.content"><STRONG>refbody.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.data.elements.incl">%data.elements.incl;</A> | 
+                         <A HREF="topicDefn.ent.html#EntityDef.example">%example;</A> | 
+                         <A HREF="commonElements.mod.html#EntityDef.foreign.unknown.incl">%foreign.unknown.incl;</A> | 
+                         <A HREF="reference.mod.html#EntityDef.refbodydiv">%refbodydiv;</A> |
+                         <A HREF="reference.mod.html#EntityDef.refsyn">%refsyn;</A> | 
+                         <A HREF="reference.mod.html#EntityDef.properties">%properties;</A> | 
+                         <A HREF="topicDefn.ent.html#EntityDef.section">%section;</A> | 
+                         <A HREF="commonElements.ent.html#EntityDef.simpletable">%simpletable;</A> | 
+                         <A HREF="commonElements.ent.html#EntityDef.table">%table;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.refbody.attributes"><STRONG>refbody.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.id-atts">%id-atts;</A>
+              <A HREF="commonElements.mod.html#EntityDef.localization-atts">%localization-atts;</A>
+              base 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="reference.dtd.html#EntityDef.base-attribute-extensions">%base-attribute-extensions;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef106"></A><STRONG>refbody</STRONG>    <A HREF="reference.mod.html#EntityDef.refbody.content">%refbody.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef222"></A><STRONG>refbody</STRONG>    <A HREF="reference.mod.html#EntityDef.refbody.attributes">%refbody.attributes;</A>&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Reference Body division         --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.refbodydiv.content"><STRONG>refbodydiv.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.data.elements.incl">%data.elements.incl;</A> | 
+                         <A HREF="topicDefn.ent.html#EntityDef.example">%example;</A> | 
+                         <A HREF="commonElements.mod.html#EntityDef.foreign.unknown.incl">%foreign.unknown.incl;</A> |
+                         <A HREF="reference.mod.html#EntityDef.refbodydiv">%refbodydiv;</A> | 
+                         <A HREF="reference.mod.html#EntityDef.refsyn">%refsyn;</A> | 
+                         <A HREF="reference.mod.html#EntityDef.properties">%properties;</A> | 
+                         <A HREF="topicDefn.ent.html#EntityDef.section">%section;</A> | 
+                         <A HREF="commonElements.ent.html#EntityDef.simpletable">%simpletable;</A> | 
+                         <A HREF="commonElements.ent.html#EntityDef.table">%table;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.refbodydiv.attributes"><STRONG>refbodydiv.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef107"></A><STRONG>refbodydiv</STRONG>    <A HREF="reference.mod.html#EntityDef.refbodydiv.content">%refbodydiv.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef223"></A><STRONG>refbodydiv</STRONG>    <A HREF="reference.mod.html#EntityDef.refbodydiv.attributes">%refbodydiv.attributes;</A>&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Reference Syntax                --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.refsyn.content"><STRONG>refsyn.content</STRONG></A>
+                       "(<A HREF="topic.mod.html#EntityDef.section.cnt">%section.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.refsyn.attributes"><STRONG>refsyn.attributes</STRONG></A>
+             "spectitle 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef108"></A><STRONG>refsyn</STRONG>    <A HREF="reference.mod.html#EntityDef.refsyn.content">%refsyn.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef224"></A><STRONG>refsyn</STRONG>    <A HREF="reference.mod.html#EntityDef.refsyn.attributes">%refsyn.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Properties                      --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.properties.content"><STRONG>properties.content</STRONG></A>
+                       "((<A HREF="reference.mod.html#EntityDef.prophead">%prophead;</A>)?, 
+                         (<A HREF="reference.mod.html#EntityDef.property">%property;</A>)+)"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.properties.attributes"><STRONG>properties.attributes</STRONG></A>
+             "relcolwidth 
+                        CDATA 
+                                  #IMPLIED
+              keycol 
+                        NMTOKEN 
+                                  #IMPLIED
+              refcols 
+                        NMTOKENS 
+                                  #IMPLIED
+              spectitle 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.display-atts">%display-atts;</A>
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef109"></A><STRONG>properties</STRONG>    <A HREF="reference.mod.html#EntityDef.properties.content">%properties.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef225"></A><STRONG>properties</STRONG>    <A HREF="reference.mod.html#EntityDef.properties.attributes">%properties.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME:  Property Head                  --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.prophead.content"><STRONG>prophead.content</STRONG></A>
+                       "((<A HREF="reference.mod.html#EntityDef.proptypehd">%proptypehd;</A>)?, 
+                         (<A HREF="reference.mod.html#EntityDef.propvaluehd">%propvaluehd;</A>)?, 
+                         (<A HREF="reference.mod.html#EntityDef.propdeschd">%propdeschd;</A>)?)"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.prophead.attributes"><STRONG>prophead.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef110"></A><STRONG>prophead</STRONG>    <A HREF="reference.mod.html#EntityDef.prophead.content">%prophead.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef230"></A><STRONG>prophead</STRONG>    <A HREF="reference.mod.html#EntityDef.prophead.attributes">%prophead.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Property Type Head              --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.proptypehd.content"><STRONG>proptypehd.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.tblcell.cnt">%tblcell.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.proptypehd.attributes"><STRONG>proptypehd.attributes</STRONG></A>
+             "specentry 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef111"></A><STRONG>proptypehd</STRONG>    <A HREF="reference.mod.html#EntityDef.proptypehd.content">%proptypehd.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef231"></A><STRONG>proptypehd</STRONG>    <A HREF="reference.mod.html#EntityDef.proptypehd.attributes">%proptypehd.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Property Value Head             --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.propvaluehd.content"><STRONG>propvaluehd.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.tblcell.cnt">%tblcell.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.propvaluehd.attributes"><STRONG>propvaluehd.attributes</STRONG></A>
+             "specentry 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef112"></A><STRONG>propvaluehd</STRONG>    <A HREF="reference.mod.html#EntityDef.propvaluehd.content">%propvaluehd.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef232"></A><STRONG>propvaluehd</STRONG>    <A HREF="reference.mod.html#EntityDef.propvaluehd.attributes">%propvaluehd.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Property Description Head       --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.propdeschd.content"><STRONG>propdeschd.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.tblcell.cnt">%tblcell.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.propdeschd.attributes"><STRONG>propdeschd.attributes</STRONG></A>
+             "specentry 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef113"></A><STRONG>propdeschd</STRONG>    <A HREF="reference.mod.html#EntityDef.propdeschd.content">%propdeschd.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef233"></A><STRONG>propdeschd</STRONG>    <A HREF="reference.mod.html#EntityDef.propdeschd.attributes">%propdeschd.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Property                        --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.property.content"><STRONG>property.content</STRONG></A>
+                       "((<A HREF="reference.mod.html#EntityDef.proptype">%proptype;</A>)?, 
+                         (<A HREF="reference.mod.html#EntityDef.propvalue">%propvalue;</A>)?, 
+                         (<A HREF="reference.mod.html#EntityDef.propdesc">%propdesc;</A>)?)"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.property.attributes"><STRONG>property.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef114"></A><STRONG>property</STRONG>    <A HREF="reference.mod.html#EntityDef.property.content">%property.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef226"></A><STRONG>property</STRONG>    <A HREF="reference.mod.html#EntityDef.property.attributes">%property.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Property Type                   --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.proptype.content"><STRONG>proptype.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.ph.cnt">%ph.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.proptype.attributes"><STRONG>proptype.attributes</STRONG></A>
+             "specentry 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef115"></A><STRONG>proptype</STRONG>    <A HREF="reference.mod.html#EntityDef.proptype.content">%proptype.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef227"></A><STRONG>proptype</STRONG>    <A HREF="reference.mod.html#EntityDef.proptype.attributes">%proptype.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Property Value                  --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.propvalue.content"><STRONG>propvalue.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.ph.cnt">%ph.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.propvalue.attributes"><STRONG>propvalue.attributes</STRONG></A>
+             "specentry 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef116"></A><STRONG>propvalue</STRONG>    <A HREF="reference.mod.html#EntityDef.propvalue.content">%propvalue.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef228"></A><STRONG>propvalue</STRONG>    <A HREF="reference.mod.html#EntityDef.propvalue.attributes">%propvalue.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Property Descrption             --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.propdesc.content"><STRONG>propdesc.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.desc.cnt">%desc.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.propdesc.attributes"><STRONG>propdesc.attributes</STRONG></A>
+             "specentry 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef117"></A><STRONG>propdesc</STRONG>    <A HREF="reference.mod.html#EntityDef.propdesc.content">%propdesc.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef229"></A><STRONG>propdesc</STRONG>    <A HREF="reference.mod.html#EntityDef.propdesc.attributes">%propdesc.attributes;</A>&gt;
+
+
+ 
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    SPECIALIZATION ATTRIBUTE DECLARATIONS      --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+&lt;!ATTLIST <A NAME="AttlistDef221"></A><STRONG>reference</STRONG>   <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/topic       reference/reference " &gt;
+&lt;!ATTLIST <A NAME="AttlistDef222"></A><STRONG>refbody</STRONG>     <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/body        reference/refbody "   &gt;
+&lt;!ATTLIST <A NAME="AttlistDef223"></A><STRONG>refbodydiv</STRONG>  <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/bodydiv     reference/refbodydiv "&gt;
+&lt;!ATTLIST <A NAME="AttlistDef224"></A><STRONG>refsyn</STRONG>      <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/section     reference/refsyn "    &gt;
+&lt;!ATTLIST <A NAME="AttlistDef225"></A><STRONG>properties</STRONG>  <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/simpletable reference/properties "&gt;
+&lt;!ATTLIST <A NAME="AttlistDef226"></A><STRONG>property</STRONG>    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/strow       reference/property "  &gt;
+&lt;!ATTLIST <A NAME="AttlistDef227"></A><STRONG>proptype</STRONG>    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/stentry     reference/proptype "  &gt;
+&lt;!ATTLIST <A NAME="AttlistDef228"></A><STRONG>propvalue</STRONG>   <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/stentry     reference/propvalue " &gt;
+&lt;!ATTLIST <A NAME="AttlistDef229"></A><STRONG>propdesc</STRONG>    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/stentry     reference/propdesc "  &gt;
+
+&lt;!ATTLIST <A NAME="AttlistDef230"></A><STRONG>prophead</STRONG>    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/sthead      reference/prophead "  &gt;
+&lt;!ATTLIST <A NAME="AttlistDef231"></A><STRONG>proptypehd</STRONG>  <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/stentry     reference/proptypehd "&gt;
+&lt;!ATTLIST <A NAME="AttlistDef232"></A><STRONG>propvaluehd</STRONG> <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/stentry     reference/propvaluehd "&gt;
+&lt;!ATTLIST <A NAME="AttlistDef233"></A><STRONG>propdeschd</STRONG>  <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/stentry     reference/propdeschd "&gt;
+
+ 
+<SPAN CLASS="COMMENT">&lt;!-- ================== End DITA Reference  =========================== --&gt;</SPAN>
+
+<?LIVEDTD EOF?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE></BODY></HTML>

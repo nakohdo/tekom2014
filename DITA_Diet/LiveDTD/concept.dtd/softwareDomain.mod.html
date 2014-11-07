@@ -1,0 +1,269 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>softwareDomain.mod</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="livedtd.css">
+<STYLE TYPE="text/css">
+  STRONG { font-weight: bold; color: red;}
+  .COMMENT { font-style:italic; color: #A8A8A8;}
+</STYLE>
+</HEAD>
+<BODY onLoad="parent.file.document.open();parent.file.document.write('<BODY TOPMARGIN=0><B>softwareDomain.mod</B></BODY>');parent.file.document.close()"><?LIVEDTD ENDHEAD?>
+<PRE>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    HEADER                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  MODULE:    DITA Software Domain                              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  VERSION:   1.2                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  DATE:      November 2009                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    PUBLIC DOCUMENT TYPE DEFINITION            --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    TYPICAL INVOCATION                         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  Refer to this file by the following public identifier or an 
+      appropriate system identifier 
+PUBLIC "-//OASIS//ELEMENTS DITA Software Domain//EN"
+      Delivered as file "softwareDomain.mod"                       --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- SYSTEM:     Darwin Information Typing Architecture (DITA)     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- PURPOSE:    Declaring the elements and specialization         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             attributes for the Software Domain                --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ORIGINAL CREATION DATE:                                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             March 2001                                        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             (C) Copyright OASIS Open 2005, 2009.              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             (C) Copyright IBM Corporation 2001, 2004.         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             All Rights Reserved.                              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  UPDATES:                                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2005.11.15 RDA: Corrected the PURPOSE in this comment      --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2005.11.15 RDA: Corrected the "Delivered as" system ID     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2007.12.01 EK:  Reformatted DTD modules for DITA 1.2       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.02.12 RDA: Add text to msgnum, cmdname, varname       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.02.13 RDA: Create .content and .attributes entities   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                   ELEMENT NAME ENTITIES                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+&lt;!ENTITY % <A NAME="EntityDef.msgph"><STRONG>msgph</STRONG></A>       "<A HREF="softwareDomain.mod.html#ElementDef159">msgph</A>"                                       &gt;
+&lt;!ENTITY % <A NAME="EntityDef.msgblock"><STRONG>msgblock</STRONG></A>    "<A HREF="softwareDomain.mod.html#ElementDef160">msgblock</A>"                                    &gt;
+&lt;!ENTITY % <A NAME="EntityDef.msgnum"><STRONG>msgnum</STRONG></A>      "<A HREF="softwareDomain.mod.html#ElementDef161">msgnum</A>"                                      &gt;
+&lt;!ENTITY % <A NAME="EntityDef.cmdname"><STRONG>cmdname</STRONG></A>     "<A HREF="softwareDomain.mod.html#ElementDef162">cmdname</A>"                                     &gt;
+&lt;!ENTITY % <A NAME="EntityDef.varname"><STRONG>varname</STRONG></A>     "<A HREF="softwareDomain.mod.html#ElementDef163">varname</A>"                                     &gt;
+&lt;!ENTITY % <A NAME="EntityDef.filepath"><STRONG>filepath</STRONG></A>    "<A HREF="softwareDomain.mod.html#ElementDef164">filepath</A>"                                    &gt;
+&lt;!ENTITY % <A NAME="EntityDef.userinput"><STRONG>userinput</STRONG></A>   "<A HREF="softwareDomain.mod.html#ElementDef165">userinput</A>"                                   &gt;
+&lt;!ENTITY % <A NAME="EntityDef.systemoutput"><STRONG>systemoutput</STRONG></A> 
+                       "<A HREF="softwareDomain.mod.html#ElementDef166">systemoutput</A>"                                &gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    ELEMENT DECLARATIONS                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Message Phrase                  --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.msgph.content"><STRONG>msgph.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.words.cnt">%words.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.msgph.attributes"><STRONG>msgph.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef159"></A><STRONG>msgph</STRONG>    <A HREF="softwareDomain.mod.html#EntityDef.msgph.content">%msgph.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef328"></A><STRONG>msgph</STRONG>    <A HREF="softwareDomain.mod.html#EntityDef.msgph.attributes">%msgph.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Message Block                   --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.msgblock.content"><STRONG>msgblock.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.words.cnt">%words.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.msgblock.attributes"><STRONG>msgblock.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.display-atts">%display-atts;</A>
+              spectitle 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED 
+              xml:space 
+                        (preserve) 
+                                  #FIXED 'preserve'"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef160"></A><STRONG>msgblock</STRONG>    <A HREF="softwareDomain.mod.html#EntityDef.msgblock.content">%msgblock.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef326"></A><STRONG>msgblock</STRONG>    <A HREF="softwareDomain.mod.html#EntityDef.msgblock.attributes">%msgblock.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Message Number                  --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.msgnum.content"><STRONG>msgnum.content</STRONG></A>
+                       "(#PCDATA |
+                         <A HREF="commonElements.ent.html#EntityDef.text">%text;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.msgnum.attributes"><STRONG>msgnum.attributes</STRONG></A>
+             "keyref 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef161"></A><STRONG>msgnum</STRONG>    <A HREF="softwareDomain.mod.html#EntityDef.msgnum.content">%msgnum.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef327"></A><STRONG>msgnum</STRONG>    <A HREF="softwareDomain.mod.html#EntityDef.msgnum.attributes">%msgnum.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Command Name                    --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.cmdname.content"><STRONG>cmdname.content</STRONG></A>
+                       "(#PCDATA |
+                         <A HREF="commonElements.ent.html#EntityDef.text">%text;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.cmdname.attributes"><STRONG>cmdname.attributes</STRONG></A>
+             "keyref 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef162"></A><STRONG>cmdname</STRONG>    <A HREF="softwareDomain.mod.html#EntityDef.cmdname.content">%cmdname.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef324"></A><STRONG>cmdname</STRONG>    <A HREF="softwareDomain.mod.html#EntityDef.cmdname.attributes">%cmdname.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Variable Name                   --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.varname.content"><STRONG>varname.content</STRONG></A>
+                       "(#PCDATA |
+                         <A HREF="commonElements.ent.html#EntityDef.text">%text;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.varname.attributes"><STRONG>varname.attributes</STRONG></A>
+             "keyref 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef163"></A><STRONG>varname</STRONG>    <A HREF="softwareDomain.mod.html#EntityDef.varname.content">%varname.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef331"></A><STRONG>varname</STRONG>    <A HREF="softwareDomain.mod.html#EntityDef.varname.attributes">%varname.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: File Path                       --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.filepath.content"><STRONG>filepath.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.words.cnt">%words.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.filepath.attributes"><STRONG>filepath.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef164"></A><STRONG>filepath</STRONG>    <A HREF="softwareDomain.mod.html#EntityDef.filepath.content">%filepath.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef325"></A><STRONG>filepath</STRONG>    <A HREF="softwareDomain.mod.html#EntityDef.filepath.attributes">%filepath.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: User Input                      --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.userinput.content"><STRONG>userinput.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.words.cnt">%words.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.userinput.attributes"><STRONG>userinput.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef165"></A><STRONG>userinput</STRONG>    <A HREF="softwareDomain.mod.html#EntityDef.userinput.content">%userinput.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef330"></A><STRONG>userinput</STRONG>    <A HREF="softwareDomain.mod.html#EntityDef.userinput.attributes">%userinput.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: System Output                   --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.systemoutput.content"><STRONG>systemoutput.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.words.cnt">%words.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.systemoutput.attributes"><STRONG>systemoutput.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef166"></A><STRONG>systemoutput</STRONG>    <A HREF="softwareDomain.mod.html#EntityDef.systemoutput.content">%systemoutput.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef329"></A><STRONG>systemoutput</STRONG>    <A HREF="softwareDomain.mod.html#EntityDef.systemoutput.attributes">%systemoutput.attributes;</A>&gt;
+
+ 
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    SPECIALIZATION ATTRIBUTE DECLARATIONS      --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+ 
+
+&lt;!ATTLIST <A NAME="AttlistDef324"></A><STRONG>cmdname</STRONG>     <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "+ topic/keyword sw-d/cmdname "&gt;
+&lt;!ATTLIST <A NAME="AttlistDef325"></A><STRONG>filepath</STRONG>    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "+ topic/ph sw-d/filepath "    &gt;
+&lt;!ATTLIST <A NAME="AttlistDef326"></A><STRONG>msgblock</STRONG>    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "+ topic/pre sw-d/msgblock "   &gt;
+&lt;!ATTLIST <A NAME="AttlistDef327"></A><STRONG>msgnum</STRONG>      <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "+ topic/keyword sw-d/msgnum " &gt;
+&lt;!ATTLIST <A NAME="AttlistDef328"></A><STRONG>msgph</STRONG>       <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "+ topic/ph sw-d/msgph "       &gt;
+&lt;!ATTLIST <A NAME="AttlistDef329"></A><STRONG>systemoutput</STRONG>
+                      <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "+ topic/ph sw-d/systemoutput "&gt;
+&lt;!ATTLIST <A NAME="AttlistDef330"></A><STRONG>userinput</STRONG>   <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "+ topic/ph sw-d/userinput "   &gt;
+&lt;!ATTLIST <A NAME="AttlistDef331"></A><STRONG>varname</STRONG>     <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "+ topic/keyword sw-d/varname "&gt;
+
+ 
+<SPAN CLASS="COMMENT">&lt;!-- ================== End Software Domain ====================== --&gt;</SPAN><?LIVEDTD EOF?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE></BODY></HTML>

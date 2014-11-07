@@ -1,0 +1,744 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>task.mod</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="livedtd.css">
+<STYLE TYPE="text/css">
+  STRONG { font-weight: bold; color: red;}
+  .COMMENT { font-style:italic; color: #A8A8A8;}
+</STYLE>
+</HEAD>
+<BODY onLoad="parent.file.document.open();parent.file.document.write('<BODY TOPMARGIN=0><B>task.mod</B></BODY>');parent.file.document.close()"><?LIVEDTD ENDHEAD?>
+<PRE>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    HEADER                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  MODULE:    DITA Task                                         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  VERSION:   1.2                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  DATE:      November 2009                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    PUBLIC DOCUMENT TYPE DEFINITION            --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    TYPICAL INVOCATION                         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  Refer to this file by the following public identifier or an 
+      appropriate system identifier 
+PUBLIC "-//OASIS//ELEMENTS DITA Task//EN"
+      Delivered as file "task.mod"                                 --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- SYSTEM:     Darwin Information Typing Architecture (DITA)     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- PURPOSE:    Declaring the elements and specialization         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             attributes for the DITA Tasks                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ORIGINAL CREATION DATE:                                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             March 2001                                        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             (C) Copyright OASIS Open 2005, 2009.              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             (C) Copyright IBM Corporation 2001, 2004.         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             All Rights Reserved.                              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  UPDATES:                                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2005.11.15 RDA: Removed old declaration for                --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    taskClasses entity                         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2005.11.15 RDA: Corrected LONG NAME for chdeschd           --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2006.06.06 RDA: Changed model of choice to listitem.cnt    --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    for completeness                           --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2006.06.07 RDA: Added &lt;abstract&gt; element                   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2006.06.07 RDA: Make universal attributes universal        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                      (DITA 1.1 proposal #12)                  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2006.11.30 RDA: Add -dita-use-conref-target to enumerated  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                      attributes                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2006.11.30 RDA: Remove #FIXED from DITAArchVersion         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2007.12.01 EK:  Reformatted DTD modules for DITA 1.2       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.01.30 RDA: Replace @conref defn. with %conref-atts;   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.02.06 RDA: Add note and itemgroup to step, substep    --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.02.06 RDA: Loosen content model of taskbody; add      --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    process and stepsection elements           --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.02.13 RDA: Create .content and .attributes entities   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.05.06 RDA: Added sectiondiv to section specializations--&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.12.02 RDA: Rename process to steps-informal           --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                   ARCHITECTURE ENTITIES                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- default namespace prefix for DITAArchVersion attribute can be
+     overridden through predefinition in the document type shell   --&gt;</SPAN>
+&lt;!ENTITY % DITAArchNSPrefix
+  "ditaarch" 
+&gt;
+
+<SPAN CLASS="COMMENT">&lt;!-- must be instanced on each topic type                          --&gt;</SPAN>
+&lt;!ENTITY % arch-atts 
+             "xmlns:%DITAArchNSPrefix; 
+                        CDATA 
+                                  #FIXED 'http://dita.oasis-open.org/architecture/2005/'
+              %DITAArchNSPrefix;:DITAArchVersion
+                         CDATA 
+                                  '1.2'
+  "
+&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                   SPECIALIZATION OF DECLARED ELEMENTS         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                   ELEMENT NAME ENTITIES                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+&lt;!ENTITY % <A NAME="EntityDef.task"><STRONG>task</STRONG></A>        "<A HREF="task.mod.html#ElementDef105">task</A>"                                        &gt;
+&lt;!ENTITY % <A NAME="EntityDef.taskbody"><STRONG>taskbody</STRONG></A>    "<A HREF="task.mod.html#ElementDef106">taskbody</A>"                                    &gt;
+&lt;!ENTITY % steps       "steps"                                       &gt;
+&lt;!ENTITY % steps-unordered 
+                       "steps-unordered"                             &gt;
+&lt;!ENTITY % <A NAME="EntityDef.step"><STRONG>step</STRONG></A>        "<A HREF="task.mod.html#ElementDef113">step</A>"                                        &gt;
+&lt;!ENTITY % <A NAME="EntityDef.stepsection"><STRONG>stepsection</STRONG></A> "<A HREF="task.mod.html#ElementDef112">stepsection</A>"                                 &gt;
+&lt;!ENTITY % <A NAME="EntityDef.cmd"><STRONG>cmd</STRONG></A>         "<A HREF="task.mod.html#ElementDef114">cmd</A>"                                         &gt;
+&lt;!ENTITY % <A NAME="EntityDef.substeps"><STRONG>substeps</STRONG></A>    "<A HREF="task.mod.html#ElementDef116">substeps</A>"                                    &gt;
+&lt;!ENTITY % <A NAME="EntityDef.substep"><STRONG>substep</STRONG></A>     "<A HREF="task.mod.html#ElementDef117">substep</A>"                                     &gt;
+&lt;!ENTITY % <A NAME="EntityDef.tutorialinfo"><STRONG>tutorialinfo</STRONG></A> 
+                       "<A HREF="task.mod.html#ElementDef118">tutorialinfo</A>"                                &gt;
+&lt;!ENTITY % <A NAME="EntityDef.info"><STRONG>info</STRONG></A>        "<A HREF="task.mod.html#ElementDef115">info</A>"                                        &gt;
+&lt;!ENTITY % <A NAME="EntityDef.stepxmp"><STRONG>stepxmp</STRONG></A>     "<A HREF="task.mod.html#ElementDef119">stepxmp</A>"                                     &gt;
+&lt;!ENTITY % <A NAME="EntityDef.stepresult"><STRONG>stepresult</STRONG></A>  "<A HREF="task.mod.html#ElementDef129">stepresult</A>"                                  &gt;
+&lt;!ENTITY % <A NAME="EntityDef.choices"><STRONG>choices</STRONG></A>     "<A HREF="task.mod.html#ElementDef120">choices</A>"                                     &gt;
+&lt;!ENTITY % <A NAME="EntityDef.choice"><STRONG>choice</STRONG></A>      "<A HREF="task.mod.html#ElementDef121">choice</A>"                                      &gt;
+&lt;!ENTITY % <A NAME="EntityDef.steps-informal"><STRONG>steps-informal</STRONG></A> "<A HREF="task.mod.html#ElementDef109">steps-informal</A>"                           &gt;
+&lt;!ENTITY % result      "result"                                      &gt;
+&lt;!ENTITY % prereq      "prereq"                                      &gt;
+&lt;!ENTITY % postreq     "postreq"                                     &gt;
+&lt;!ENTITY % context     "context"                                     &gt;
+&lt;!ENTITY % <A NAME="EntityDef.choicetable"><STRONG>choicetable</STRONG></A> "<A HREF="task.mod.html#ElementDef122">choicetable</A>"                                 &gt;
+&lt;!ENTITY % <A NAME="EntityDef.chhead"><STRONG>chhead</STRONG></A>      "<A HREF="task.mod.html#ElementDef123">chhead</A>"                                      &gt;
+&lt;!ENTITY % <A NAME="EntityDef.chrow"><STRONG>chrow</STRONG></A>       "<A HREF="task.mod.html#ElementDef126">chrow</A>"                                       &gt;
+&lt;!ENTITY % <A NAME="EntityDef.choptionhd"><STRONG>choptionhd</STRONG></A>  "<A HREF="task.mod.html#ElementDef124">choptionhd</A>"                                  &gt;
+&lt;!ENTITY % <A NAME="EntityDef.chdeschd"><STRONG>chdeschd</STRONG></A>    "<A HREF="task.mod.html#ElementDef125">chdeschd</A>"                                    &gt;
+&lt;!ENTITY % <A NAME="EntityDef.choption"><STRONG>choption</STRONG></A>    "<A HREF="task.mod.html#ElementDef127">choption</A>"                                    &gt;
+&lt;!ENTITY % <A NAME="EntityDef.chdesc"><STRONG>chdesc</STRONG></A>      "<A HREF="task.mod.html#ElementDef128">chdesc</A>"                                      &gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    SHARED ATTRIBUTE LISTS                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    Provide an alternative set of univ-atts 
+                        that allows importance to be redefined 
+                        locally                                    --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.univ-atts-no-importance-task"><STRONG>univ-atts-no-importance-task</STRONG></A>
+             '<A HREF="commonElements.mod.html#EntityDef.id-atts">%id-atts;</A>
+              <A HREF="commonElements.mod.html#EntityDef.filter-atts">%filter-atts;</A>
+              base 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="task.dtd.html#EntityDef.base-attribute-extensions">%base-attribute-extensions;</A>
+              rev 
+                        CDATA 
+                                  #IMPLIED
+              status 
+                        (new | 
+                         changed | 
+                         deleted | 
+                         unchanged | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.localization-atts">%localization-atts;</A> 
+ '
+&gt;
+
+&lt;!ENTITY % task-info-types 
+  "%info-types;
+  " 
+&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    DOMAINS ATTRIBUTE OVERRIDE                 --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+&lt;!ENTITY included-domains 
+  ""
+&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    ELEMENT DECLARATIONS                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Task                            --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.task.content"><STRONG>task.content</STRONG></A>
+                       "((<A HREF="commonElements.ent.html#EntityDef.title">%title;</A>), 
+                         (<A HREF="topicDefn.ent.html#EntityDef.titlealts">%titlealts;</A>)?,
+                         (<A HREF="topicDefn.ent.html#EntityDef.abstract">%abstract;</A> | 
+                          <A HREF="topicDefn.ent.html#EntityDef.shortdesc">%shortdesc;</A>)?, 
+                         (<A HREF="topicDefn.ent.html#EntityDef.prolog">%prolog;</A>)?, 
+                         (<A HREF="task.mod.html#EntityDef.taskbody">%taskbody;</A>)?, 
+                         (<A HREF="topicDefn.ent.html#EntityDef.related-links">%related-links;</A>)?, 
+                         (<A HREF="task.dtd.html#EntityDef.task-info-types">%task-info-types;</A>)* )"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.task.attributes"><STRONG>task.attributes</STRONG></A>
+             "id 
+                        ID 
+                                  #REQUIRED
+              <A HREF="commonElements.mod.html#EntityDef.conref-atts">%conref-atts;</A>
+              <A HREF="commonElements.mod.html#EntityDef.select-atts">%select-atts;</A>
+              <A HREF="commonElements.mod.html#EntityDef.localization-atts">%localization-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef105"></A><STRONG>task</STRONG>    <A HREF="task.mod.html#EntityDef.task.content">%task.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef235"></A><STRONG>task</STRONG>    
+              <A HREF="task.mod.html#EntityDef.task.attributes">%task.attributes;</A>
+              <A HREF="topic.mod.html#EntityDef.arch-atts">%arch-atts;</A>
+              domains 
+                        CDATA 
+                                  "&amp;included-domains;"&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Task Body                       --&gt;</SPAN>
+&lt;!ENTITY % taskbody.content
+                       "(((%prereq;) | 
+                          (%context;) |
+                          (%section;))*,
+                         ((%steps; | 
+                           %steps-unordered; |
+                           %steps-informal;))?, 
+                         (%result;)?, 
+                         (%example;)*, 
+                         (%postreq;)*)"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.taskbody.attributes"><STRONG>taskbody.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.id-atts">%id-atts;</A>
+              <A HREF="commonElements.mod.html#EntityDef.localization-atts">%localization-atts;</A>
+              base 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="task.dtd.html#EntityDef.base-attribute-extensions">%base-attribute-extensions;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef106"></A><STRONG>taskbody</STRONG>    <A HREF="strictTaskbodyConstraint.mod.html#EntityDef.taskbody.content">%taskbody.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef236"></A><STRONG>taskbody</STRONG>    <A HREF="task.mod.html#EntityDef.taskbody.attributes">%taskbody.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Prerequisites                   --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.prereq.content"><STRONG>prereq.content</STRONG></A>
+                       "(<A HREF="topic.mod.html#EntityDef.section.notitle.cnt">%section.notitle.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.prereq.attributes"><STRONG>prereq.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef107"></A><STRONG>prereq</STRONG>    <A HREF="task.mod.html#EntityDef.prereq.content">%prereq.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef251"></A><STRONG>prereq</STRONG>    <A HREF="task.mod.html#EntityDef.prereq.attributes">%prereq.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Context                         --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.context.content"><STRONG>context.content</STRONG></A>
+                       "(<A HREF="topic.mod.html#EntityDef.section.notitle.cnt">%section.notitle.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.context.attributes"><STRONG>context.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef108"></A><STRONG>context</STRONG>    <A HREF="task.mod.html#EntityDef.context.content">%context.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef253"></A><STRONG>context</STRONG>    <A HREF="task.mod.html#EntityDef.context.attributes">%context.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Informal Steps                  --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.steps-informal.content"><STRONG>steps-informal.content</STRONG></A>
+                       "(<A HREF="topic.mod.html#EntityDef.section.notitle.cnt">%section.notitle.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.steps-informal.attributes"><STRONG>steps-informal.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef109"></A><STRONG>steps-informal</STRONG>    <A HREF="task.mod.html#EntityDef.steps-informal.content">%steps-informal.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef254"></A><STRONG>steps-informal</STRONG>    <A HREF="task.mod.html#EntityDef.steps-informal.attributes">%steps-informal.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Steps                           --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.steps.content"><STRONG>steps.content</STRONG></A>
+                       "((<A HREF="task.mod.html#EntityDef.stepsection">%stepsection;</A>)?,
+                         (<A HREF="task.mod.html#EntityDef.step">%step;</A>))+"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.steps.attributes"><STRONG>steps.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef110"></A><STRONG>steps</STRONG>    <A HREF="task.mod.html#EntityDef.steps.content">%steps.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef237"></A><STRONG>steps</STRONG>    <A HREF="task.mod.html#EntityDef.steps.attributes">%steps.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Steps: Unordered                --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.steps-unordered.content"><STRONG>steps-unordered.content</STRONG></A>
+                       "((<A HREF="task.mod.html#EntityDef.stepsection">%stepsection;</A>)?,
+                         (<A HREF="task.mod.html#EntityDef.step">%step;</A>))+"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.steps-unordered.attributes"><STRONG>steps-unordered.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef111"></A><STRONG>steps-unordered</STRONG>    <A HREF="task.mod.html#EntityDef.steps-unordered.content">%steps-unordered.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef238"></A><STRONG>steps-unordered</STRONG>    <A HREF="task.mod.html#EntityDef.steps-unordered.attributes">%steps-unordered.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Step section                    --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.stepsection.content"><STRONG>stepsection.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.listitem.cnt">%listitem.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.stepsection.attributes"><STRONG>stepsection.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef112"></A><STRONG>stepsection</STRONG>    <A HREF="task.mod.html#EntityDef.stepsection.content">%stepsection.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef239"></A><STRONG>stepsection</STRONG>    <A HREF="task.mod.html#EntityDef.stepsection.attributes">%stepsection.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Step                            --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.step.content"><STRONG>step.content</STRONG></A>
+                       "((<A HREF="task.dtd.html#EntityDef.note">%note;</A>)*,
+                         <A HREF="task.mod.html#EntityDef.cmd">%cmd;</A>, 
+                         (<A HREF="task.mod.html#EntityDef.choices">%choices;</A> |
+                          <A HREF="task.mod.html#EntityDef.choicetable">%choicetable;</A> | 
+                          <A HREF="task.mod.html#EntityDef.info">%info;</A> |
+                          <A HREF="commonElements.ent.html#EntityDef.itemgroup">%itemgroup;</A> |
+                          <A HREF="task.mod.html#EntityDef.stepxmp">%stepxmp;</A> | 
+                          <A HREF="task.mod.html#EntityDef.substeps">%substeps;</A> |
+                          <A HREF="task.mod.html#EntityDef.tutorialinfo">%tutorialinfo;</A>)*, 
+                         (<A HREF="task.mod.html#EntityDef.stepresult">%stepresult;</A>)? )"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.step.attributes"><STRONG>step.attributes</STRONG></A>
+             "importance 
+                        (optional | 
+                         required | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              <A HREF="task.mod.html#EntityDef.univ-atts-no-importance-task">%univ-atts-no-importance-task;</A> 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef113"></A><STRONG>step</STRONG>    <A HREF="task.mod.html#EntityDef.step.content">%step.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef240"></A><STRONG>step</STRONG>    <A HREF="task.mod.html#EntityDef.step.attributes">%step.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Command                         --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.cmd.content"><STRONG>cmd.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.ph.cnt">%ph.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.cmd.attributes"><STRONG>cmd.attributes</STRONG></A>
+             "keyref 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef114"></A><STRONG>cmd</STRONG>    <A HREF="task.mod.html#EntityDef.cmd.content">%cmd.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef241"></A><STRONG>cmd</STRONG>    <A HREF="task.mod.html#EntityDef.cmd.attributes">%cmd.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Information                     --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.info.content"><STRONG>info.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.itemgroup.cnt">%itemgroup.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.info.attributes"><STRONG>info.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef115"></A><STRONG>info</STRONG>    <A HREF="task.mod.html#EntityDef.info.content">%info.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef245"></A><STRONG>info</STRONG>    <A HREF="task.mod.html#EntityDef.info.attributes">%info.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Sub-steps                       --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.substeps.content"><STRONG>substeps.content</STRONG></A>
+                       "(<A HREF="task.mod.html#EntityDef.substep">%substep;</A>)+"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.substeps.attributes"><STRONG>substeps.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef116"></A><STRONG>substeps</STRONG>    <A HREF="task.mod.html#EntityDef.substeps.content">%substeps.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef242"></A><STRONG>substeps</STRONG>    <A HREF="task.mod.html#EntityDef.substeps.attributes">%substeps.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Sub-step                        --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.substep.content"><STRONG>substep.content</STRONG></A>
+                       "((<A HREF="task.dtd.html#EntityDef.note">%note;</A>)*,
+                         <A HREF="task.mod.html#EntityDef.cmd">%cmd;</A>, 
+                         (<A HREF="task.mod.html#EntityDef.info">%info;</A> | 
+                          <A HREF="commonElements.ent.html#EntityDef.itemgroup">%itemgroup;</A> |
+                          <A HREF="task.mod.html#EntityDef.stepxmp">%stepxmp;</A> | 
+                          <A HREF="task.mod.html#EntityDef.tutorialinfo">%tutorialinfo;</A>)*, 
+                         (<A HREF="task.mod.html#EntityDef.stepresult">%stepresult;</A>)? )"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.substep.attributes"><STRONG>substep.attributes</STRONG></A>
+             "importance 
+                        (optional | 
+                         required | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              <A HREF="task.mod.html#EntityDef.univ-atts-no-importance-task">%univ-atts-no-importance-task;</A> 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef117"></A><STRONG>substep</STRONG>    <A HREF="task.mod.html#EntityDef.substep.content">%substep.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef243"></A><STRONG>substep</STRONG>    <A HREF="task.mod.html#EntityDef.substep.attributes">%substep.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Tutorial Information            --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.tutorialinfo.content"><STRONG>tutorialinfo.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.itemgroup.cnt">%itemgroup.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.tutorialinfo.attributes"><STRONG>tutorialinfo.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef118"></A><STRONG>tutorialinfo</STRONG>    <A HREF="task.mod.html#EntityDef.tutorialinfo.content">%tutorialinfo.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef244"></A><STRONG>tutorialinfo</STRONG>    <A HREF="task.mod.html#EntityDef.tutorialinfo.attributes">%tutorialinfo.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Step Example                    --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.stepxmp.content"><STRONG>stepxmp.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.itemgroup.cnt">%itemgroup.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.stepxmp.attributes"><STRONG>stepxmp.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef119"></A><STRONG>stepxmp</STRONG>    <A HREF="task.mod.html#EntityDef.stepxmp.content">%stepxmp.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef246"></A><STRONG>stepxmp</STRONG>    <A HREF="task.mod.html#EntityDef.stepxmp.attributes">%stepxmp.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Choices                         --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.choices.content"><STRONG>choices.content</STRONG></A>
+                       "(<A HREF="task.mod.html#EntityDef.choice">%choice;</A>)+"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.choices.attributes"><STRONG>choices.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef120"></A><STRONG>choices</STRONG>    <A HREF="task.mod.html#EntityDef.choices.content">%choices.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef248"></A><STRONG>choices</STRONG>    <A HREF="task.mod.html#EntityDef.choices.attributes">%choices.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Choice                          --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.choice.content"><STRONG>choice.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.listitem.cnt">%listitem.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.choice.attributes"><STRONG>choice.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef121"></A><STRONG>choice</STRONG>    <A HREF="task.mod.html#EntityDef.choice.content">%choice.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef249"></A><STRONG>choice</STRONG>    <A HREF="task.mod.html#EntityDef.choice.attributes">%choice.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Choice Table                    --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.choicetable.content"><STRONG>choicetable.content</STRONG></A>
+                       "((<A HREF="task.mod.html#EntityDef.chhead">%chhead;</A>)?, 
+                         (<A HREF="task.mod.html#EntityDef.chrow">%chrow;</A>)+ )"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.choicetable.attributes"><STRONG>choicetable.attributes</STRONG></A>
+             "relcolwidth 
+                        CDATA 
+                                  #IMPLIED
+              keycol 
+                        NMTOKEN 
+                                  '1'
+              refcols 
+                        NMTOKENS 
+                                  #IMPLIED
+              spectitle 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.display-atts">%display-atts;</A>
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef122"></A><STRONG>choicetable</STRONG>    <A HREF="task.mod.html#EntityDef.choicetable.content">%choicetable.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef255"></A><STRONG>choicetable</STRONG>    <A HREF="task.mod.html#EntityDef.choicetable.attributes">%choicetable.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Choice Head                     --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.chhead.content"><STRONG>chhead.content</STRONG></A>
+                       "((<A HREF="task.mod.html#EntityDef.choptionhd">%choptionhd;</A>), 
+                         (<A HREF="task.mod.html#EntityDef.chdeschd">%chdeschd;</A>) )"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.chhead.attributes"><STRONG>chhead.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef123"></A><STRONG>chhead</STRONG>    <A HREF="task.mod.html#EntityDef.chhead.content">%chhead.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef256"></A><STRONG>chhead</STRONG>    <A HREF="task.mod.html#EntityDef.chhead.attributes">%chhead.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Choice Option Head              --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.choptionhd.content"><STRONG>choptionhd.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.tblcell.cnt">%tblcell.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.choptionhd.attributes"><STRONG>choptionhd.attributes</STRONG></A>
+             "specentry 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef124"></A><STRONG>choptionhd</STRONG>    <A HREF="task.mod.html#EntityDef.choptionhd.content">%choptionhd.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef258"></A><STRONG>choptionhd</STRONG>    <A HREF="task.mod.html#EntityDef.choptionhd.attributes">%choptionhd.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Choice Description Head         --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.chdeschd.content"><STRONG>chdeschd.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.tblcell.cnt">%tblcell.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.chdeschd.attributes"><STRONG>chdeschd.attributes</STRONG></A>
+             "specentry 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef125"></A><STRONG>chdeschd</STRONG>    <A HREF="task.mod.html#EntityDef.chdeschd.content">%chdeschd.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef259"></A><STRONG>chdeschd</STRONG>    <A HREF="task.mod.html#EntityDef.chdeschd.attributes">%chdeschd.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Choice Row                      --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.chrow.content"><STRONG>chrow.content</STRONG></A>
+                       "((<A HREF="task.mod.html#EntityDef.choption">%choption;</A>), 
+                         (<A HREF="task.mod.html#EntityDef.chdesc">%chdesc;</A>))"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.chrow.attributes"><STRONG>chrow.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef126"></A><STRONG>chrow</STRONG>    <A HREF="task.mod.html#EntityDef.chrow.content">%chrow.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef257"></A><STRONG>chrow</STRONG>    <A HREF="task.mod.html#EntityDef.chrow.attributes">%chrow.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Choice Option                   --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.choption.content"><STRONG>choption.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.tblcell.cnt">%tblcell.cnt;</A>)*
+"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.choption.attributes"><STRONG>choption.attributes</STRONG></A>
+             "specentry 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef127"></A><STRONG>choption</STRONG>    <A HREF="task.mod.html#EntityDef.choption.content">%choption.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef260"></A><STRONG>choption</STRONG>    <A HREF="task.mod.html#EntityDef.choption.attributes">%choption.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Choice Description              --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.chdesc.content"><STRONG>chdesc.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.tblcell.cnt">%tblcell.cnt;</A>)*
+"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.chdesc.attributes"><STRONG>chdesc.attributes</STRONG></A>
+             "specentry 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef128"></A><STRONG>chdesc</STRONG>    <A HREF="task.mod.html#EntityDef.chdesc.content">%chdesc.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef261"></A><STRONG>chdesc</STRONG>    <A HREF="task.mod.html#EntityDef.chdesc.attributes">%chdesc.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Step Result                     --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.stepresult.content"><STRONG>stepresult.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.itemgroup.cnt">%itemgroup.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.stepresult.attributes"><STRONG>stepresult.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef129"></A><STRONG>stepresult</STRONG>    <A HREF="task.mod.html#EntityDef.stepresult.content">%stepresult.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef247"></A><STRONG>stepresult</STRONG>    <A HREF="task.mod.html#EntityDef.stepresult.attributes">%stepresult.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Result                          --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.result.content"><STRONG>result.content</STRONG></A>
+                       "(<A HREF="topic.mod.html#EntityDef.section.notitle.cnt">%section.notitle.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.result.attributes"><STRONG>result.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef130"></A><STRONG>result</STRONG>    <A HREF="task.mod.html#EntityDef.result.content">%result.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef250"></A><STRONG>result</STRONG>    <A HREF="task.mod.html#EntityDef.result.attributes">%result.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Post Requirements               --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.postreq.content"><STRONG>postreq.content</STRONG></A>
+                       "(<A HREF="topic.mod.html#EntityDef.section.notitle.cnt">%section.notitle.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.postreq.attributes"><STRONG>postreq.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef131"></A><STRONG>postreq</STRONG>    <A HREF="task.mod.html#EntityDef.postreq.content">%postreq.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef252"></A><STRONG>postreq</STRONG>    <A HREF="task.mod.html#EntityDef.postreq.attributes">%postreq.attributes;</A>&gt;
+
+ 
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    SPECIALIZATION ATTRIBUTE DECLARATIONS      --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+&lt;!ATTLIST <A NAME="AttlistDef235"></A><STRONG>task</STRONG>        <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/topic task/task "        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef236"></A><STRONG>taskbody</STRONG>    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/body task/taskbody "     &gt;
+&lt;!ATTLIST <A NAME="AttlistDef237"></A><STRONG>steps</STRONG>       <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/ol task/steps "          &gt;
+&lt;!ATTLIST <A NAME="AttlistDef238"></A><STRONG>steps-unordered</STRONG> 
+                      <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/ul task/steps-unordered "&gt;
+&lt;!ATTLIST <A NAME="AttlistDef239"></A><STRONG>stepsection</STRONG> <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/li task/stepsection "    &gt;
+&lt;!ATTLIST <A NAME="AttlistDef240"></A><STRONG>step</STRONG>        <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/li task/step "           &gt;
+&lt;!ATTLIST <A NAME="AttlistDef241"></A><STRONG>cmd</STRONG>         <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/ph task/cmd "            &gt;
+&lt;!ATTLIST <A NAME="AttlistDef242"></A><STRONG>substeps</STRONG>    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/ol task/substeps "       &gt;
+&lt;!ATTLIST <A NAME="AttlistDef243"></A><STRONG>substep</STRONG>     <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/li task/substep "        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef244"></A><STRONG>tutorialinfo</STRONG> 
+                      <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/itemgroup task/tutorialinfo "&gt;
+&lt;!ATTLIST <A NAME="AttlistDef245"></A><STRONG>info</STRONG>        <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/itemgroup task/info "    &gt;
+&lt;!ATTLIST <A NAME="AttlistDef246"></A><STRONG>stepxmp</STRONG>     <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/itemgroup task/stepxmp " &gt;
+&lt;!ATTLIST <A NAME="AttlistDef247"></A><STRONG>stepresult</STRONG>  <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/itemgroup task/stepresult "&gt;
+
+&lt;!ATTLIST <A NAME="AttlistDef248"></A><STRONG>choices</STRONG>     <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/ul task/choices "        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef249"></A><STRONG>choice</STRONG>      <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/li task/choice "         &gt;
+&lt;!ATTLIST <A NAME="AttlistDef250"></A><STRONG>result</STRONG>      <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/section task/result "    &gt;
+&lt;!ATTLIST <A NAME="AttlistDef251"></A><STRONG>prereq</STRONG>      <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/section task/prereq "    &gt;
+&lt;!ATTLIST <A NAME="AttlistDef252"></A><STRONG>postreq</STRONG>     <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/section task/postreq "   &gt;
+&lt;!ATTLIST <A NAME="AttlistDef253"></A><STRONG>context</STRONG>     <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/section task/context "   &gt;
+&lt;!ATTLIST <A NAME="AttlistDef254"></A><STRONG>steps-informal</STRONG> <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A> class CDATA "- topic/section task/steps-informal "&gt;
+
+&lt;!ATTLIST <A NAME="AttlistDef255"></A><STRONG>choicetable</STRONG> <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/simpletable task/choicetable "&gt;
+&lt;!ATTLIST <A NAME="AttlistDef256"></A><STRONG>chhead</STRONG>      <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/sthead task/chhead "     &gt;
+&lt;!ATTLIST <A NAME="AttlistDef257"></A><STRONG>chrow</STRONG>       <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/strow task/chrow "       &gt;
+&lt;!ATTLIST <A NAME="AttlistDef258"></A><STRONG>choptionhd</STRONG>  <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/stentry task/choptionhd "&gt;
+&lt;!ATTLIST <A NAME="AttlistDef259"></A><STRONG>chdeschd</STRONG>    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/stentry task/chdeschd "  &gt;
+&lt;!ATTLIST <A NAME="AttlistDef260"></A><STRONG>choption</STRONG>    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/stentry task/choption "  &gt;
+&lt;!ATTLIST <A NAME="AttlistDef261"></A><STRONG>chdesc</STRONG>      <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class  CDATA "- topic/stentry task/chdesc "    &gt;
+
+ 
+<SPAN CLASS="COMMENT">&lt;!-- ================== End DITA Task  =========================== --&gt;</SPAN>
+<?LIVEDTD EOF?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE></BODY></HTML>

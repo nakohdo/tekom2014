@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>uiDomain.mod</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="livedtd.css">
+<STYLE TYPE="text/css">
+  STRONG { font-weight: bold; color: red;}
+  .COMMENT { font-style:italic; color: #A8A8A8;}
+</STYLE>
+</HEAD>
+<BODY onLoad="parent.file.document.open();parent.file.document.write('<BODY TOPMARGIN=0><B>uiDomain.mod</B></BODY>');parent.file.document.close()"><?LIVEDTD ENDHEAD?>
+<PRE>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    HEADER                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  MODULE:    DITA User Interface Domain                        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  VERSION:   1.2                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  DATE:      November 2009                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    PUBLIC DOCUMENT TYPE DEFINITION            --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    TYPICAL INVOCATION                         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  Refer to this file by the following public identifier or an 
+      appropriate system identifier 
+PUBLIC "-//OASIS//ELEMENTS DITA User Interface Domain//EN"
+      Delivered as file "uiDomain.mod"                             --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- SYSTEM:     Darwin Information Typing Architecture (DITA)     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- PURPOSE:    Declaring the elements and specialization         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             attributes for the User Interface Domain          --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ORIGINAL CREATION DATE:                                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             March 2001                                        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             (C) Copyright OASIS Open 2005, 2009.              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             (C) Copyright IBM Corporation 2001, 2004.         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             All Rights Reserved.                              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  UPDATES:                                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2005.11.15 RDA: Corrected LONG NAME for screen             --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2005.11.15 RDA: Corrected the "Delivered as" system ID     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2007.12.01 EK:  Reformatted DTD modules for DITA 1.2       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.02.12 RDA: Add text to wintitle, shortcut             --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.02.13 RDA: Create .content and .attributes entities   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                   ELEMENT NAME ENTITIES                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+ 
+&lt;!ENTITY % <A NAME="EntityDef.uicontrol"><STRONG>uicontrol</STRONG></A>   "<A HREF="uiDomain.mod.html#ElementDef128">uicontrol</A>"                                   &gt;
+&lt;!ENTITY % <A NAME="EntityDef.wintitle"><STRONG>wintitle</STRONG></A>    "<A HREF="uiDomain.mod.html#ElementDef129">wintitle</A>"                                    &gt;
+&lt;!ENTITY % <A NAME="EntityDef.menucascade"><STRONG>menucascade</STRONG></A> "<A HREF="uiDomain.mod.html#ElementDef130">menucascade</A>"                                 &gt;
+&lt;!ENTITY % <A NAME="EntityDef.shortcut"><STRONG>shortcut</STRONG></A>    "<A HREF="uiDomain.mod.html#ElementDef131">shortcut</A>"                                    &gt;
+&lt;!ENTITY % <A NAME="EntityDef.screen"><STRONG>screen</STRONG></A>      "<A HREF="uiDomain.mod.html#ElementDef132">screen</A>"                                      &gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    UI KEYWORD TYPES ELEMENT DECLARATIONS      --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: User Interface Control          --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.uicontrol.content"><STRONG>uicontrol.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.words.cnt">%words.cnt;</A> | 
+                         <A HREF="commonElements.ent.html#EntityDef.image">%image;</A> | 
+                         <A HREF="uiDomain.mod.html#EntityDef.shortcut">%shortcut;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.uicontrol.attributes"><STRONG>uicontrol.attributes</STRONG></A>
+             "keyref 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef128"></A><STRONG>uicontrol</STRONG>    <A HREF="uiDomain.mod.html#EntityDef.uicontrol.content">%uicontrol.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef262"></A><STRONG>uicontrol</STRONG>    <A HREF="uiDomain.mod.html#EntityDef.uicontrol.attributes">%uicontrol.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Window Title                    --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.wintitle.content"><STRONG>wintitle.content</STRONG></A>
+                       "(#PCDATA |
+                         <A HREF="commonElements.ent.html#EntityDef.text">%text;</A>)*
+"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.wintitle.attributes"><STRONG>wintitle.attributes</STRONG></A>
+             "keyref 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef129"></A><STRONG>wintitle</STRONG>    <A HREF="uiDomain.mod.html#EntityDef.wintitle.content">%wintitle.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef263"></A><STRONG>wintitle</STRONG>    <A HREF="uiDomain.mod.html#EntityDef.wintitle.attributes">%wintitle.attributes;</A>&gt;
+
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Menu Cascade                    --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.menucascade.content"><STRONG>menucascade.content</STRONG></A>
+                       "(<A HREF="uiDomain.mod.html#EntityDef.uicontrol">%uicontrol;</A>)+"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.menucascade.attributes"><STRONG>menucascade.attributes</STRONG></A>
+             "keyref 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef130"></A><STRONG>menucascade</STRONG>    <A HREF="uiDomain.mod.html#EntityDef.menucascade.content">%menucascade.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef259"></A><STRONG>menucascade</STRONG>    <A HREF="uiDomain.mod.html#EntityDef.menucascade.attributes">%menucascade.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Short Cut                       --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.shortcut.content"><STRONG>shortcut.content</STRONG></A>
+                       "(#PCDATA |
+                        <A HREF="commonElements.ent.html#EntityDef.text">%text;</A>)*
+"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.shortcut.attributes"><STRONG>shortcut.attributes</STRONG></A>
+             "keyref 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef131"></A><STRONG>shortcut</STRONG>    <A HREF="uiDomain.mod.html#EntityDef.shortcut.content">%shortcut.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef261"></A><STRONG>shortcut</STRONG>    <A HREF="uiDomain.mod.html#EntityDef.shortcut.attributes">%shortcut.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Text Screen Capture             --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.screen.content"><STRONG>screen.content</STRONG></A>
+                       "(#PCDATA | 
+                         <A HREF="commonElements.mod.html#EntityDef.basic.ph.notm">%basic.ph.notm;</A> |
+                         <A HREF="commonElements.mod.html#EntityDef.data.elements.incl">%data.elements.incl;</A> | 
+                         <A HREF="commonElements.mod.html#EntityDef.foreign.unknown.incl">%foreign.unknown.incl;</A> | 
+                         <A HREF="commonElements.mod.html#EntityDef.txt.incl">%txt.incl;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.screen.attributes"><STRONG>screen.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.display-atts">%display-atts;</A>
+              spectitle 
+                        CDATA 
+                                  #IMPLIED
+              xml:space 
+                        (preserve) 
+                                  #FIXED 'preserve'
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A> 
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef132"></A><STRONG>screen</STRONG>    <A HREF="uiDomain.mod.html#EntityDef.screen.content">%screen.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef260"></A><STRONG>screen</STRONG>    <A HREF="uiDomain.mod.html#EntityDef.screen.attributes">%screen.attributes;</A>&gt;
+
+ 
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    SPECIALIZATION ATTRIBUTE DECLARATIONS      --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+ 
+
+&lt;!ATTLIST <A NAME="AttlistDef259"></A><STRONG>menucascade</STRONG> <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "+ topic/ph ui-d/menucascade "  &gt;
+&lt;!ATTLIST <A NAME="AttlistDef260"></A><STRONG>screen</STRONG>      <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "+ topic/pre ui-d/screen "      &gt;
+&lt;!ATTLIST <A NAME="AttlistDef261"></A><STRONG>shortcut</STRONG>    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "+ topic/keyword ui-d/shortcut "&gt;
+&lt;!ATTLIST <A NAME="AttlistDef262"></A><STRONG>uicontrol</STRONG>   <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "+ topic/ph ui-d/uicontrol "    &gt;
+&lt;!ATTLIST <A NAME="AttlistDef263"></A><STRONG>wintitle</STRONG>    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "+ topic/keyword ui-d/wintitle "&gt;
+
+ 
+<SPAN CLASS="COMMENT">&lt;!-- ================== End DITA User Interface Domain =========== --&gt;</SPAN>
+<?LIVEDTD EOF?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE></BODY></HTML>

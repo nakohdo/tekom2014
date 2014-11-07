@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>strictTaskbodyConstraint.mod</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="livedtd.css">
+<STYLE TYPE="text/css">
+  STRONG { font-weight: bold; color: red;}
+  .COMMENT { font-style:italic; color: #A8A8A8;}
+</STYLE>
+</HEAD>
+<BODY onLoad="parent.file.document.open();parent.file.document.write('<BODY TOPMARGIN=0><B>strictTaskbodyConstraint.mod</B></BODY>');parent.file.document.close()"><?LIVEDTD ENDHEAD?>
+<PRE>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    HEADER                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  MODULE:    DITA Strict Taskbody Constraint                   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  VERSION:   1.2                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  DATE:      November 2009                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    PUBLIC DOCUMENT TYPE DEFINITION            --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    TYPICAL INVOCATION                         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  Refer to this file by the following public identifier or an 
+      appropriate system identifier 
+PUBLIC "-//OASIS//ELEMENTS DITA Strict Taskbody Constraint//EN"
+      Delivered as file "strictTaskbodyConstraint.mod"             --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- SYSTEM:     Darwin Information Typing Architecture (DITA)     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- PURPOSE:    Declaring the domain entity for the strict task   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             constraint module                                 --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ORIGINAL CREATION DATE:                                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             April 2008                                        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             (C) Copyright OASIS Open 2008, 2009.              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             All Rights Reserved.                              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  UPDATES:                                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    Strict Taskbody ENTITIES                   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+&lt;!ENTITY taskbody-constraints     
+  "(<A HREF="topic.mod.html#ElementDef88">topic</A> <A HREF="task.mod.html#ElementDef105">task</A> strictTaskbody-c)"
+&gt;
+
+&lt;!ENTITY % <A NAME="EntityDef.prereq"><STRONG>prereq</STRONG></A>          "<A HREF="task.mod.html#ElementDef107">prereq</A>"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.context"><STRONG>context</STRONG></A>         "<A HREF="task.mod.html#ElementDef108">context</A>"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.steps"><STRONG>steps</STRONG></A>           "<A HREF="task.mod.html#ElementDef110">steps</A>"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.steps-unordered"><STRONG>steps-unordered</STRONG></A> "<A HREF="task.mod.html#ElementDef111">steps-unordered</A>"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.result"><STRONG>result</STRONG></A>          "<A HREF="task.mod.html#ElementDef130">result</A>"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.example"><STRONG>example</STRONG></A>         "<A HREF="topic.mod.html#ElementDef97">example</A>"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.postreq"><STRONG>postreq</STRONG></A>         "<A HREF="task.mod.html#ElementDef131">postreq</A>"&gt;
+
+&lt;!ENTITY % <A NAME="EntityDef.taskbody.content"><STRONG>taskbody.content</STRONG></A>
+                       "((<A HREF="strictTaskbodyConstraint.mod.html#EntityDef.prereq">%prereq;</A>)?, 
+                         (<A HREF="strictTaskbodyConstraint.mod.html#EntityDef.context">%context;</A>)?,
+                         (<A HREF="strictTaskbodyConstraint.mod.html#EntityDef.steps">%steps;</A> | 
+                          <A HREF="strictTaskbodyConstraint.mod.html#EntityDef.steps-unordered">%steps-unordered;</A>)?, 
+                         (<A HREF="strictTaskbodyConstraint.mod.html#EntityDef.result">%result;</A>)?, 
+                         (<A HREF="strictTaskbodyConstraint.mod.html#EntityDef.example">%example;</A>)?, 
+                         (<A HREF="strictTaskbodyConstraint.mod.html#EntityDef.postreq">%postreq;</A>)?)"
+&gt;
+
+<SPAN CLASS="COMMENT">&lt;!-- ================== End Strict Taskbody Entities ============= --&gt;</SPAN>
+<?LIVEDTD EOF?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE></BODY></HTML>

@@ -1,0 +1,300 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>hazardstatementDomain.mod</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="livedtd.css">
+<STYLE TYPE="text/css">
+  STRONG { font-weight: bold; color: red;}
+  .COMMENT { font-style:italic; color: #A8A8A8;}
+</STYLE>
+</HEAD>
+<BODY onLoad="parent.file.document.open();parent.file.document.write('<BODY TOPMARGIN=0><B>hazardstatementDomain.mod</B></BODY>');parent.file.document.close()"><?LIVEDTD ENDHEAD?>
+<PRE>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    HEADER                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  MODULE:    DITA Hazard Statement Domain                      --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  VERSION:   1.2                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  DATE:      November 2009                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    PUBLIC DOCUMENT TYPE DEFINITION            --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    TYPICAL INVOCATION                         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  Refer to this file by the following public identifier or an 
+      appropriate system identifier 
+PUBLIC "-//OASIS//ELEMENTS DITA Hazard Statement Domain//EN"
+      Delivered as file "hazardstatementDomain.mod"                --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- SYSTEM:     Darwin Information Typing Architecture (DITA)     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- PURPOSE:    Declaring the elements and specialization         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             attributes for the Hazard Statement Domain        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ORIGINAL CREATION DATE:                                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             February 2008                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             (C) Copyright OASIS Open 2008, 2009.              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             All Rights Reserved.                              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  UPDATES:                                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2007.02.20 Chris Kravogel, SeicoDyne GmbH: Created domain  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2007.03.06 Chris Kravogel, SeicoDyne GmbH: Add howtoavoid  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    entity                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2007.11.20 Chris Kravogel, SeicoDyne GmbH: Reduced ATTLIST --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    of hazardstatement to ATTLIST of note      --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.02.05 Chris Kravogel, SeicoDyne GmbH: Renamed symbol  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    to hazardsymbol, added %words.cnt; and     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    %trademark; to consequences, typeofhazard  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.02.05 RDA: Reformatted for DITA 1.2; removed @alt     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    and added @scalefit on hazardsymbol        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.02.13 RDA: Create .content and .attributes entities   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2009.12.03 RDA: Removed caution1 and caution2 values to    --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    match the revised note/@type values        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    COMMON ATTLIST SETS                        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    Hazard Statement Entities                  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+&lt;!ENTITY % <A NAME="EntityDef.hazard.cnt"><STRONG>hazard.cnt</STRONG></A> 
+  "#PCDATA | 
+   <A HREF="commonElements.mod.html#EntityDef.basic.ph">%basic.ph;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.sl">%sl;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.simpletable">%simpletable;</A>"
+&gt;
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                   ELEMENT NAME ENTITIES                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+ 
+&lt;!ENTITY % <A NAME="EntityDef.hazardstatement"><STRONG>hazardstatement</STRONG></A> "<A HREF="hazardstatementDomain.mod.html#ElementDef118">hazardstatement</A>"                         &gt;
+&lt;!ENTITY % <A NAME="EntityDef.messagepanel"><STRONG>messagepanel</STRONG></A>    "<A HREF="hazardstatementDomain.mod.html#ElementDef120">messagepanel</A>"                            &gt;
+&lt;!ENTITY % <A NAME="EntityDef.hazardsymbol"><STRONG>hazardsymbol</STRONG></A>    "<A HREF="hazardstatementDomain.mod.html#ElementDef119">hazardsymbol</A>"                            &gt;
+&lt;!ENTITY % <A NAME="EntityDef.typeofhazard"><STRONG>typeofhazard</STRONG></A>    "<A HREF="hazardstatementDomain.mod.html#ElementDef121">typeofhazard</A>"                            &gt;
+&lt;!ENTITY % <A NAME="EntityDef.consequence"><STRONG>consequence</STRONG></A>     "<A HREF="hazardstatementDomain.mod.html#ElementDef122">consequence</A>"                             &gt;
+&lt;!ENTITY % <A NAME="EntityDef.howtoavoid"><STRONG>howtoavoid</STRONG></A>      "<A HREF="hazardstatementDomain.mod.html#ElementDef123">howtoavoid</A>"                              &gt;
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--            HAZARDSTATEMENT KEYWORD TYPES ELEMENT DECLARATIONS --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Hazard Statement                --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.hazardstatement.content"><STRONG>hazardstatement.content</STRONG></A>
+                       "((<A HREF="hazardstatementDomain.mod.html#EntityDef.messagepanel">%messagepanel;</A>)+,
+                         (<A HREF="hazardstatementDomain.mod.html#EntityDef.hazardsymbol">%hazardsymbol;</A>)*)"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.hazardstatement.attributes"><STRONG>hazardstatement.attributes</STRONG></A>
+             "type 
+                        (attention|
+                         caution | 
+                         danger | 
+                         fastpath | 
+                         important | 
+                         <A HREF="commonElements.mod.html#ElementDef10">note</A> |
+                         notice |
+                         other | 
+                         remember | 
+                         restriction |
+                         tip |
+                         warning |
+                         -dita-use-conref-target) 
+                                  #IMPLIED 
+              spectitle 
+                        CDATA 
+                                  #IMPLIED
+              othertype 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef118"></A><STRONG>hazardstatement</STRONG>    <A HREF="hazardstatementDomain.mod.html#EntityDef.hazardstatement.content">%hazardstatement.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef240"></A><STRONG>hazardstatement</STRONG>    <A HREF="hazardstatementDomain.mod.html#EntityDef.hazardstatement.attributes">%hazardstatement.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Hazard Symbol                   --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.hazardsymbol.content"><STRONG>hazardsymbol.content</STRONG></A>
+                       "((<A HREF="commonElements.ent.html#EntityDef.alt">%alt;</A>)?,
+                         (<A HREF="commonElements.ent.html#EntityDef.longdescref">%longdescref;</A>)?)"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.hazardsymbol.attributes"><STRONG>hazardsymbol.attributes</STRONG></A>
+             "href 
+                        CDATA 
+                                  #REQUIRED
+
+              scope 
+                        (external | 
+                         local | 
+                         peer | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              keyref 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#ElementDef40">longdescref</A> 
+                        CDATA 
+                                  #IMPLIED
+              height 
+                        NMTOKEN 
+                                  #IMPLIED
+              width 
+                        NMTOKEN 
+                                  #IMPLIED
+              align 
+                        CDATA 
+                                  #IMPLIED
+              scale 
+                        NMTOKEN 
+                                  #IMPLIED
+              scalefit
+                        (yes |
+                         no |
+                         -dita-use-conref-target)
+                                  #IMPLIED
+              placement 
+                        (break | 
+                         inline | 
+                         -dita-use-conref-target) 
+                                  'inline'
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef119"></A><STRONG>hazardsymbol</STRONG>    <A HREF="hazardstatementDomain.mod.html#EntityDef.hazardsymbol.content">%hazardsymbol.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef242"></A><STRONG>hazardsymbol</STRONG>    <A HREF="hazardstatementDomain.mod.html#EntityDef.hazardsymbol.attributes">%hazardsymbol.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Hazard Message panel            --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.messagepanel.content"><STRONG>messagepanel.content</STRONG></A>
+                       "((<A HREF="hazardstatementDomain.mod.html#EntityDef.typeofhazard">%typeofhazard;</A>),
+                         (<A HREF="hazardstatementDomain.mod.html#EntityDef.consequence">%consequence;</A>)*,
+                         (<A HREF="hazardstatementDomain.mod.html#EntityDef.howtoavoid">%howtoavoid;</A>)+)"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.messagepanel.attributes"><STRONG>messagepanel.attributes</STRONG></A>
+             "spectitle 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef120"></A><STRONG>messagepanel</STRONG>    <A HREF="hazardstatementDomain.mod.html#EntityDef.messagepanel.content">%messagepanel.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef241"></A><STRONG>messagepanel</STRONG>    <A HREF="hazardstatementDomain.mod.html#EntityDef.messagepanel.attributes">%messagepanel.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: The Type of Hazard              --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.typeofhazard.content"><STRONG>typeofhazard.content</STRONG></A>
+                   "(<A HREF="commonElements.mod.html#EntityDef.words.cnt">%words.cnt;</A> |
+                     <A HREF="topic.dtd.html#EntityDef.ph">%ph;</A> |
+                     <A HREF="commonElements.ent.html#EntityDef.tm">%tm;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.typeofhazard.attributes"><STRONG>typeofhazard.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef121"></A><STRONG>typeofhazard</STRONG>    <A HREF="hazardstatementDomain.mod.html#EntityDef.typeofhazard.content">%typeofhazard.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef243"></A><STRONG>typeofhazard</STRONG>    <A HREF="hazardstatementDomain.mod.html#EntityDef.typeofhazard.attributes">%typeofhazard.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--            LONG NAME: Consequences of not Avoiding the Hazard --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.consequence.content"><STRONG>consequence.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.words.cnt">%words.cnt;</A> |
+                         <A HREF="topic.dtd.html#EntityDef.ph">%ph;</A> | 
+                         <A HREF="commonElements.ent.html#EntityDef.tm">%tm;</A>)*
+"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.consequence.attributes"><STRONG>consequence.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef122"></A><STRONG>consequence</STRONG>    <A HREF="hazardstatementDomain.mod.html#EntityDef.consequence.content">%consequence.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef244"></A><STRONG>consequence</STRONG>    <A HREF="hazardstatementDomain.mod.html#EntityDef.consequence.attributes">%consequence.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: How to Avoid the Hazard         --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.howtoavoid.content"><STRONG>howtoavoid.content</STRONG></A>
+                       "(<A HREF="hazardstatementDomain.mod.html#EntityDef.hazard.cnt">%hazard.cnt;</A>)*
+"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.howtoavoid.attributes"><STRONG>howtoavoid.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef123"></A><STRONG>howtoavoid</STRONG>    <A HREF="hazardstatementDomain.mod.html#EntityDef.howtoavoid.content">%howtoavoid.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef245"></A><STRONG>howtoavoid</STRONG>    <A HREF="hazardstatementDomain.mod.html#EntityDef.howtoavoid.attributes">%howtoavoid.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--               SPECIALIZATION ATTRIBUTE DECLARATIONS           --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+&lt;!ATTLIST <A NAME="AttlistDef240"></A><STRONG>hazardstatement</STRONG> <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "+ topic/note hazard-d/hazardstatement "&gt; 
+&lt;!ATTLIST <A NAME="AttlistDef241"></A><STRONG>messagepanel</STRONG>    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "+ topic/ul hazard-d/messagepanel "     &gt; 
+&lt;!ATTLIST <A NAME="AttlistDef242"></A><STRONG>hazardsymbol</STRONG>    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "+ topic/image hazard-d/hazardsymbol "  &gt; 
+&lt;!ATTLIST <A NAME="AttlistDef243"></A><STRONG>typeofhazard</STRONG>    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "+ topic/li hazard-d/typeofhazard "     &gt;
+&lt;!ATTLIST <A NAME="AttlistDef244"></A><STRONG>consequence</STRONG>     <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "+ topic/li hazard-d/consequence "      &gt;
+&lt;!ATTLIST <A NAME="AttlistDef245"></A><STRONG>howtoavoid</STRONG>      <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "+ topic/li hazard-d/howtoavoid "       &gt;
+ 
+<SPAN CLASS="COMMENT">&lt;!-- ================== End DITA Hazard Statement Domain ========= --&gt;</SPAN>
+<?LIVEDTD EOF?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE></BODY></HTML>

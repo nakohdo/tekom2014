@@ -1,0 +1,1948 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>commonElements.mod</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="livedtd.css">
+<STYLE TYPE="text/css">
+  STRONG { font-weight: bold; color: red;}
+  .COMMENT { font-style:italic; color: #A8A8A8;}
+</STYLE>
+</HEAD>
+<BODY onLoad="parent.file.document.open();parent.file.document.write('<BODY TOPMARGIN=0><B>commonElements.mod</B></BODY>');parent.file.document.close()"><?LIVEDTD ENDHEAD?>
+<PRE>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    HEADER                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  MODULE:    DITA Common Elements                              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  VERSION:   1.2                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  DATE:      November 2009                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    PUBLIC DOCUMENT TYPE DEFINITION            --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    TYPICAL INVOCATION                         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  Refer to this file by the following public identifier or an 
+      appropriate system identifier 
+PUBLIC "-//OASIS//ELEMENTS DITA Common Elements//EN"
+      Delivered as file "commonElements.mod"                       --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- SYSTEM:     Darwin Information Typing Architecture (DITA)     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- PURPOSE:    Declaring the elements and specialization         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             attributes for content elements used in both      --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             topics and maps.                                  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ORIGINAL CREATION DATE:                                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             June 2006                                         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             (C) Copyright OASIS Open 2005, 2009.              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             (C) Copyright IBM Corporation 2001, 2004.         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             All Rights Reserved.                              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  UPDATES:                                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2006.06.06 RDA: Add data element                           --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2006.06.07 RDA: Add @scale to image                        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2006.06.07 RDA: Add index-base element                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2006.06.07 RDA: Make universal attributes universal        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                      (DITA 1.1 proposal #12)                  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2006.06.07 RDA: Add unknown element                        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2006.06.14 RDA: Add dir attribute to localization-atts     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2006.11.30 RDA: Add -dita-use-conref-target to enumerated  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                      attributes                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2007.12.01 EK:  Reformatted DTD modules for DITA 1.2       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.01.28 RDA: Add draft-comment to shortdesc             --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.01.28 RDA: Remove enumeration for @disposition on     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    draft-comment                              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.01.29 RDA: Extend content of figgroup                 --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.01.30 RDA: Add %conref-atts; and @conaction           --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.02.01 RDA: Added keyref to data, data-about           --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    Added conkeyref attr to conref attr entity --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.02.12 RDA: Added text element, added to keyword, tm,  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    term, ph. Added ph to alt.                 --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.02.12 RDA: Added longdescref; add to image, object    --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.02.12 RDA: Modify imbeds to use specific 1.2 version  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.02.12 RDA: Move navtitle decl. here from topic.mod    --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.02.13 RDA: Create .content and .attributes entities   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.11.10 RDA: Make href optional on image                --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    ELEMENT NAME ENTITIES                      --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+&lt;!ENTITY % commonDefns 
+  PUBLIC "-//OASIS//ENTITIES DITA 1.2 Common Elements//EN" 
+         "commonElements.ent" 
+&gt;<A HREF="topicDefn.ent.html#EntityDef.commonDefns">%commonDefns;</A>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    COMMON ELEMENT SETS                        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+<SPAN CLASS="COMMENT">&lt;!--                   Phrase/inline elements of various classes   --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.basic.ph"><STRONG>basic.ph</STRONG></A> 
+  "<A HREF="commonElements.ent.html#EntityDef.boolean">%boolean;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.cite">%cite;</A> | 
+   <A HREF="concept.dtd.html#EntityDef.keyword">%keyword;</A> | 
+   <A HREF="concept.dtd.html#EntityDef.ph">%ph;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.q">%q;</A> |
+   <A HREF="concept.dtd.html#EntityDef.term">%term;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.tm">%tm;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.xref">%xref;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.state">%state;</A>
+  "
+&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                   Elements common to most body-like contexts  --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.basic.block"><STRONG>basic.block</STRONG></A> 
+  "<A HREF="concept.dtd.html#EntityDef.dl">%dl;</A> | 
+   <A HREF="concept.dtd.html#EntityDef.fig">%fig;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.image">%image;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.lines">%lines;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.lq">%lq;</A> | 
+   <A HREF="concept.dtd.html#EntityDef.note">%note;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.object">%object;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.ol">%ol;</A>| 
+   <A HREF="commonElements.ent.html#EntityDef.p">%p;</A> | 
+   <A HREF="concept.dtd.html#EntityDef.pre">%pre;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.simpletable">%simpletable;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.sl">%sl;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.table">%table;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.ul">%ul;</A>
+  "
+&gt;
+
+<SPAN CLASS="COMMENT">&lt;!-- class groupings to preserve in a schema --&gt;</SPAN>
+
+&lt;!ENTITY % <A NAME="EntityDef.basic.phandblock"><STRONG>basic.phandblock</STRONG></A> 
+  "<A HREF="commonElements.mod.html#EntityDef.basic.block">%basic.block;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.basic.ph">%basic.ph;</A>
+  " 
+&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!-- Exclusions: models modified by removing excluded content      --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.basic.ph.noxref"><STRONG>basic.ph.noxref</STRONG></A>
+  "<A HREF="commonElements.ent.html#EntityDef.boolean">%boolean;</A> | 
+   <A HREF="concept.dtd.html#EntityDef.keyword">%keyword;</A> | 
+   <A HREF="concept.dtd.html#EntityDef.ph">%ph;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.q">%q;</A> |
+   <A HREF="concept.dtd.html#EntityDef.term">%term;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.tm">%tm;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.state">%state;</A>
+  "
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.basic.ph.notm"><STRONG>basic.ph.notm</STRONG></A>
+  "<A HREF="commonElements.ent.html#EntityDef.boolean">%boolean;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.cite">%cite;</A> | 
+   <A HREF="concept.dtd.html#EntityDef.keyword">%keyword;</A> | 
+   <A HREF="concept.dtd.html#EntityDef.ph">%ph;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.q">%q;</A> |
+   <A HREF="concept.dtd.html#EntityDef.term">%term;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.xref">%xref;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.state">%state;</A>
+  "
+&gt;
+
+
+&lt;!ENTITY % <A NAME="EntityDef.basic.block.notbl"><STRONG>basic.block.notbl</STRONG></A>
+  "<A HREF="concept.dtd.html#EntityDef.dl">%dl;</A> | 
+   <A HREF="concept.dtd.html#EntityDef.fig">%fig;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.image">%image;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.lines">%lines;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.lq">%lq;</A> | 
+   <A HREF="concept.dtd.html#EntityDef.note">%note;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.object">%object;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.ol">%ol;</A>| 
+   <A HREF="commonElements.ent.html#EntityDef.p">%p;</A> | 
+   <A HREF="concept.dtd.html#EntityDef.pre">%pre;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.sl">%sl;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.ul">%ul;</A>
+  "
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.basic.block.nonote"><STRONG>basic.block.nonote</STRONG></A>
+  "<A HREF="concept.dtd.html#EntityDef.dl">%dl;</A> | 
+   <A HREF="concept.dtd.html#EntityDef.fig">%fig;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.image">%image;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.lines">%lines;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.lq">%lq;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.object">%object;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.ol">%ol;</A>| 
+   <A HREF="commonElements.ent.html#EntityDef.p">%p;</A> | 
+   <A HREF="concept.dtd.html#EntityDef.pre">%pre;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.simpletable">%simpletable;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.sl">%sl;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.table">%table;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.ul">%ul;</A>
+  "
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.basic.block.nopara"><STRONG>basic.block.nopara</STRONG></A>
+  "<A HREF="concept.dtd.html#EntityDef.dl">%dl;</A> | 
+   <A HREF="concept.dtd.html#EntityDef.fig">%fig;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.image">%image;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.lines">%lines;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.lq">%lq;</A> | 
+   <A HREF="concept.dtd.html#EntityDef.note">%note;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.object">%object;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.ol">%ol;</A>| 
+   <A HREF="concept.dtd.html#EntityDef.pre">%pre;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.simpletable">%simpletable;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.sl">%sl;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.table">%table;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.ul">%ul;</A>
+  "
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.basic.block.nolq"><STRONG>basic.block.nolq</STRONG></A>
+  "<A HREF="concept.dtd.html#EntityDef.dl">%dl;</A> | 
+   <A HREF="concept.dtd.html#EntityDef.fig">%fig;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.image">%image;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.lines">%lines;</A> | 
+   <A HREF="concept.dtd.html#EntityDef.note">%note;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.object">%object;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.ol">%ol;</A>| 
+   <A HREF="commonElements.ent.html#EntityDef.p">%p;</A> | 
+   <A HREF="concept.dtd.html#EntityDef.pre">%pre;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.simpletable">%simpletable;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.sl">%sl;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.table">%table;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.ul">%ul;</A>
+  "
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.basic.block.notbnofg"><STRONG>basic.block.notbnofg</STRONG></A>
+  "<A HREF="concept.dtd.html#EntityDef.dl">%dl;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.image">%image;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.lines">%lines;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.lq">%lq;</A> | 
+   <A HREF="concept.dtd.html#EntityDef.note">%note;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.object">%object;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.ol">%ol;</A>| 
+   <A HREF="commonElements.ent.html#EntityDef.p">%p;</A> | 
+   <A HREF="concept.dtd.html#EntityDef.pre">%pre;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.sl">%sl;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.ul">%ul;</A>
+  "
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.basic.block.notbfgobj"><STRONG>basic.block.notbfgobj</STRONG></A>
+  "<A HREF="concept.dtd.html#EntityDef.dl">%dl;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.image">%image;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.lines">%lines;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.lq">%lq;</A> | 
+   <A HREF="concept.dtd.html#EntityDef.note">%note;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.ol">%ol;</A>| 
+   <A HREF="commonElements.ent.html#EntityDef.p">%p;</A> | 
+   <A HREF="concept.dtd.html#EntityDef.pre">%pre;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.sl">%sl;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.ul">%ul;</A>
+  "
+&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!-- Inclusions: defined sets that can be added into appropriate models --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.txt.incl"><STRONG>txt.incl</STRONG></A> 
+  "<A HREF="commonElements.ent.html#EntityDef.draft-comment">%draft-comment;</A> |
+   <A HREF="commonElements.ent.html#EntityDef.fn">%fn;</A> |
+   <A HREF="commonElements.ent.html#EntityDef.indextermref">%indextermref;</A> |
+   <A HREF="commonElements.ent.html#EntityDef.indexterm">%indexterm;</A> |
+   <A HREF="commonElements.ent.html#EntityDef.required-cleanup">%required-cleanup;</A>
+  "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!-- Metadata elements intended for specialization --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.data.elements.incl"><STRONG>data.elements.incl</STRONG></A> 
+  "<A HREF="commonElements.ent.html#EntityDef.data">%data;</A> |
+   <A HREF="commonElements.ent.html#EntityDef.data-about">%data-about;</A>
+  "
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.foreign.unknown.incl"><STRONG>foreign.unknown.incl</STRONG></A> 
+  "<A HREF="commonElements.ent.html#EntityDef.foreign">%foreign;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.unknown">%unknown;</A>
+  " 
+&gt;
+
+<SPAN CLASS="COMMENT">&lt;!-- Predefined content model groups, based on the previous, element-only categories: --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- txt.incl is appropriate for any mixed content definitions (those that have PCDATA) --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- the context for blocks is implicitly an InfoMaster "containing_division" --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.listitem.cnt"><STRONG>listitem.cnt</STRONG></A> 
+  "#PCDATA | 
+   <A HREF="commonElements.mod.html#EntityDef.basic.block">%basic.block;</A> |
+   <A HREF="commonElements.mod.html#EntityDef.basic.ph">%basic.ph;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.data.elements.incl">%data.elements.incl;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.foreign.unknown.incl">%foreign.unknown.incl;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.itemgroup">%itemgroup;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.txt.incl">%txt.incl;</A>
+  "
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.itemgroup.cnt"><STRONG>itemgroup.cnt</STRONG></A> 
+  "#PCDATA | 
+   <A HREF="commonElements.mod.html#EntityDef.basic.block">%basic.block;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.basic.ph">%basic.ph;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.data.elements.incl">%data.elements.incl;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.foreign.unknown.incl">%foreign.unknown.incl;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.txt.incl">%txt.incl;</A>
+  "
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.title.cnt"><STRONG>title.cnt</STRONG></A> 
+  "#PCDATA | 
+   <A HREF="commonElements.mod.html#EntityDef.basic.ph.noxref">%basic.ph.noxref;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.data.elements.incl">%data.elements.incl;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.foreign.unknown.incl">%foreign.unknown.incl;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.image">%image;</A>
+  "
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.xreftext.cnt"><STRONG>xreftext.cnt</STRONG></A> 
+  "#PCDATA | 
+   <A HREF="commonElements.mod.html#EntityDef.basic.ph.noxref">%basic.ph.noxref;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.data.elements.incl">%data.elements.incl;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.foreign.unknown.incl">%foreign.unknown.incl;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.image">%image;</A>
+  "
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.xrefph.cnt"><STRONG>xrefph.cnt</STRONG></A> 
+  "#PCDATA | 
+   <A HREF="commonElements.mod.html#EntityDef.basic.ph.noxref">%basic.ph.noxref;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.data.elements.incl">%data.elements.incl;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.foreign.unknown.incl">%foreign.unknown.incl;</A>
+  "
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.shortquote.cnt"><STRONG>shortquote.cnt</STRONG></A> 
+  "#PCDATA | 
+   <A HREF="commonElements.mod.html#EntityDef.basic.ph">%basic.ph;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.data.elements.incl">%data.elements.incl;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.foreign.unknown.incl">%foreign.unknown.incl;</A>
+  "
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.para.cnt"><STRONG>para.cnt</STRONG></A> 
+  "#PCDATA | 
+   <A HREF="commonElements.mod.html#EntityDef.basic.block.nopara">%basic.block.nopara;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.basic.ph">%basic.ph;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.data.elements.incl">%data.elements.incl;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.foreign.unknown.incl">%foreign.unknown.incl;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.txt.incl">%txt.incl;</A>
+  "
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.note.cnt"><STRONG>note.cnt</STRONG></A> 
+  "#PCDATA | 
+   <A HREF="commonElements.mod.html#EntityDef.basic.block.nonote">%basic.block.nonote;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.basic.ph">%basic.ph;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.data.elements.incl">%data.elements.incl;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.foreign.unknown.incl">%foreign.unknown.incl;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.txt.incl">%txt.incl;</A>
+  "
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.longquote.cnt"><STRONG>longquote.cnt</STRONG></A> 
+  "#PCDATA | 
+   <A HREF="commonElements.mod.html#EntityDef.basic.block.nolq">%basic.block.nolq;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.basic.ph">%basic.ph;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.data.elements.incl">%data.elements.incl;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.foreign.unknown.incl">%foreign.unknown.incl;</A> |
+   <A HREF="commonElements.ent.html#EntityDef.longquoteref">%longquoteref;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.txt.incl">%txt.incl;</A> 
+  "&gt;
+&lt;!ENTITY % <A NAME="EntityDef.tblcell.cnt"><STRONG>tblcell.cnt</STRONG></A> 
+  "#PCDATA | 
+   <A HREF="commonElements.mod.html#EntityDef.basic.block.notbl">%basic.block.notbl;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.basic.ph">%basic.ph;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.data.elements.incl">%data.elements.incl;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.foreign.unknown.incl">%foreign.unknown.incl;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.txt.incl">%txt.incl;</A>
+  "
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.desc.cnt"><STRONG>desc.cnt</STRONG></A> 
+  "#PCDATA | 
+   <A HREF="commonElements.mod.html#EntityDef.basic.block.notbfgobj">%basic.block.notbfgobj;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.basic.ph">%basic.ph;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.data.elements.incl">%data.elements.incl;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.foreign.unknown.incl">%foreign.unknown.incl;</A>
+  "
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.ph.cnt"><STRONG>ph.cnt</STRONG></A> 
+  "#PCDATA | 
+   <A HREF="commonElements.mod.html#EntityDef.basic.ph">%basic.ph;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.data.elements.incl">%data.elements.incl;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.foreign.unknown.incl">%foreign.unknown.incl;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.image">%image;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.txt.incl">%txt.incl;</A>
+  "
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.fn.cnt"><STRONG>fn.cnt</STRONG></A> 
+  "#PCDATA | 
+   <A HREF="commonElements.mod.html#EntityDef.basic.block.notbl">%basic.block.notbl;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.basic.ph">%basic.ph;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.data.elements.incl">%data.elements.incl;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.foreign.unknown.incl">%foreign.unknown.incl;</A>
+  "
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.term.cnt"><STRONG>term.cnt</STRONG></A> 
+  "#PCDATA | 
+   <A HREF="commonElements.mod.html#EntityDef.basic.ph">%basic.ph;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.data.elements.incl">%data.elements.incl;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.foreign.unknown.incl">%foreign.unknown.incl;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.image">%image;</A>
+  "
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.defn.cnt"><STRONG>defn.cnt</STRONG></A> 
+  "#PCDATA | 
+   <A HREF="commonElements.mod.html#EntityDef.basic.block">%basic.block;</A> |
+   <A HREF="commonElements.mod.html#EntityDef.basic.ph">%basic.ph;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.data.elements.incl">%data.elements.incl;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.foreign.unknown.incl">%foreign.unknown.incl;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.itemgroup">%itemgroup;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.txt.incl">%txt.incl;</A>
+  "
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.pre.cnt"><STRONG>pre.cnt</STRONG></A> 
+  "#PCDATA | 
+   <A HREF="commonElements.mod.html#EntityDef.basic.ph">%basic.ph;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.data.elements.incl">%data.elements.incl;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.foreign.unknown.incl">%foreign.unknown.incl;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.txt.incl">%txt.incl;</A>
+  "
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.fig.cnt"><STRONG>fig.cnt</STRONG></A> 
+  "<A HREF="commonElements.mod.html#EntityDef.basic.block.notbnofg">%basic.block.notbnofg;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.data.elements.incl">%data.elements.incl;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.fn">%fn;</A>| 
+   <A HREF="commonElements.mod.html#EntityDef.foreign.unknown.incl">%foreign.unknown.incl;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.simpletable">%simpletable;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.xref">%xref;</A>
+  "
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.figgroup.cnt"><STRONG>figgroup.cnt</STRONG></A> 
+  "<A HREF="commonElements.mod.html#EntityDef.basic.block.notbnofg">%basic.block.notbnofg;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.basic.ph">%basic.ph;</A> |
+   <A HREF="commonElements.mod.html#EntityDef.data.elements.incl">%data.elements.incl;</A> | 
+   <A HREF="commonElements.ent.html#EntityDef.fn">%fn;</A> |
+   <A HREF="commonElements.mod.html#EntityDef.foreign.unknown.incl">%foreign.unknown.incl;</A> 
+  "
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.words.cnt"><STRONG>words.cnt</STRONG></A> 
+  "#PCDATA | 
+   <A HREF="commonElements.mod.html#EntityDef.data.elements.incl">%data.elements.incl;</A> | 
+   <A HREF="commonElements.mod.html#EntityDef.foreign.unknown.incl">%foreign.unknown.incl;</A> | 
+   <A HREF="concept.dtd.html#EntityDef.keyword">%keyword;</A> | 
+   <A HREF="concept.dtd.html#EntityDef.term">%term;</A>
+  "
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.data.cnt"><STRONG>data.cnt</STRONG></A> 
+  "<A HREF="commonElements.mod.html#EntityDef.words.cnt">%words.cnt;</A> |
+   <A HREF="commonElements.ent.html#EntityDef.image">%image;</A> |
+   <A HREF="commonElements.ent.html#EntityDef.object">%object;</A> |
+   <A HREF="concept.dtd.html#EntityDef.ph">%ph;</A> |
+   <A HREF="commonElements.ent.html#EntityDef.title">%title;</A>
+  "
+&gt;
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    COMMON ATTLIST SETS                        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- Copied into metaDecl.mod --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--&lt;!ENTITY % date-format 'CDATA'                                       &gt;--&gt;</SPAN>
+
+&lt;!ENTITY % <A NAME="EntityDef.display-atts"><STRONG>display-atts</STRONG></A> 
+             'scale 
+                        (50 |
+                         60 |
+                         70 |
+                         80 |
+                         90 |
+                         100 |
+                         110 |
+                         120 |
+                         140 |
+                         160 |
+                         180 |
+                         200 |
+                        -dita-use-conref-target) 
+                                  #IMPLIED
+              frame 
+                        (all |
+                         bottom |
+                         none | 
+                         sides | 
+                         top | 
+                         topbot | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              expanse 
+                        (column | 
+                         page |
+                         spread | 
+                         textline | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED' 
+&gt;
+
+<SPAN CLASS="COMMENT">&lt;!-- Provide a default of no attribute extensions --&gt;</SPAN>
+&lt;!ENTITY % props-attribute-extensions 
+  ""
+&gt;
+&lt;!ENTITY % base-attribute-extensions 
+  ""
+&gt;
+
+&lt;!ENTITY % <A NAME="EntityDef.filter-atts"><STRONG>filter-atts</STRONG></A>
+             'props 
+                         CDATA 
+                                   #IMPLIED
+              <A HREF="metaDecl.mod.html#ElementDef82">platform</A> 
+                         CDATA 
+                                   #IMPLIED
+              product 
+                         CDATA 
+                                   #IMPLIED
+              <A HREF="metaDecl.mod.html#ElementDef74">audience</A> 
+                         CDATA 
+                                   #IMPLIED
+              otherprops 
+                         CDATA 
+                                   #IMPLIED
+              <A HREF="concept.dtd.html#EntityDef.props-attribute-extensions">%props-attribute-extensions;</A> 
+  ' 
+&gt;
+
+&lt;!ENTITY % <A NAME="EntityDef.select-atts"><STRONG>select-atts</STRONG></A> 
+             '<A HREF="commonElements.mod.html#EntityDef.filter-atts">%filter-atts;</A>
+              base 
+                         CDATA 
+                                  #IMPLIED
+              <A HREF="concept.dtd.html#EntityDef.base-attribute-extensions">%base-attribute-extensions;</A>
+              importance 
+                        (default | 
+                         deprecated | 
+                         high | 
+                         low | 
+                         normal | 
+                         obsolete | 
+                         optional | 
+                         recommended | 
+                         required | 
+                         urgent | 
+                         -dita-use-conref-target ) 
+                                  #IMPLIED
+              rev 
+                        CDATA 
+                                  #IMPLIED
+              status 
+                        (changed | 
+                         deleted | 
+                         new | 
+                         unchanged | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED' 
+&gt;
+
+&lt;!ENTITY % <A NAME="EntityDef.conref-atts"><STRONG>conref-atts</STRONG></A> 
+             'conref 
+                        CDATA 
+                                  #IMPLIED
+              conrefend
+                        CDATA
+                                  #IMPLIED
+              conaction
+                        (mark |
+                         pushafter |
+                         pushbefore |
+                         pushreplace |
+                         -dita-use-conref-target)
+                                  #IMPLIED
+              conkeyref
+                        CDATA
+                                  #IMPLIED' 
+&gt;
+
+&lt;!ENTITY % <A NAME="EntityDef.id-atts"><STRONG>id-atts</STRONG></A> 
+             'id 
+                        NMTOKEN 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.conref-atts">%conref-atts;</A>' 
+&gt;
+
+<SPAN CLASS="COMMENT">&lt;!-- Attributes related to localization that are used everywhere   --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.localization-atts"><STRONG>localization-atts</STRONG></A> 
+             'translate 
+                        (no | 
+                         yes | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              xml:lang 
+                        CDATA 
+                                  #IMPLIED
+              dir 
+                        (lro | 
+                         ltr | 
+                         rlo | 
+                         rtl | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED' 
+&gt;
+<SPAN CLASS="COMMENT">&lt;!-- The following entity should be used when defaulting a new
+     element to translate="no", so that other (or new) localization
+     attributes will always be included.   --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.localization-atts-translate-no"><STRONG>localization-atts-translate-no</STRONG></A> 
+             'translate 
+                        (no | 
+                         yes | 
+                         -dita-use-conref-target) 
+                                  "no"
+              xml:lang 
+                        CDATA 
+                                  #IMPLIED
+              dir 
+                        (lro | 
+                         ltr | 
+                         rlo | 
+                         rtl | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED' 
+&gt;
+ 
+&lt;!ENTITY % <A NAME="EntityDef.univ-atts"><STRONG>univ-atts</STRONG></A> 
+             '<A HREF="commonElements.mod.html#EntityDef.id-atts">%id-atts;</A>
+              <A HREF="commonElements.mod.html#EntityDef.select-atts">%select-atts;</A>
+              <A HREF="commonElements.mod.html#EntityDef.localization-atts">%localization-atts;</A>' 
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.univ-atts-translate-no"><STRONG>univ-atts-translate-no</STRONG></A> 
+             '<A HREF="commonElements.mod.html#EntityDef.id-atts">%id-atts;</A>
+              <A HREF="commonElements.mod.html#EntityDef.select-atts">%select-atts;</A>
+              <A HREF="commonElements.mod.html#EntityDef.localization-atts-translate-no">%localization-atts-translate-no;</A>' 
+&gt;
+
+&lt;!ENTITY % <A NAME="EntityDef.global-atts"><STRONG>global-atts</STRONG></A> 
+             'xtrc 
+                        CDATA 
+                                  #IMPLIED
+              xtrf 
+                        CDATA 
+                                  #IMPLIED'
+&gt;
+ 
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    ELEMENT DECLARATIONS                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Data About                      --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.data-about.content"><STRONG>data-about.content</STRONG></A>
+                       "((<A HREF="commonElements.ent.html#EntityDef.data">%data;</A>), 
+                         (<A HREF="commonElements.ent.html#EntityDef.data">%data;</A>|
+                          <A HREF="commonElements.ent.html#EntityDef.data-about">%data-about;</A>)*)
+"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.data-about.attributes"><STRONG>data-about.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              href 
+                        CDATA 
+                                  #IMPLIED
+              keyref 
+                        CDATA 
+                                  #IMPLIED
+              format 
+                        CDATA 
+                                  #IMPLIED
+              type 
+                        CDATA 
+                                  #IMPLIED
+              scope 
+                       (external | 
+                        local | 
+                        peer | 
+                        -dita-use-conref-target) 
+                                  #IMPLIED
+              outputclass
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef1"></A><STRONG>data-about</STRONG>    <A HREF="commonElements.mod.html#EntityDef.data-about.content">%data-about.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef74"></A><STRONG>data-about</STRONG>    <A HREF="commonElements.mod.html#EntityDef.data-about.attributes">%data-about.attributes;</A>&gt;
+
+
+&lt;!ENTITY % <A NAME="EntityDef.data-element-atts"><STRONG>data-element-atts</STRONG></A>
+             '<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              name 
+                        CDATA 
+                                  #IMPLIED
+              datatype 
+                        CDATA 
+                                  #IMPLIED
+              value 
+                        CDATA 
+                                  #IMPLIED
+              href 
+                        CDATA 
+                                  #IMPLIED
+              keyref 
+                        CDATA 
+                                  #IMPLIED
+              format 
+                        CDATA 
+                                  #IMPLIED
+              type 
+                        CDATA 
+                                  #IMPLIED
+              scope 
+                        (external | 
+                         local | 
+                         peer | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              outputclass
+                        CDATA 
+                                  #IMPLIED' 
+&gt;
+ 
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Data element                    --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.data.content"><STRONG>data.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.data.cnt">%data.cnt;</A>)*
+"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.data.attributes"><STRONG>data.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.data-element-atts">%data-element-atts;</A>"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef2"></A><STRONG>data</STRONG>    <A HREF="commonElements.mod.html#EntityDef.data.content">%data.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef73"></A><STRONG>data</STRONG>    <A HREF="commonElements.mod.html#EntityDef.data.attributes">%data.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Unknown element                 --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.unknown.content"><STRONG>unknown.content</STRONG></A>
+                       "ANY"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.unknown.attributes"><STRONG>unknown.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef3"></A><STRONG>unknown</STRONG>    <A HREF="commonElements.mod.html#EntityDef.unknown.content">%unknown.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef120"></A><STRONG>unknown</STRONG>    <A HREF="commonElements.mod.html#EntityDef.unknown.attributes">%unknown.attributes;</A>&gt;
+
+ 
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Foreign content element         --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.foreign.content"><STRONG>foreign.content</STRONG></A>
+                       "ANY
+"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.foreign.attributes"><STRONG>foreign.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef4"></A><STRONG>foreign</STRONG>    <A HREF="commonElements.mod.html#EntityDef.foreign.content">%foreign.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef86"></A><STRONG>foreign</STRONG>    <A HREF="commonElements.mod.html#EntityDef.foreign.attributes">%foreign.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Title                           --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    This is referenced inside CALS table       --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.title.content"><STRONG>title.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.title.cnt">%title.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.title.attributes"><STRONG>title.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.id-atts">%id-atts;</A>
+              <A HREF="commonElements.mod.html#EntityDef.localization-atts">%localization-atts;</A>
+              base 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="concept.dtd.html#EntityDef.base-attribute-extensions">%base-attribute-extensions;</A>
+              outputclass
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef5"></A><STRONG>title</STRONG>    <A HREF="commonElements.mod.html#EntityDef.title.content">%title.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef117"></A><STRONG>title</STRONG>    <A HREF="commonElements.mod.html#EntityDef.title.attributes">%title.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Navigation Title                --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.navtitle.content"><STRONG>navtitle.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.words.cnt">%words.cnt;</A> |
+                         <A HREF="concept.dtd.html#EntityDef.ph">%ph;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.navtitle.attributes"><STRONG>navtitle.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef6"></A><STRONG>navtitle</STRONG>    <A HREF="commonElements.mod.html#EntityDef.navtitle.content">%navtitle.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef98"></A><STRONG>navtitle</STRONG>    <A HREF="commonElements.mod.html#EntityDef.navtitle.attributes">%navtitle.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Short Description               --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.shortdesc.content"><STRONG>shortdesc.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.title.cnt">%title.cnt;</A> |
+                         <A HREF="commonElements.ent.html#EntityDef.draft-comment">%draft-comment;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.shortdesc.attributes"><STRONG>shortdesc.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef7"></A><STRONG>shortdesc</STRONG>    <A HREF="commonElements.mod.html#EntityDef.shortdesc.content">%shortdesc.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef207"></A><STRONG>shortdesc</STRONG>    <A HREF="commonElements.mod.html#EntityDef.shortdesc.attributes">%shortdesc.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Description                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    Desc is used in context with figure and 
+                        table titles and also for content models 
+                        within linkgroup and object (for 
+                        accessibility)                             --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.desc.content"><STRONG>desc.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.desc.cnt">%desc.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.desc.attributes"><STRONG>desc.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef8"></A><STRONG>desc</STRONG>    <A HREF="commonElements.mod.html#EntityDef.desc.content">%desc.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef76"></A><STRONG>desc</STRONG>    <A HREF="commonElements.mod.html#EntityDef.desc.attributes">%desc.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    BASIC DOCUMENT ELEMENT DECLARATIONS        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    (rich text)                                --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Paragraph                       --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.p.content"><STRONG>p.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.para.cnt">%para.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.p.attributes"><STRONG>p.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef9"></A><STRONG>p</STRONG>    <A HREF="commonElements.mod.html#EntityDef.p.content">%p.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef102"></A><STRONG>p</STRONG>    <A HREF="commonElements.mod.html#EntityDef.p.attributes">%p.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Note                            --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.note.content"><STRONG>note.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.note.cnt">%note.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.note.attributes"><STRONG>note.attributes</STRONG></A>
+             "type 
+                        (attention|
+                         caution | 
+                         danger | 
+                         fastpath | 
+                         important | 
+                         <A HREF="commonElements.mod.html#ElementDef10">note</A> |
+                         notice |
+                         other | 
+                         remember | 
+                         restriction |
+                         tip |
+                         warning |
+                         -dita-use-conref-target) 
+                                  #IMPLIED 
+              spectitle 
+                        CDATA 
+                                  #IMPLIED
+              othertype 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef10"></A><STRONG>note</STRONG>    <A HREF="commonElements.mod.html#EntityDef.note.content">%note.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef99"></A><STRONG>note</STRONG>    <A HREF="commonElements.mod.html#EntityDef.note.attributes">%note.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Long quote reference            --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.longquoteref.content"><STRONG>longquoteref.content</STRONG></A>
+                       "EMPTY"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.longquoteref.attributes"><STRONG>longquoteref.attributes</STRONG></A>
+             "href 
+                        CDATA 
+                                  #IMPLIED
+              keyref 
+                        CDATA 
+                                  #IMPLIED
+              type 
+                        CDATA 
+                                  #IMPLIED
+              format 
+                        CDATA 
+                                  #IMPLIED
+              scope 
+                        (external | 
+                         local | 
+                         peer | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef11"></A><STRONG>longquoteref</STRONG>    <A HREF="commonElements.mod.html#EntityDef.longquoteref.content">%longquoteref.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef96"></A><STRONG>longquoteref</STRONG>    <A HREF="commonElements.mod.html#EntityDef.longquoteref.attributes">%longquoteref.attributes;</A>&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Long Quote (Excerpt)            --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.lq.content"><STRONG>lq.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.longquote.cnt">%longquote.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.lq.attributes"><STRONG>lq.attributes</STRONG></A>
+             "href 
+                        CDATA 
+                                  #IMPLIED
+              keyref 
+                        CDATA 
+                                  #IMPLIED
+              format 
+                        CDATA 
+                                  #IMPLIED
+              type 
+                        CDATA 
+                                  #IMPLIED
+              scope 
+                       (external | 
+                        local | 
+                        peer | 
+                        -dita-use-conref-target) 
+                                  #IMPLIED
+              reftitle 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef12"></A><STRONG>lq</STRONG>    <A HREF="commonElements.mod.html#EntityDef.lq.content">%lq.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef97"></A><STRONG>lq</STRONG>    <A HREF="commonElements.mod.html#EntityDef.lq.attributes">%lq.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Quoted text                     --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.q.content"><STRONG>q.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.shortquote.cnt">%shortquote.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.q.attributes"><STRONG>q.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef13"></A><STRONG>q</STRONG>    <A HREF="commonElements.mod.html#EntityDef.q.content">%q.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef106"></A><STRONG>q</STRONG>    <A HREF="commonElements.mod.html#EntityDef.q.attributes">%q.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Simple List                     --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.sl.content"><STRONG>sl.content</STRONG></A>
+                       "(<A HREF="commonElements.ent.html#EntityDef.sli">%sli;</A>)+"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.sl.attributes"><STRONG>sl.attributes</STRONG></A>
+             "compact 
+                        (no | 
+                         yes | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              spectitle 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef14"></A><STRONG>sl</STRONG>    <A HREF="commonElements.mod.html#EntityDef.sl.content">%sl.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef109"></A><STRONG>sl</STRONG>    <A HREF="commonElements.mod.html#EntityDef.sl.attributes">%sl.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Simple List Item                --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.sli.content"><STRONG>sli.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.ph.cnt">%ph.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.sli.attributes"><STRONG>sli.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef15"></A><STRONG>sli</STRONG>    <A HREF="commonElements.mod.html#EntityDef.sli.content">%sli.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef110"></A><STRONG>sli</STRONG>    <A HREF="commonElements.mod.html#EntityDef.sli.attributes">%sli.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Unordered List                  --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.ul.content"><STRONG>ul.content</STRONG></A>
+                       "(<A HREF="commonElements.ent.html#EntityDef.li">%li;</A>)+"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.ul.attributes"><STRONG>ul.attributes</STRONG></A>
+             "compact 
+                        (no | 
+                         yes | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              spectitle 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef16"></A><STRONG>ul</STRONG>    <A HREF="commonElements.mod.html#EntityDef.ul.content">%ul.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef119"></A><STRONG>ul</STRONG>    <A HREF="commonElements.mod.html#EntityDef.ul.attributes">%ul.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Ordered List                    --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.ol.content"><STRONG>ol.content</STRONG></A>
+                       "(<A HREF="commonElements.ent.html#EntityDef.li">%li;</A>)+"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.ol.attributes"><STRONG>ol.attributes</STRONG></A>
+             "compact 
+                        (no | 
+                         yes | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              spectitle 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef17"></A><STRONG>ol</STRONG>    <A HREF="commonElements.mod.html#EntityDef.ol.content">%ol.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef101"></A><STRONG>ol</STRONG>    <A HREF="commonElements.mod.html#EntityDef.ol.attributes">%ol.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: List Item                       --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.li.content"><STRONG>li.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.listitem.cnt">%listitem.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.li.attributes"><STRONG>li.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef18"></A><STRONG>li</STRONG>    <A HREF="commonElements.mod.html#EntityDef.li.content">%li.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef93"></A><STRONG>li</STRONG>    <A HREF="commonElements.mod.html#EntityDef.li.attributes">%li.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Item Group                      --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.itemgroup.content"><STRONG>itemgroup.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.itemgroup.cnt">%itemgroup.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.itemgroup.attributes"><STRONG>itemgroup.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef19"></A><STRONG>itemgroup</STRONG>    <A HREF="commonElements.mod.html#EntityDef.itemgroup.content">%itemgroup.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef91"></A><STRONG>itemgroup</STRONG>    <A HREF="commonElements.mod.html#EntityDef.itemgroup.attributes">%itemgroup.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Definition List                 --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.dl.content"><STRONG>dl.content</STRONG></A>
+                       "((<A HREF="commonElements.ent.html#EntityDef.dlhead">%dlhead;</A>)?, 
+                         (<A HREF="commonElements.ent.html#EntityDef.dlentry">%dlentry;</A>)+)"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.dl.attributes"><STRONG>dl.attributes</STRONG></A>
+             "compact 
+                        (no | 
+                         yes | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              spectitle 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef20"></A><STRONG>dl</STRONG>    <A HREF="commonElements.mod.html#EntityDef.dl.content">%dl.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef77"></A><STRONG>dl</STRONG>    <A HREF="commonElements.mod.html#EntityDef.dl.attributes">%dl.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Definition List Head            --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.dlhead.content"><STRONG>dlhead.content</STRONG></A>
+                       "((<A HREF="commonElements.ent.html#EntityDef.dthd">%dthd;</A>)?, 
+                         (<A HREF="commonElements.ent.html#EntityDef.ddhd">%ddhd;</A>)? )"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.dlhead.attributes"><STRONG>dlhead.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef21"></A><STRONG>dlhead</STRONG>    <A HREF="commonElements.mod.html#EntityDef.dlhead.content">%dlhead.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef79"></A><STRONG>dlhead</STRONG>    <A HREF="commonElements.mod.html#EntityDef.dlhead.attributes">%dlhead.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Term Header                     --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.dthd.content"><STRONG>dthd.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.title.cnt">%title.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.dthd.attributes"><STRONG>dthd.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef22"></A><STRONG>dthd</STRONG>    <A HREF="commonElements.mod.html#EntityDef.dthd.content">%dthd.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef82"></A><STRONG>dthd</STRONG>    <A HREF="commonElements.mod.html#EntityDef.dthd.attributes">%dthd.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Definition Header               --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.ddhd.content"><STRONG>ddhd.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.title.cnt">%title.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.ddhd.attributes"><STRONG>ddhd.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef23"></A><STRONG>ddhd</STRONG>    <A HREF="commonElements.mod.html#EntityDef.ddhd.content">%ddhd.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef75"></A><STRONG>ddhd</STRONG>    <A HREF="commonElements.mod.html#EntityDef.ddhd.attributes">%ddhd.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Definition List Entry           --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.dlentry.content"><STRONG>dlentry.content</STRONG></A>
+                       "((<A HREF="commonElements.ent.html#EntityDef.dt">%dt;</A>)+, 
+                         (<A HREF="commonElements.ent.html#EntityDef.dd">%dd;</A>)+ )"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.dlentry.attributes"><STRONG>dlentry.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef24"></A><STRONG>dlentry</STRONG>    <A HREF="commonElements.mod.html#EntityDef.dlentry.content">%dlentry.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef78"></A><STRONG>dlentry</STRONG>    <A HREF="commonElements.mod.html#EntityDef.dlentry.attributes">%dlentry.attributes;</A>&gt;
+
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Definition Term                 --&gt;</SPAN> 
+&lt;!ENTITY % <A NAME="EntityDef.dt.content"><STRONG>dt.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.term.cnt">%term.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.dt.attributes"><STRONG>dt.attributes</STRONG></A>
+             "keyref 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef25"></A><STRONG>dt</STRONG>    <A HREF="commonElements.mod.html#EntityDef.dt.content">%dt.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef81"></A><STRONG>dt</STRONG>    <A HREF="commonElements.mod.html#EntityDef.dt.attributes">%dt.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Definition Description          --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.dd.content"><STRONG>dd.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.defn.cnt">%defn.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.dd.attributes"><STRONG>dd.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef26"></A><STRONG>dd</STRONG>    <A HREF="commonElements.mod.html#EntityDef.dd.content">%dd.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef72"></A><STRONG>dd</STRONG>    <A HREF="commonElements.mod.html#EntityDef.dd.attributes">%dd.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Figure                          --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.fig.content"><STRONG>fig.content</STRONG></A>
+                       "((<A HREF="commonElements.ent.html#EntityDef.title">%title;</A>)?, 
+                         (<A HREF="commonElements.ent.html#EntityDef.desc">%desc;</A>)?, 
+                         (<A HREF="commonElements.ent.html#EntityDef.figgroup">%figgroup;</A> | 
+                          <A HREF="commonElements.mod.html#EntityDef.fig.cnt">%fig.cnt;</A>)* )"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.fig.attributes"><STRONG>fig.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.display-atts">%display-atts;</A>
+              spectitle 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef27"></A><STRONG>fig</STRONG>    <A HREF="commonElements.mod.html#EntityDef.fig.content">%fig.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef83"></A><STRONG>fig</STRONG>    <A HREF="commonElements.mod.html#EntityDef.fig.attributes">%fig.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Figure Group                    --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.figgroup.content"><STRONG>figgroup.content</STRONG></A>
+                       "((<A HREF="commonElements.ent.html#EntityDef.title">%title;</A>)?, 
+                         (<A HREF="commonElements.ent.html#EntityDef.figgroup">%figgroup;</A> | 
+                          (<A HREF="commonElements.mod.html#EntityDef.figgroup.cnt">%figgroup.cnt;</A>))* )"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.figgroup.attributes"><STRONG>figgroup.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef28"></A><STRONG>figgroup</STRONG>    <A HREF="commonElements.mod.html#EntityDef.figgroup.content">%figgroup.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef84"></A><STRONG>figgroup</STRONG>    <A HREF="commonElements.mod.html#EntityDef.figgroup.attributes">%figgroup.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Preformatted Text               --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.pre.content"><STRONG>pre.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.pre.cnt">%pre.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.pre.attributes"><STRONG>pre.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.display-atts">%display-atts;</A>
+              spectitle 
+                        CDATA 
+                                  #IMPLIED
+              xml:space 
+                        (preserve) 
+                                  #FIXED 'preserve'
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef29"></A><STRONG>pre</STRONG>    <A HREF="commonElements.mod.html#EntityDef.pre.content">%pre.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef105"></A><STRONG>pre</STRONG>    <A HREF="commonElements.mod.html#EntityDef.pre.attributes">%pre.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Line Respecting Text            --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.lines.content"><STRONG>lines.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.pre.cnt">%pre.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.lines.attributes"><STRONG>lines.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.display-atts">%display-atts;</A>
+              spectitle 
+                        CDATA 
+                                  #IMPLIED
+              xml:space 
+                        (preserve) 
+                                  #FIXED 'preserve'
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef30"></A><STRONG>lines</STRONG>    <A HREF="commonElements.mod.html#EntityDef.lines.content">%lines.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef94"></A><STRONG>lines</STRONG>    <A HREF="commonElements.mod.html#EntityDef.lines.attributes">%lines.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                   BASE FORM PHRASE TYPES                      --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Text                            --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.text.content"><STRONG>text.content</STRONG></A>
+                       "(#PCDATA | 
+                         <A HREF="commonElements.ent.html#EntityDef.text">%text;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.text.attributes"><STRONG>text.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+"&gt;
+&lt;!ELEMENT <A NAME="ElementDef31"></A><STRONG>text</STRONG>    <A HREF="commonElements.mod.html#EntityDef.text.content">%text.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef116"></A><STRONG>text</STRONG>    <A HREF="commonElements.mod.html#EntityDef.text.attributes">%text.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Keyword                         --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.keyword.content"><STRONG>keyword.content</STRONG></A>
+                       "(#PCDATA |
+                         <A HREF="commonElements.ent.html#EntityDef.text">%text;</A> |
+                         <A HREF="commonElements.ent.html#EntityDef.tm">%tm;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.keyword.attributes"><STRONG>keyword.attributes</STRONG></A>
+             "keyref 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef32"></A><STRONG>keyword</STRONG>    <A HREF="commonElements.mod.html#EntityDef.keyword.content">%keyword.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef92"></A><STRONG>keyword</STRONG>    <A HREF="commonElements.mod.html#EntityDef.keyword.attributes">%keyword.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Term                            --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.term.content"><STRONG>term.content</STRONG></A>
+                       "(#PCDATA |
+                         <A HREF="commonElements.ent.html#EntityDef.text">%text;</A> |
+                         <A HREF="commonElements.ent.html#EntityDef.tm">%tm;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.term.attributes"><STRONG>term.attributes</STRONG></A>
+             "keyref 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef33"></A><STRONG>term</STRONG>    <A HREF="commonElements.mod.html#EntityDef.term.content">%term.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef115"></A><STRONG>term</STRONG>    <A HREF="commonElements.mod.html#EntityDef.term.attributes">%term.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Phrase                          --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.ph.content"><STRONG>ph.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.ph.cnt">%ph.cnt;</A> |
+                         <A HREF="commonElements.ent.html#EntityDef.text">%text;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.ph.attributes"><STRONG>ph.attributes</STRONG></A>
+             "keyref 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef34"></A><STRONG>ph</STRONG>    <A HREF="commonElements.mod.html#EntityDef.ph.content">%ph.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef104"></A><STRONG>ph</STRONG>    <A HREF="commonElements.mod.html#EntityDef.ph.attributes">%ph.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Trade Mark                      --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.tm.content"><STRONG>tm.content</STRONG></A>
+                       "(#PCDATA |
+                         <A HREF="commonElements.ent.html#EntityDef.text">%text;</A> |
+                         <A HREF="commonElements.ent.html#EntityDef.tm">%tm;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.tm.attributes"><STRONG>tm.attributes</STRONG></A>
+             "trademark 
+                        CDATA 
+                                  #IMPLIED
+              tmowner 
+                        CDATA 
+                                  #IMPLIED
+              tmtype 
+                        (reg | 
+                         service | 
+                         <A HREF="commonElements.mod.html#ElementDef35">tm</A> | 
+                         -dita-use-conref-target) 
+                                  #REQUIRED
+              tmclass 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+"&gt;
+&lt;!ELEMENT <A NAME="ElementDef35"></A><STRONG>tm</STRONG>    <A HREF="commonElements.mod.html#EntityDef.tm.content">%tm.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef118"></A><STRONG>tm</STRONG>    <A HREF="commonElements.mod.html#EntityDef.tm.attributes">%tm.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Boolean  (deprecated)           --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.boolean.content"><STRONG>boolean.content</STRONG></A>
+                       "EMPTY"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.boolean.attributes"><STRONG>boolean.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#ElementDef37">state</A> 
+                        (no | 
+                         yes | 
+                         -dita-use-conref-target) 
+                                  #REQUIRED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef36"></A><STRONG>boolean</STRONG>    <A HREF="commonElements.mod.html#EntityDef.boolean.content">%boolean.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef70"></A><STRONG>boolean</STRONG>    <A HREF="commonElements.mod.html#EntityDef.boolean.attributes">%boolean.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: State                           --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    A state can have a name and a string value, 
+                        even if empty or indeterminate             --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.state.content"><STRONG>state.content</STRONG></A>
+                       "EMPTY"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.state.attributes"><STRONG>state.attributes</STRONG></A>
+             "name 
+                        CDATA 
+                                  #REQUIRED
+              value 
+                        CDATA 
+                                  #REQUIRED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef37"></A><STRONG>state</STRONG>    <A HREF="commonElements.mod.html#EntityDef.state.content">%state.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef111"></A><STRONG>state</STRONG>    <A HREF="commonElements.mod.html#EntityDef.state.attributes">%state.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Image Data                      --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.image.content"><STRONG>image.content</STRONG></A>
+                       "((<A HREF="commonElements.ent.html#EntityDef.alt">%alt;</A>)?,
+                         (<A HREF="commonElements.ent.html#EntityDef.longdescref">%longdescref;</A>)?)
+"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.image.attributes"><STRONG>image.attributes</STRONG></A>
+             "href 
+                        CDATA 
+                                  #IMPLIED
+
+              scope 
+                        (external | 
+                         local | 
+                         peer | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              keyref 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#ElementDef39">alt</A> 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#ElementDef40">longdescref</A> 
+                        CDATA 
+                                  #IMPLIED
+              height 
+                        NMTOKEN 
+                                  #IMPLIED
+              width 
+                        NMTOKEN 
+                                  #IMPLIED
+              align 
+                        CDATA 
+                                  #IMPLIED
+              scale 
+                        NMTOKEN 
+                                  #IMPLIED
+              scalefit
+                        (yes |
+                         no |
+                         -dita-use-conref-target)
+                                  #IMPLIED
+              placement 
+                        (break | 
+                         inline | 
+                         -dita-use-conref-target) 
+                                  'inline'
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef38"></A><STRONG>image</STRONG>    <A HREF="commonElements.mod.html#EntityDef.image.content">%image.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef87"></A><STRONG>image</STRONG>    <A HREF="commonElements.mod.html#EntityDef.image.attributes">%image.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Alternate text                  --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.alt.content"><STRONG>alt.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.words.cnt">%words.cnt;</A> |
+                         <A HREF="concept.dtd.html#EntityDef.ph">%ph;</A>)*
+"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.alt.attributes"><STRONG>alt.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef39"></A><STRONG>alt</STRONG>    <A HREF="commonElements.mod.html#EntityDef.alt.content">%alt.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef69"></A><STRONG>alt</STRONG>    <A HREF="commonElements.mod.html#EntityDef.alt.attributes">%alt.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Long description reference      --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.longdescref.content"><STRONG>longdescref.content</STRONG></A>
+                       "EMPTY"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.longdescref.attributes"><STRONG>longdescref.attributes</STRONG></A>
+             "href 
+                        CDATA 
+                                  #IMPLIED
+              keyref 
+                        CDATA 
+                                  #IMPLIED
+              type 
+                        CDATA 
+                                  #IMPLIED
+              format 
+                        CDATA 
+                                  #IMPLIED
+              scope 
+                        (external | 
+                         local | 
+                         peer | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef40"></A><STRONG>longdescref</STRONG>    <A HREF="commonElements.mod.html#EntityDef.longdescref.content">%longdescref.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef95"></A><STRONG>longdescref</STRONG>    <A HREF="commonElements.mod.html#EntityDef.longdescref.attributes">%longdescref.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Object (Streaming/Executable 
+                                   Data)                           --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- The longdescre attribute is an error which appeared in the
+     original DTD implementation of OASIS DITA. It is an error that
+     is not part of the standard. It was left here to provide time
+     to change documents, but it will be removed at a later date.
+     The longdescref (with ending F) should be used instead.       --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.object.content"><STRONG>object.content</STRONG></A>
+                       "((<A HREF="commonElements.ent.html#EntityDef.desc">%desc;</A>)?,
+                         (<A HREF="commonElements.ent.html#EntityDef.longdescref">%longdescref;</A>)?,
+                         (<A HREF="commonElements.ent.html#EntityDef.param">%param;</A>)*, 
+                         (<A HREF="commonElements.mod.html#EntityDef.foreign.unknown.incl">%foreign.unknown.incl;</A>)*)"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.object.attributes"><STRONG>object.attributes</STRONG></A>
+             "declare 
+                        (declare) 
+                                  #IMPLIED
+              classid 
+                        CDATA 
+                                  #IMPLIED
+              codebase 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#ElementDef2">data</A> 
+                        CDATA 
+                                  #IMPLIED
+              type 
+                        CDATA 
+                                  #IMPLIED
+              codetype 
+                        CDATA 
+                                  #IMPLIED
+              archive 
+                        CDATA 
+                                  #IMPLIED
+              standby 
+                        CDATA 
+                                  #IMPLIED
+              height 
+                        NMTOKEN 
+                                  #IMPLIED
+              width 
+                        NMTOKEN 
+                                  #IMPLIED
+              usemap 
+                        CDATA 
+                                  #IMPLIED
+              name 
+                        CDATA 
+                                  #IMPLIED
+              tabindex 
+                        NMTOKEN 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#ElementDef40">longdescref</A>
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED 
+              longdescre CDATA    #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef41"></A><STRONG>object</STRONG>    <A HREF="commonElements.mod.html#EntityDef.object.content">%object.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef100"></A><STRONG>object</STRONG>    <A HREF="commonElements.mod.html#EntityDef.object.attributes">%object.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Parameter                       --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.param.content"><STRONG>param.content</STRONG></A>
+                       "EMPTY
+"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.param.attributes"><STRONG>param.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              name 
+                        CDATA 
+                                  #REQUIRED
+              value 
+                        CDATA 
+                                  #IMPLIED
+              valuetype 
+                        (<A HREF="commonElements.mod.html#ElementDef2">data</A> | 
+                         <A HREF="commonElements.mod.html#ElementDef41">object</A> | 
+                         ref | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              type 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef42"></A><STRONG>param</STRONG>    <A HREF="commonElements.mod.html#EntityDef.param.content">%param.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef103"></A><STRONG>param</STRONG>    <A HREF="commonElements.mod.html#EntityDef.param.attributes">%param.attributes;</A>&gt;
+ 
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Simple Table                    --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.simpletable.content"><STRONG>simpletable.content</STRONG></A>
+                       "((<A HREF="commonElements.ent.html#EntityDef.sthead">%sthead;</A>)?, 
+                         (<A HREF="commonElements.ent.html#EntityDef.strow">%strow;</A>)+)"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.simpletable.attributes"><STRONG>simpletable.attributes</STRONG></A>
+             "relcolwidth 
+                        CDATA 
+                                  #IMPLIED
+              keycol 
+                        NMTOKEN 
+                                  #IMPLIED
+              refcols 
+                        NMTOKENS 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.display-atts">%display-atts;</A>
+              spectitle 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef43"></A><STRONG>simpletable</STRONG>    <A HREF="commonElements.mod.html#EntityDef.simpletable.content">%simpletable.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef108"></A><STRONG>simpletable</STRONG>    <A HREF="commonElements.mod.html#EntityDef.simpletable.attributes">%simpletable.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Simple Table Head               --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.sthead.content"><STRONG>sthead.content</STRONG></A>
+                       "(<A HREF="commonElements.ent.html#EntityDef.stentry">%stentry;</A>)+"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.sthead.attributes"><STRONG>sthead.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef44"></A><STRONG>sthead</STRONG>    <A HREF="commonElements.mod.html#EntityDef.sthead.content">%sthead.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef113"></A><STRONG>sthead</STRONG>    <A HREF="commonElements.mod.html#EntityDef.sthead.attributes">%sthead.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Simple Table Row                --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.strow.content"><STRONG>strow.content</STRONG></A>
+                       "(<A HREF="commonElements.ent.html#EntityDef.stentry">%stentry;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.strow.attributes"><STRONG>strow.attributes</STRONG></A>
+             "<A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef45"></A><STRONG>strow</STRONG>    <A HREF="commonElements.mod.html#EntityDef.strow.content">%strow.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef114"></A><STRONG>strow</STRONG>    <A HREF="commonElements.mod.html#EntityDef.strow.attributes">%strow.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Simple Table Cell (entry)       --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.stentry.content"><STRONG>stentry.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.tblcell.cnt">%tblcell.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.stentry.attributes"><STRONG>stentry.attributes</STRONG></A>
+             "specentry 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef46"></A><STRONG>stentry</STRONG>    <A HREF="commonElements.mod.html#EntityDef.stentry.content">%stentry.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef112"></A><STRONG>stentry</STRONG>    <A HREF="commonElements.mod.html#EntityDef.stentry.attributes">%stentry.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Review Comments Block           --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.draft-comment.content"><STRONG>draft-comment.content</STRONG></A>
+                       "(#PCDATA | 
+                         <A HREF="commonElements.mod.html#EntityDef.basic.phandblock">%basic.phandblock;</A> | 
+                         <A HREF="commonElements.mod.html#EntityDef.data.elements.incl">%data.elements.incl;</A> | 
+                         <A HREF="commonElements.mod.html#EntityDef.foreign.unknown.incl">%foreign.unknown.incl;</A>)*"
+&gt;
+<SPAN CLASS="COMMENT">&lt;!-- 20080128: Removed enumeration for @disposition for DITA 1.2. Previous values:
+               accepted, completed, deferred, duplicate, issue, open, 
+               rejected, reopened, unassigned, -dita-use-conref-target           --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.draft-comment.attributes"><STRONG>draft-comment.attributes</STRONG></A>
+             "<A HREF="metaDecl.mod.html#ElementDef62">author</A> 
+                        CDATA 
+                                  #IMPLIED
+              time 
+                        CDATA 
+                                  #IMPLIED
+              disposition 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts-translate-no">%univ-atts-translate-no;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef47"></A><STRONG>draft-comment</STRONG>    <A HREF="commonElements.mod.html#EntityDef.draft-comment.content">%draft-comment.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef80"></A><STRONG>draft-comment</STRONG>    <A HREF="commonElements.mod.html#EntityDef.draft-comment.attributes">%draft-comment.attributes;</A>&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Required Cleanup Block          --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.required-cleanup.content"><STRONG>required-cleanup.content</STRONG></A>
+                       "ANY"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.required-cleanup.attributes"><STRONG>required-cleanup.attributes</STRONG></A>
+             "remap 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts-translate-no">%univ-atts-translate-no;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef48"></A><STRONG>required-cleanup</STRONG>    <A HREF="commonElements.mod.html#EntityDef.required-cleanup.content">%required-cleanup.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef107"></A><STRONG>required-cleanup</STRONG>    <A HREF="commonElements.mod.html#EntityDef.required-cleanup.attributes">%required-cleanup.attributes;</A>&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Footnote                        --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.fn.content"><STRONG>fn.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.fn.cnt">%fn.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.fn.attributes"><STRONG>fn.attributes</STRONG></A>
+             "callout 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef49"></A><STRONG>fn</STRONG>    <A HREF="commonElements.mod.html#EntityDef.fn.content">%fn.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef85"></A><STRONG>fn</STRONG>    <A HREF="commonElements.mod.html#EntityDef.fn.attributes">%fn.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Index Term                      --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.indexterm.content"><STRONG>indexterm.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.words.cnt">%words.cnt;</A>|
+                         <A HREF="commonElements.ent.html#EntityDef.indexterm">%indexterm;</A>|
+                         <A HREF="concept.dtd.html#EntityDef.index-base">%index-base;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.indexterm.attributes"><STRONG>indexterm.attributes</STRONG></A>
+             "keyref 
+                        CDATA 
+                                  #IMPLIED
+              start 
+                        CDATA 
+                                  #IMPLIED
+              end 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+"&gt;
+&lt;!ELEMENT <A NAME="ElementDef50"></A><STRONG>indexterm</STRONG>    <A HREF="commonElements.mod.html#EntityDef.indexterm.content">%indexterm.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef88"></A><STRONG>indexterm</STRONG>    <A HREF="commonElements.mod.html#EntityDef.indexterm.attributes">%indexterm.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Index Base                      --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.index-base.content"><STRONG>index-base.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.words.cnt">%words.cnt;</A> |
+                         <A HREF="commonElements.ent.html#EntityDef.indexterm">%indexterm;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.index-base.attributes"><STRONG>index-base.attributes</STRONG></A>
+             "keyref 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef51"></A><STRONG>index-base</STRONG>    <A HREF="commonElements.mod.html#EntityDef.index-base.content">%index-base.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef89"></A><STRONG>index-base</STRONG>    <A HREF="commonElements.mod.html#EntityDef.index-base.attributes">%index-base.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Index term reference            --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.indextermref.content"><STRONG>indextermref.content</STRONG></A>
+                       "EMPTY
+"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.indextermref.attributes"><STRONG>indextermref.attributes</STRONG></A>
+             "keyref 
+                        CDATA 
+                                  #REQUIRED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+"&gt;
+&lt;!ELEMENT <A NAME="ElementDef52"></A><STRONG>indextermref</STRONG>    <A HREF="commonElements.mod.html#EntityDef.indextermref.content">%indextermref.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef90"></A><STRONG>indextermref</STRONG>    <A HREF="commonElements.mod.html#EntityDef.indextermref.attributes">%indextermref.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Citation (bibliographic source) --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.cite.content"><STRONG>cite.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.xrefph.cnt">%xrefph.cnt;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.cite.attributes"><STRONG>cite.attributes</STRONG></A>
+             "keyref 
+                        CDATA 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef53"></A><STRONG>cite</STRONG>    <A HREF="commonElements.mod.html#EntityDef.cite.content">%cite.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef71"></A><STRONG>cite</STRONG>    <A HREF="commonElements.mod.html#EntityDef.cite.attributes">%cite.attributes;</A>&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Cross Reference/Link            --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.xref.content"><STRONG>xref.content</STRONG></A>
+                       "(<A HREF="commonElements.mod.html#EntityDef.xreftext.cnt">%xreftext.cnt;</A> | 
+                         <A HREF="commonElements.ent.html#EntityDef.desc">%desc;</A>)*"
+&gt;
+&lt;!ENTITY % <A NAME="EntityDef.xref.attributes"><STRONG>xref.attributes</STRONG></A>
+             "href 
+                        CDATA 
+                                  #IMPLIED
+              keyref 
+                        CDATA 
+                                  #IMPLIED
+              type 
+                        CDATA 
+                                  #IMPLIED
+              format 
+                        CDATA 
+                                  #IMPLIED
+              scope 
+                        (external | 
+                         local | 
+                         peer | 
+                         -dita-use-conref-target) 
+                                  #IMPLIED
+              <A HREF="commonElements.mod.html#EntityDef.univ-atts">%univ-atts;</A>
+              outputclass 
+                        CDATA 
+                                  #IMPLIED"
+&gt;
+&lt;!ELEMENT <A NAME="ElementDef54"></A><STRONG>xref</STRONG>    <A HREF="commonElements.mod.html#EntityDef.xref.content">%xref.content;</A>&gt;
+&lt;!ATTLIST <A NAME="AttlistDef121"></A><STRONG>xref</STRONG>    <A HREF="commonElements.mod.html#EntityDef.xref.attributes">%xref.attributes;</A>&gt;
+
+
+
+&lt;!ENTITY % <A NAME="EntityDef.tableXML"><STRONG>tableXML</STRONG></A> 
+  PUBLIC  "-//OASIS//ELEMENTS DITA Exchange Table Model//EN" 
+          "tblDecl.mod" 
+&gt;<A HREF="commonElements.mod.html#EntityDef.tableXML">%tableXML;</A>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    SPECIALIZATION ATTRIBUTE DECLARATIONS      --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+ 
+&lt;!ATTLIST <A NAME="AttlistDef69"></A><STRONG>alt</STRONG>       <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/alt "        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef70"></A><STRONG>boolean</STRONG>   <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/boolean "    &gt;
+&lt;!ATTLIST <A NAME="AttlistDef71"></A><STRONG>cite</STRONG>      <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/cite "       &gt;
+&lt;!ATTLIST <A NAME="AttlistDef72"></A><STRONG>dd</STRONG>        <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/dd "         &gt;
+&lt;!ATTLIST <A NAME="AttlistDef73"></A><STRONG>data</STRONG>      <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/data "       &gt;
+&lt;!ATTLIST <A NAME="AttlistDef74"></A><STRONG>data-about</STRONG>
+                    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/data-about "&gt;
+&lt;!ATTLIST <A NAME="AttlistDef75"></A><STRONG>ddhd</STRONG>      <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/ddhd "       &gt;
+&lt;!ATTLIST <A NAME="AttlistDef76"></A><STRONG>desc</STRONG>      <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/desc "       &gt;
+&lt;!ATTLIST <A NAME="AttlistDef77"></A><STRONG>dl</STRONG>        <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/dl "         &gt;
+&lt;!ATTLIST <A NAME="AttlistDef78"></A><STRONG>dlentry</STRONG>   <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/dlentry "    &gt;
+&lt;!ATTLIST <A NAME="AttlistDef79"></A><STRONG>dlhead</STRONG>    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/dlhead "     &gt;
+&lt;!ATTLIST <A NAME="AttlistDef80"></A><STRONG>draft-comment</STRONG> 
+                    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/draft-comment "&gt;
+&lt;!ATTLIST <A NAME="AttlistDef81"></A><STRONG>dt</STRONG>        <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/dt "         &gt;
+&lt;!ATTLIST <A NAME="AttlistDef82"></A><STRONG>dthd</STRONG>      <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/dthd "       &gt;
+&lt;!ATTLIST <A NAME="AttlistDef83"></A><STRONG>fig</STRONG>       <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/fig "        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef84"></A><STRONG>figgroup</STRONG>  <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/figgroup "   &gt;
+&lt;!ATTLIST <A NAME="AttlistDef85"></A><STRONG>fn</STRONG>        <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/fn "         &gt;
+&lt;!ATTLIST <A NAME="AttlistDef86"></A><STRONG>foreign</STRONG>   <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/foreign "    &gt;
+&lt;!ATTLIST <A NAME="AttlistDef87"></A><STRONG>image</STRONG>     <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/image "      &gt;
+&lt;!ATTLIST <A NAME="AttlistDef88"></A><STRONG>indexterm</STRONG> <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/indexterm "  &gt;
+&lt;!ATTLIST <A NAME="AttlistDef89"></A><STRONG>index-base</STRONG> <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/index-base "&gt;
+&lt;!ATTLIST <A NAME="AttlistDef90"></A><STRONG>indextermref</STRONG> 
+                    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/indextermref "&gt;
+&lt;!ATTLIST <A NAME="AttlistDef91"></A><STRONG>itemgroup</STRONG> <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/itemgroup "  &gt;
+&lt;!ATTLIST <A NAME="AttlistDef92"></A><STRONG>keyword</STRONG>   <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/keyword "    &gt;
+&lt;!ATTLIST <A NAME="AttlistDef93"></A><STRONG>li</STRONG>        <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/li "         &gt;
+&lt;!ATTLIST <A NAME="AttlistDef94"></A><STRONG>lines</STRONG>     <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/lines "      &gt;
+&lt;!ATTLIST <A NAME="AttlistDef95"></A><STRONG>longdescref</STRONG>
+                    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/longdescref "&gt;
+&lt;!ATTLIST <A NAME="AttlistDef96"></A><STRONG>longquoteref</STRONG>
+                    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/longquoteref "&gt;
+&lt;!ATTLIST <A NAME="AttlistDef97"></A><STRONG>lq</STRONG>        <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/lq "         &gt;
+&lt;!ATTLIST <A NAME="AttlistDef98"></A><STRONG>navtitle</STRONG>  <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/navtitle "   &gt;
+&lt;!ATTLIST <A NAME="AttlistDef99"></A><STRONG>note</STRONG>      <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/note "       &gt;
+&lt;!ATTLIST <A NAME="AttlistDef100"></A><STRONG>object</STRONG>    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/object "     &gt;
+&lt;!ATTLIST <A NAME="AttlistDef101"></A><STRONG>ol</STRONG>        <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/ol "         &gt;
+&lt;!ATTLIST <A NAME="AttlistDef102"></A><STRONG>p</STRONG>         <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/p "          &gt;
+&lt;!ATTLIST <A NAME="AttlistDef103"></A><STRONG>param</STRONG>     <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/param "      &gt;
+&lt;!ATTLIST <A NAME="AttlistDef104"></A><STRONG>ph</STRONG>        <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/ph "         &gt;
+&lt;!ATTLIST <A NAME="AttlistDef105"></A><STRONG>pre</STRONG>       <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/pre "        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef106"></A><STRONG>q</STRONG>         <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/q "          &gt;
+&lt;!ATTLIST <A NAME="AttlistDef107"></A><STRONG>required-cleanup</STRONG> 
+                    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/required-cleanup "&gt;
+&lt;!ATTLIST <A NAME="AttlistDef108"></A><STRONG>simpletable</STRONG> 
+                    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/simpletable "&gt;
+&lt;!ATTLIST <A NAME="AttlistDef109"></A><STRONG>sl</STRONG>        <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/sl "         &gt;
+&lt;!ATTLIST <A NAME="AttlistDef110"></A><STRONG>sli</STRONG>       <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/sli "        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef111"></A><STRONG>state</STRONG>     <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/state "      &gt;
+&lt;!ATTLIST <A NAME="AttlistDef112"></A><STRONG>stentry</STRONG>   <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/stentry "    &gt;
+&lt;!ATTLIST <A NAME="AttlistDef113"></A><STRONG>sthead</STRONG>    <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/sthead "     &gt;
+&lt;!ATTLIST <A NAME="AttlistDef114"></A><STRONG>strow</STRONG>     <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/strow "      &gt;
+&lt;!ATTLIST <A NAME="AttlistDef115"></A><STRONG>term</STRONG>      <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/term "       &gt;
+&lt;!ATTLIST <A NAME="AttlistDef116"></A><STRONG>text</STRONG>      <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/text "       &gt;
+&lt;!ATTLIST <A NAME="AttlistDef117"></A><STRONG>title</STRONG>     <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/title "      &gt;
+&lt;!ATTLIST <A NAME="AttlistDef118"></A><STRONG>tm</STRONG>        <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/tm "         &gt;
+&lt;!ATTLIST <A NAME="AttlistDef119"></A><STRONG>ul</STRONG>        <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/ul "         &gt;
+&lt;!ATTLIST <A NAME="AttlistDef120"></A><STRONG>unknown</STRONG>   <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/unknown "    &gt;
+&lt;!ATTLIST <A NAME="AttlistDef121"></A><STRONG>xref</STRONG>      <A HREF="commonElements.mod.html#EntityDef.global-atts">%global-atts;</A>  class CDATA "- topic/xref "       &gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ================== End Common Elements Module  ============== --&gt;</SPAN><?LIVEDTD EOF?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE></BODY></HTML>

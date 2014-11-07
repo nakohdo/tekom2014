@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>topicDefn.ent</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="livedtd.css">
+<STYLE TYPE="text/css">
+  STRONG { font-weight: bold; color: red;}
+  .COMMENT { font-style:italic; color: #A8A8A8;}
+</STYLE>
+</HEAD>
+<BODY onLoad="parent.file.document.open();parent.file.document.write('<BODY TOPMARGIN=0><B>topicDefn.ent</B></BODY>');parent.file.document.close()"><?LIVEDTD ENDHEAD?>
+<PRE>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    HEADER                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  MODULE:    DITA Topic Definitions                            --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  VERSION:   1.2                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  DATE:      November 2009                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    PUBLIC DOCUMENT TYPE DEFINITION            --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    TYPICAL INVOCATION                         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  Refer to this file by the following public identifier or an 
+PUBLIC"-//OASIS//ENTITIES DITA Topic Definitions//EN"
+      Delivered as file "topicDefn.ent"                            --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- SYSTEM:     Darwin Information Typing Architecture (DITA)     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- PURPOSE:    Declaring the topic definitions                   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ORIGINAL CREATION DATE:                                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             March 2001                                        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             (C) Copyright OASIS Open 2005, 2009.              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             (C) Copyright IBM Corporation 2001, 2004.         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             All Rights Reserved.                              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  UPDATES:                                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2005.11.15 RDA: Removed old declarations for spanspec and  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    tfoot entities                             --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2005.11.15 RDA: Corrected the "Delivered as" system ID     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2006.07.06 RDA: Moved common elements to the module        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    commonElements.ent                         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.01.28 RDA: Move %metadata; defn to commonElements.ent --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.02.12 RDA: Modify imbed to use specific 1.2 version   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.02.12 RDA: Move %navtitle; defn to commonElements.ent --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    2008.02.13 RDA: Add bodydiv and sectiondiv                 --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    ELEMENT NAME ENTITIES                      --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+&lt;!ENTITY % <A NAME="EntityDef.topic"><STRONG>topic</STRONG></A>        "<A HREF="topic.mod.html#ElementDef88">topic</A>"                                      &gt;
+&lt;!ENTITY % <A NAME="EntityDef.abstract"><STRONG>abstract</STRONG></A>     "<A HREF="topic.mod.html#ElementDef91">abstract</A>"                                   &gt;
+&lt;!ENTITY % <A NAME="EntityDef.body"><STRONG>body</STRONG></A>         "<A HREF="topic.mod.html#ElementDef92">body</A>"                                       &gt;
+&lt;!ENTITY % <A NAME="EntityDef.bodydiv"><STRONG>bodydiv</STRONG></A>      "<A HREF="topic.mod.html#ElementDef93">bodydiv</A>"                                    &gt;
+&lt;!ENTITY % <A NAME="EntityDef.example"><STRONG>example</STRONG></A>      "<A HREF="topic.mod.html#ElementDef97">example</A>"                                    &gt;
+&lt;!ENTITY % <A NAME="EntityDef.link"><STRONG>link</STRONG></A>         "<A HREF="topic.mod.html#ElementDef100">link</A>"                                       &gt;
+&lt;!ENTITY % <A NAME="EntityDef.linkinfo"><STRONG>linkinfo</STRONG></A>     "<A HREF="topic.mod.html#ElementDef103">linkinfo</A>"                                   &gt;
+&lt;!ENTITY % <A NAME="EntityDef.linklist"><STRONG>linklist</STRONG></A>     "<A HREF="topic.mod.html#ElementDef102">linklist</A>"                                   &gt;
+&lt;!ENTITY % <A NAME="EntityDef.linkpool"><STRONG>linkpool</STRONG></A>     "<A HREF="topic.mod.html#ElementDef104">linkpool</A>"                                   &gt;
+&lt;!ENTITY % <A NAME="EntityDef.linktext"><STRONG>linktext</STRONG></A>     "<A HREF="topic.mod.html#ElementDef101">linktext</A>"                                   &gt;
+&lt;!ENTITY % <A NAME="EntityDef.no-topic-nesting"><STRONG>no-topic-nesting</STRONG></A>     
+                        "<A HREF="topic.mod.html#ElementDef94">no-topic-nesting</A>"                           &gt;
+&lt;!ENTITY % <A NAME="EntityDef.prolog"><STRONG>prolog</STRONG></A>       "<A HREF="topic.mod.html#ElementDef98">prolog</A>"                                     &gt;
+&lt;!ENTITY % <A NAME="EntityDef.related-links"><STRONG>related-links</STRONG></A>     
+                        "<A HREF="topic.mod.html#ElementDef99">related-links</A>"                              &gt;
+&lt;!ENTITY % <A NAME="EntityDef.searchtitle"><STRONG>searchtitle</STRONG></A>  "<A HREF="topic.mod.html#ElementDef90">searchtitle</A>"                                &gt;
+&lt;!ENTITY % <A NAME="EntityDef.section"><STRONG>section</STRONG></A>      "<A HREF="topic.mod.html#ElementDef95">section</A>"                                    &gt;
+&lt;!ENTITY % <A NAME="EntityDef.sectiondiv"><STRONG>sectiondiv</STRONG></A>   "<A HREF="topic.mod.html#ElementDef96">sectiondiv</A>"                                 &gt;
+&lt;!ENTITY % <A NAME="EntityDef.shortdesc"><STRONG>shortdesc</STRONG></A>    "<A HREF="commonElements.mod.html#ElementDef7">shortdesc</A>"                                  &gt;
+&lt;!ENTITY % <A NAME="EntityDef.titlealts"><STRONG>titlealts</STRONG></A>    "<A HREF="topic.mod.html#ElementDef89">titlealts</A>"                                  &gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    Also include common elements used in topics
+                        and maps                                   --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.commonDefns"><STRONG>commonDefns</STRONG></A>   PUBLIC 
+                       "-//OASIS//ENTITIES DITA 1.2 Common Elements//EN" 
+                       "commonElements.ent"                          &gt;
+<A HREF="topicDefn.ent.html#EntityDef.commonDefns">%commonDefns;</A>
+
+<SPAN CLASS="COMMENT">&lt;!-- ================== End Topic Definitions Entities =========== --&gt;</SPAN><?LIVEDTD EOF?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE></BODY></HTML>
