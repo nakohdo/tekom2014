@@ -1,0 +1,7 @@
+<catalog prefer="public">
+  
+  <public 
+    publicId="-//tekom2014//DTD DITA myTopic//EN" 
+    uri="myTopic.dtd"/>
+  
+</catalog>

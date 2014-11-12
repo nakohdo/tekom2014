@@ -1,8 +1,0 @@
-<catalog
-  xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="public">
-  
-  <public 
-    publicId="-//OASIS//DTD DITA myTopic//EN" 
-    uri="dtd/myTopic.dtd"/>
-  
-</catalog>

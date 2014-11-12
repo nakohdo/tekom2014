@@ -1,0 +1,6 @@
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="public">
+  
+ 	<nextCatalog catalog="catalog-dita.xml"/>
+	<nextCatalog catalog="plugins/de.tekom.dita_diet/myCatalog.xml"/>
+ 
+</catalog>

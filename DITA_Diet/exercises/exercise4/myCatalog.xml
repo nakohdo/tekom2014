@@ -1,0 +1,9 @@
+<catalog prefer="public">
+  
+  <public 
+	publicId="-//OASIS//DTD DITA Topic//EN" 
+	uri="topic.dtd"
+	/>
+	
+  
+</catalog>
