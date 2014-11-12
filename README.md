@@ -6,6 +6,9 @@ Here, we will provide the sample code as well as more detailed information than 
 
 * Wiki: https://github.com/nakohdo/tekom2014/wiki/DITA-Diet---Beautiful-on-the-Inside
 * GitHub Pages: https://nakohdo.github.io/tekom2014/ 
+ 
+# Download 
+Please download the updated files for the workshop: https://github.com/nakohdo/tekom2014/archive/dita.zip
 
 Frank Ralf  
 Marion Knebel  
