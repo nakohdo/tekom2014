@@ -7,3 +7,5 @@ Hier wird es neben Beispielcode auch detailliertere Infos zum Vortrag geben, als
 * Wiki: https://github.com/nakohdo/tekom2014/wiki/Sonnenfinsternis-in-der-Technischen-Dokumentation
 
 Frank Ralf
+
+Feedback-Link: http://OTS7.honestly.de
