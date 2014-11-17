@@ -4,8 +4,6 @@ Dies ist das Repository für meinen Vortrag ["Sonnenfinsternis in der Technische
 
 Hier wird es neben Beispielcode auch detailliertere Infos zum Vortrag geben, als es der Tagungsband ermöglicht. 
 
-* Wiki: https://github.com/nakohdo/tekom2014/wiki
-* GitHub Pages: https://nakohdo.github.io/tekom2014/ 
+* Wiki: https://github.com/nakohdo/tekom2014/wiki/Sonnenfinsternis-in-der-Technischen-Dokumentation
 
 Frank Ralf
-
