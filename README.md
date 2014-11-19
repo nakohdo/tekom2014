@@ -13,3 +13,5 @@ Please download the updated files for the workshop: https://github.com/nakohdo/t
 Frank Ralf  
 Marion Knebel  
 (Mark Schubert)  
+
+http://DITA3.honestly.de
