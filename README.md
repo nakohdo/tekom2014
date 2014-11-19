@@ -8,5 +8,5 @@ Hier wird es neben Beispielcode auch detailliertere Infos zum Vortrag geben, als
 
 Frank Ralf
 
-Folien zum Vortrag: http://tagungen.tekom.de/fileadmin/tx_doccon/slides/714_Sonnenfinsternis_in_der_Technischen_Dokumentation.pdf
-Feedback-Link: http://OTS7.honestly.de
+- Folien zum Vortrag: http://tagungen.tekom.de/fileadmin/tx_doccon/slides/714_Sonnenfinsternis_in_der_Technischen_Dokumentation.pdf
+- Feedback-Link: http://OTS7.honestly.de
