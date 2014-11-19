@@ -14,4 +14,8 @@ Frank Ralf
 Marion Knebel  
 (Mark Schubert)  
 
+## Presentation download
+http://tagungen.tekom.de/fileadmin/tx_doccon/slides/715_DITA_Diet_Beautiful_on_the_Inside.pdf
+
+## Feedback link
 http://DITA3.honestly.de
